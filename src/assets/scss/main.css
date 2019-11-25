@@ -1,0 +1,18 @@
+.parallax {
+  height: 90vh;
+  overflow: hidden;
+}
+
+/*
+Button
+ */
+.gsiButton {
+  padding: 0;
+}
+.gsiButton a {
+  padding: 1.125rem 2.25rem;
+  color: white;
+  text-decoration: none;
+}
+
+/*# sourceMappingURL=main.css.map */
