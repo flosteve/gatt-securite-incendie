@@ -1,4 +1,4 @@
-require('dotenv').config({
+require("dotenv").config({
   path: `.env.${process.env.NODE_ENV}`,
 })
 
@@ -25,17 +25,17 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: 'Gatt Sécurité Incendie',
-        short_name: 'GSI',
-        start_url: '/',
-        background_color: '#c8292e',
-        theme_color: '#c8292e',
-        display: 'minimal-ui',
-        icon: 'src/assets/img/logo_gsi.png', // This path is relative to the root of the site.
+        name: "Gatt Sécurité Incendie",
+        short_name: "GSI",
+        start_url: "/",
+        background_color: "#c8292e",
+        theme_color: "#c8292e",
+        display: "minimal-ui",
+        icon: "src/assets/img/logo_gsi.png", // This path is relative to the root of the site.
       },
     },
-    'gatsby-plugin-offline',
-    'gatsby-plugin-sass',
+    "gatsby-plugin-offline",
+    "gatsby-plugin-sass",
     {
       resolve: `gatsby-theme-material-ui`,
       options: {
@@ -44,11 +44,11 @@ module.exports = {
             google: [
               {
                 family: `Montserrat`,
-                variants: [`300`, `400`, `500`, '600', '700'],
+                variants: [`300`, `400`, `500`, "600", "700"],
               },
               {
                 family: `Open Sans`,
-                variants: [`300`, `400`, `500`, '600', '700'],
+                variants: [`300`, `400`, `500`, "600", "700"],
               },
             ],
           },
@@ -65,8 +65,9 @@ module.exports = {
         useGoogleAnalytics: true,
       },
     },
+    `gatsby-plugin-netlify`,
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
+    `gatsby-plugin-offline`,
   ],
 }
