@@ -41,10 +41,8 @@ export default function Footer(props) {
           " "
         )}
         {content}
-        <div className={classes.clearFix} />© {new Date().getFullYear()}, Built
-        with
-        {` `}
-        <a href="https://www.gatsbyjs.org">Gatsby</a>
+        <div className={classes.clearFix} />© {new Date().getFullYear()}, Tout
+        droits réservés - Gatt Sécurité Incendie
       </div>
     </footer>
   )

@@ -14,3 +14,23 @@ Button
     text-decoration: none;
   }
 }
+
+@media (max-width: 812px) and (orientation: landscape) {
+  .parallax {
+    height: 130vh;
+  }
+}
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 3.2rem !important;
+  }
+
+  .contactHome {
+    padding: 30px 0;
+  }
+
+  .formHome {
+    padding: 30px 15px 0;
+  }
+}

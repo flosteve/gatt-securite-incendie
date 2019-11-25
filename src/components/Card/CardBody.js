@@ -1,16 +1,16 @@
-import React from "react";
+import React from "react"
 // nodejs library that concatenates classes
-import classNames from "classnames";
+import classNames from "classnames"
 // nodejs library to set properties for components
-import PropTypes from "prop-types";
+import PropTypes from "prop-types"
 // @material-ui/core components
-import { makeStyles } from "@material-ui/core/styles";
+import { makeStyles } from "@material-ui/core/styles"
 // @material-ui/icons
 
 // core components
-import styles from "assets/jss/material-kit-pro-react/components/cardBodyStyle.js";
+import styles from "../../assets/jss/material-kit-pro-react/components/cardBodyStyle.js"
 
-const useStyles = makeStyles(styles);
+const useStyles = makeStyles(styles)
 
 export default function CardBody(props) {
   const {
@@ -23,8 +23,8 @@ export default function CardBody(props) {
     signup,
     color,
     ...rest
-  } = props;
-  const classes = useStyles();
+  } = props
+  const classes = useStyles()
   const cardBodyClasses = classNames({
     [classes.cardBody]: true,
     [classes.cardBodyBackground]: background,
@@ -33,13 +33,13 @@ export default function CardBody(props) {
     [classes.cardPricing]: pricing,
     [classes.cardSignup]: signup,
     [classes.cardBodyColor]: color,
-    [className]: className !== undefined
-  });
+    [className]: className !== undefined,
+  })
   return (
     <div className={cardBodyClasses} {...rest}>
       {children}
     </div>
-  );
+  )
 }
 
 CardBody.propTypes = {
@@ -50,5 +50,5 @@ CardBody.propTypes = {
   pricing: PropTypes.bool,
   signup: PropTypes.bool,
   color: PropTypes.bool,
-  children: PropTypes.node
-};
+  children: PropTypes.node,
+}

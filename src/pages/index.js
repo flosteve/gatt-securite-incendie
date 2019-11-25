@@ -10,7 +10,7 @@ import Button from "../components/CustomButtons/Button.js"
 import InfoArea from "../components/InfoArea/InfoArea.js"
 import Img from "gatsby-image"
 
-import { makeStyles, Paper } from "@material-ui/core"
+import { makeStyles } from "@material-ui/core"
 import presentationStyle from "../assets/jss/material-kit-pro-react/views/presentationStyle"
 
 import LibraryBooksIcon from "@material-ui/icons/LibraryBooks"
@@ -19,6 +19,7 @@ import BuildIcon from "@material-ui/icons/Build"
 import CreateIcon from "@material-ui/icons/Create"
 import MapIcon from "@material-ui/icons/Map"
 import VerifiedUserIcon from "@material-ui/icons/VerifiedUser"
+import SectionContacts from "../templates/SectionsPage/Sections/SectionContacts"
 
 const useStyles = makeStyles(presentationStyle)
 
@@ -31,11 +32,14 @@ const IndexPage = () => {
           description
         }
       }
-      allFile(
-        filter: {
-          relativePath: { in: ["banner_home_gsi.jpeg", "nos_offres.jpeg"] }
+      file(relativePath: { eq: "banner_home_gsi.jpeg" }) {
+        childImageSharp {
+          fluid(maxWidth: 1600, maxHeight: 900, quality: 100) {
+            ...GatsbyImageSharpFluid_withWebp_tracedSVG
+          }
         }
-      ) {
+      }
+      allFile(filter: { relativePath: { eq: "nos_offres.jpeg" } }) {
         edges {
           node {
             childImageSharp {
@@ -50,12 +54,12 @@ const IndexPage = () => {
   `)
 
   const classes = useStyles()
-  console.log(data.allFile.edges)
+
   return (
     <Layout>
       <Seo title="Accueil" />
       <Parallax
-        image={data.allFile.edges[0].node.childImageSharp.fluid.src}
+        image={data.file.childImageSharp.fluid.src}
         className="parallax"
       >
         <div className={classes.container}>
@@ -87,7 +91,7 @@ const IndexPage = () => {
           <GridContainer className={classes.gridContainer}>
             <GridItem xs={12} sm={12} md={6}>
               <div className={classes.phoneContainer}>
-                <Img fluid={data.allFile.edges[1].node.childImageSharp.fluid} />
+                <Img fluid={data.allFile.edges[0].node.childImageSharp.fluid} />
               </div>
             </GridItem>
             <GridItem xs={12} sm={12} md={6}>
@@ -123,6 +127,7 @@ const IndexPage = () => {
             </GridItem>
           </GridContainer>
         </div>
+        <SectionContacts />
       </div>
     </Layout>
   )

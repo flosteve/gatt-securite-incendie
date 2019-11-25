@@ -6,8 +6,8 @@ import {
   primaryCardHeader,
   roseCardHeader,
   blackColor,
-  hexToRgb
-} from "assets/jss/material-kit-pro-react.js";
+  hexToRgb,
+} from "../../material-kit-pro-react.js"
 
 const cardHeaderStyle = {
   cardHeader: {
@@ -17,14 +17,14 @@ const cardHeaderStyle = {
     marginRight: "15px",
     marginTop: "-30px",
     border: "0",
-    marginBottom: "0"
+    marginBottom: "0",
   },
   cardHeaderPlain: {
     marginLeft: "0px",
     marginRight: "0px",
     "&$cardHeaderImage": {
-      margin: "0 !important"
-    }
+      margin: "0 !important",
+    },
   },
   cardHeaderImage: {
     position: "relative",
@@ -43,20 +43,20 @@ const cardHeaderStyle = {
         hexToRgb(blackColor) +
         ", 0.24), 0 8px 10px -5px rgba(" +
         hexToRgb(blackColor) +
-        ", 0.2)"
+        ", 0.2)",
     },
     "& a": {
-      display: "block"
-    }
+      display: "block",
+    },
   },
   noShadow: {
     "& img": {
-      boxShadow: "none !important"
-    }
+      boxShadow: "none !important",
+    },
   },
   cardHeaderContact: {
     margin: "0 15px",
-    marginTop: "-20px"
+    marginTop: "-50px",
   },
   cardHeaderSignup: {
     marginLeft: "20px",
@@ -64,14 +64,14 @@ const cardHeaderStyle = {
     marginTop: "-40px",
     padding: "20px 0",
     width: "100%",
-    marginBottom: "15px"
+    marginBottom: "15px",
   },
   warningCardHeader,
   successCardHeader,
   dangerCardHeader,
   infoCardHeader,
   primaryCardHeader,
-  roseCardHeader
-};
+  roseCardHeader,
+}
 
-export default cardHeaderStyle;
+export default cardHeaderStyle
