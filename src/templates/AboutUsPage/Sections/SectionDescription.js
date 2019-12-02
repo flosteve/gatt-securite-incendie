@@ -1,18 +1,18 @@
-import React from "react";
+import React from "react"
 // nodejs library that concatenates classes
-import classNames from "classnames";
+import classNames from "classnames"
 // core components
-import GridContainer from "components/Grid/GridContainer.js";
-import GridItem from "components/Grid/GridItem.js";
+import GridContainer from "components/Grid/GridContainer.js"
+import GridItem from "components/Grid/GridItem.js"
 // @material-ui/core components
-import { makeStyles } from "@material-ui/core/styles";
+import { makeStyles } from "@material-ui/core/styles"
 
-import descriptionStyle from "assets/jss/material-kit-pro-react/views/aboutUsSections/descriptionStyle.js";
+import descriptionStyle from "../../../assets/jss/material-kit-pro-react/views/aboutUsSections/descriptionStyle.js"
 
-const useStyles = makeStyles(descriptionStyle);
+const useStyles = makeStyles(descriptionStyle)
 
 export default function SectionDescription() {
-  const classes = useStyles();
+  const classes = useStyles()
   return (
     <div className={classNames(classes.aboutDescription, classes.textCenter)}>
       <GridContainer>
@@ -31,5 +31,5 @@ export default function SectionDescription() {
         </GridItem>
       </GridContainer>
     </div>
-  );
+  )
 }

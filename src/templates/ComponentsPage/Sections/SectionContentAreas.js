@@ -1,86 +1,86 @@
-import React from "react";
+import React from "react"
 
 // @material-ui/core components
-import { makeStyles } from "@material-ui/core/styles";
-import Checkbox from "@material-ui/core/Checkbox";
-import Tooltip from "@material-ui/core/Tooltip";
+import { makeStyles } from "@material-ui/core/styles"
+import Checkbox from "@material-ui/core/Checkbox"
+import Tooltip from "@material-ui/core/Tooltip"
 // @material-ui/core icons
-import Person from "@material-ui/icons/Person";
-import Edit from "@material-ui/icons/Edit";
-import Close from "@material-ui/icons/Close";
-import Check from "@material-ui/icons/Check";
-import Remove from "@material-ui/icons/Remove";
-import Add from "@material-ui/icons/Add";
-import KeyboardArrowRight from "@material-ui/icons/KeyboardArrowRight";
-import Reply from "@material-ui/icons/Reply";
-import Favorite from "@material-ui/icons/Favorite";
+import Person from "@material-ui/icons/Person"
+import Edit from "@material-ui/icons/Edit"
+import Close from "@material-ui/icons/Close"
+import Check from "@material-ui/icons/Check"
+import Remove from "@material-ui/icons/Remove"
+import Add from "@material-ui/icons/Add"
+import KeyboardArrowRight from "@material-ui/icons/KeyboardArrowRight"
+import Reply from "@material-ui/icons/Reply"
+import Favorite from "@material-ui/icons/Favorite"
 // core components
-import GridContainer from "components/Grid/GridContainer.js";
-import GridItem from "components/Grid/GridItem.js";
-import Table from "components/Table/Table.js";
-import Button from "components/CustomButtons/Button.js";
-import Media from "components/Media/Media.js";
-import CustomInput from "components/CustomInput/CustomInput.js";
-import Paginations from "components/Pagination/Pagination.js";
+import GridContainer from "components/Grid/GridContainer.js"
+import GridItem from "components/Grid/GridItem.js"
+import Table from "components/Table/Table.js"
+import Button from "components/CustomButtons/Button.js"
+import Media from "components/Media/Media.js"
+import CustomInput from "components/CustomInput/CustomInput.js"
+import Paginations from "components/Pagination/Pagination.js"
 
-import style from "assets/jss/material-kit-pro-react/views/componentsSections/contentAreas.js";
+import style from "assets/jss/material-kit-pro-react/views/componentsSections/contentAreas.js"
 
-import avatar from "assets/img/faces/avatar.jpg";
-import kendall from "assets/img/faces/kendall.jpg";
-import marc from "assets/img/faces/marc.jpg";
-import placeholder from "assets/img/placeholder.jpg";
-import product1 from "assets/img/product1.jpg";
-import product2 from "assets/img/product2.jpg";
-import product3 from "assets/img/product3.jpg";
+import avatar from "assets/img/faces/avatar.jpg"
+import kendall from "assets/img/faces/kendall.jpg"
+import marc from "assets/img/faces/marc.jpg"
+import placeholder from "assets/img/placeholder.jpg"
+import product1 from "assets/img/product1.jpg"
+import product2 from "assets/img/product2.jpg"
+import product3 from "assets/img/product3.jpg"
 
-const useStyles = makeStyles(style);
+const useStyles = makeStyles(style)
 
 export default function SectionContentAreas() {
-  const [checked, setChecked] = React.useState([1, 3, 5]);
+  const [checked, setChecked] = React.useState([1, 3, 5])
   const handleToggle = value => {
-    const currentIndex = checked.indexOf(value);
-    const newChecked = [...checked];
+    const currentIndex = checked.indexOf(value)
+    const newChecked = [...checked]
     if (currentIndex === -1) {
-      newChecked.push(value);
+      newChecked.push(value)
     } else {
-      newChecked.splice(currentIndex, 1);
+      newChecked.splice(currentIndex, 1)
     }
-    setChecked(newChecked);
-  };
-  const classes = useStyles();
+    setChecked(newChecked)
+  }
+  const classes = useStyles()
   const fillButtons = [
     { color: "info", icon: Person },
     { color: "success", icon: Edit },
-    { color: "danger", icon: Close }
+    { color: "danger", icon: Close },
   ].map((prop, key) => {
     return (
       <Button justIcon size="sm" color={prop.color} key={key}>
         <prop.icon />
       </Button>
-    );
-  });
+    )
+  })
   const simpleButtons = [
     { color: "info", icon: Person },
     { color: "success", icon: Edit },
-    { color: "danger", icon: Close }
+    { color: "danger", icon: Close },
   ].map((prop, key) => {
     return (
       <Button simple justIcon size="sm" color={prop.color} key={key}>
         <prop.icon />
       </Button>
-    );
-  });
+    )
+  })
   const roundButtons = [
     { color: "info", icon: Person },
     { color: "success", icon: Edit },
-    { color: "danger", icon: Close }
+    { color: "danger", icon: Close },
   ].map((prop, key) => {
     return (
       <Button round justIcon size="sm" color={prop.color} key={key}>
         <prop.icon />
       </Button>
-    );
-  });
+    )
+  })
   return (
     <div className="cd-section" id="contentAreas">
       <h2>Content Areas</h2>
@@ -108,7 +108,7 @@ export default function SectionContentAreas() {
                 "Job Position",
                 "Since",
                 "Salary",
-                "Actions"
+                "Actions",
               ]}
               tableData={[
                 [
@@ -117,7 +117,7 @@ export default function SectionContentAreas() {
                   "Develop",
                   "2013",
                   "€ 99,225",
-                  fillButtons
+                  fillButtons,
                 ],
                 ["2", "John Doe", "Design", "2012", "€ 89,241", roundButtons],
                 ["3", "Alex Mike", "Design", "2010", "€ 92,144", simpleButtons],
@@ -127,7 +127,7 @@ export default function SectionContentAreas() {
                   "Marketing",
                   "2013",
                   "€ 49,990",
-                  roundButtons
+                  roundButtons,
                 ],
                 [
                   "5",
@@ -135,19 +135,19 @@ export default function SectionContentAreas() {
                   "Communication",
                   "2015",
                   "€ 69,201",
-                  fillButtons
-                ]
+                  fillButtons,
+                ],
               ]}
               customCellClasses={[
                 classes.textCenter,
                 classes.textRight,
-                classes.textRight
+                classes.textRight,
               ]}
               customClassesForCells={[0, 4, 5]}
               customHeadCellClasses={[
                 classes.textCenter,
                 classes.textRight,
-                classes.textRight
+                classes.textRight,
               ]}
               customHeadClassesForCells={[0, 4, 5]}
             />
@@ -163,7 +163,7 @@ export default function SectionContentAreas() {
                 "Type",
                 "Qty",
                 "Price",
-                "Amount"
+                "Amount",
               ]}
               tableData={[
                 [
@@ -177,14 +177,14 @@ export default function SectionContentAreas() {
                     icon={<Check className={classes.uncheckedIcon} />}
                     classes={{
                       checked: classes.checked,
-                      root: classes.checkRoot
+                      root: classes.checkRoot,
                     }}
                   />,
                   "Moleskine Agenda",
                   "Office",
                   "25",
                   "€ 49",
-                  "€ 1,225"
+                  "€ 1,225",
                 ],
                 [
                   "2",
@@ -197,14 +197,14 @@ export default function SectionContentAreas() {
                     icon={<Check className={classes.uncheckedIcon} />}
                     classes={{
                       checked: classes.checked,
-                      root: classes.checkRoot
+                      root: classes.checkRoot,
                     }}
                   />,
                   "Stabilo Pen",
                   "Office",
                   "30",
                   "€ 10",
-                  "€ 300"
+                  "€ 300",
                 ],
                 [
                   "3",
@@ -217,14 +217,14 @@ export default function SectionContentAreas() {
                     icon={<Check className={classes.uncheckedIcon} />}
                     classes={{
                       checked: classes.checked,
-                      root: classes.checkRoot
+                      root: classes.checkRoot,
                     }}
                   />,
                   "A4 Paper Pack",
                   "Office",
                   "50",
                   "€ 10.99",
-                  "€ 109"
+                  "€ 109",
                 ],
                 [
                   "4",
@@ -237,14 +237,14 @@ export default function SectionContentAreas() {
                     icon={<Check className={classes.uncheckedIcon} />}
                     classes={{
                       checked: classes.checked,
-                      root: classes.checkRoot
+                      root: classes.checkRoot,
                     }}
                   />,
                   "Apple iPad",
                   "Communication",
                   "10",
                   "€ 499.00",
-                  "€ 4,990"
+                  "€ 4,990",
                 ],
                 [
                   "5",
@@ -257,14 +257,14 @@ export default function SectionContentAreas() {
                     icon={<Check className={classes.uncheckedIcon} />}
                     classes={{
                       checked: classes.checked,
-                      root: classes.checkRoot
+                      root: classes.checkRoot,
                     }}
                   />,
                   "Apple iPhone",
                   "Communication",
                   "10",
                   "€ 599.00",
-                  "€ 5,999"
+                  "€ 5,999",
                 ],
                 {
                   total: true,
@@ -273,20 +273,20 @@ export default function SectionContentAreas() {
                     <span>
                       <small>€</small>12,999
                     </span>
-                  )
-                }
+                  ),
+                },
               ]}
               customCellClasses={[
                 classes.textCenter,
                 classes.padding0,
                 classes.textRight,
-                classes.textRight
+                classes.textRight,
               ]}
               customClassesForCells={[0, 1, 5, 6]}
               customHeadCellClasses={[
                 classes.textCenter,
                 classes.textRight,
-                classes.textRight
+                classes.textRight,
               ]}
               customHeadClassesForCells={[0, 5, 6]}
             />
@@ -306,7 +306,7 @@ export default function SectionContentAreas() {
                 "PRICE",
                 "QTY",
                 "AMOUNT",
-                ""
+                "",
               ]}
               tableData={[
                 [
@@ -361,7 +361,7 @@ export default function SectionContentAreas() {
                     <Button link className={classes.actionButton}>
                       <Close />
                     </Button>
-                  </Tooltip>
+                  </Tooltip>,
                 ],
                 [
                   <div className={classes.imgContainer} key={875643}>
@@ -413,7 +413,7 @@ export default function SectionContentAreas() {
                     <Button link className={classes.actionButton}>
                       <Close />
                     </Button>
-                  </Tooltip>
+                  </Tooltip>,
                 ],
                 [
                   <div className={classes.imgContainer} key={875643}>
@@ -465,7 +465,7 @@ export default function SectionContentAreas() {
                     <Button link className={classes.actionButton}>
                       <Close />
                     </Button>
-                  </Tooltip>
+                  </Tooltip>,
                 ],
                 {
                   purchase: true,
@@ -481,9 +481,9 @@ export default function SectionContentAreas() {
                       <Button color="info" round>
                         Complete Purchase <KeyboardArrowRight />
                       </Button>
-                    )
-                  }
-                }
+                    ),
+                  },
+                },
               ]}
               tableShopping
               customHeadCellClasses={[
@@ -492,7 +492,7 @@ export default function SectionContentAreas() {
                 classes.description,
                 classes.textCenter,
                 classes.textRight,
-                classes.textRight
+                classes.textRight,
               ]}
               customHeadClassesForCells={[0, 2, 3, 4, 5, 6]}
               customCellClasses={[
@@ -501,7 +501,7 @@ export default function SectionContentAreas() {
                 classes.customFont,
                 classes.tdNumber + " " + classes.textCenter,
                 classes.tdNumber + " " + classes.tdNumberAndButtonGroup,
-                classes.tdNumber + " " + classes.textCenter
+                classes.tdNumber + " " + classes.textCenter,
               ]}
               customClassesForCells={[1, 2, 3, 4, 5, 6]}
             />
@@ -580,12 +580,12 @@ export default function SectionContentAreas() {
                       <CustomInput
                         id="reply"
                         formControlProps={{
-                          fullWidth: true
+                          fullWidth: true,
                         }}
                         inputProps={{
                           multiline: true,
                           rows: 4,
-                          placeholder: " Write some nice stuff or nothing..."
+                          placeholder: " Write some nice stuff or nothing...",
                         }}
                       />
                     }
@@ -594,7 +594,7 @@ export default function SectionContentAreas() {
                         <Reply /> Reply
                       </Button>
                     }
-                  />
+                  />,
                 ]}
               />
               <Media
@@ -684,7 +684,7 @@ export default function SectionContentAreas() {
                         </Button>
                       </div>
                     }
-                  />
+                  />,
                 ]}
               />
               <Media
@@ -745,7 +745,7 @@ export default function SectionContentAreas() {
                     { active: true, text: 3 },
                     { text: 4 },
                     { text: 5 },
-                    { text: "»" }
+                    { text: "»" },
                   ]}
                   color="primary"
                 />
@@ -761,12 +761,12 @@ export default function SectionContentAreas() {
                 <CustomInput
                   id="logged"
                   formControlProps={{
-                    fullWidth: true
+                    fullWidth: true,
                   }}
                   inputProps={{
                     multiline: true,
                     rows: 6,
-                    placeholder: " Write some nice stuff or nothing..."
+                    placeholder: " Write some nice stuff or nothing...",
                   }}
                 />
               }
@@ -789,10 +789,10 @@ export default function SectionContentAreas() {
                       <CustomInput
                         id="not-logged-name"
                         formControlProps={{
-                          fullWidth: true
+                          fullWidth: true,
                         }}
                         inputProps={{
-                          placeholder: "Your Name"
+                          placeholder: "Your Name",
                         }}
                       />
                     </GridItem>
@@ -800,10 +800,10 @@ export default function SectionContentAreas() {
                       <CustomInput
                         id="not-logged-email"
                         formControlProps={{
-                          fullWidth: true
+                          fullWidth: true,
                         }}
                         inputProps={{
-                          placeholder: "Your Email"
+                          placeholder: "Your Email",
                         }}
                       />
                     </GridItem>
@@ -811,12 +811,12 @@ export default function SectionContentAreas() {
                   <CustomInput
                     id="not-logged-message"
                     formControlProps={{
-                      fullWidth: true
+                      fullWidth: true,
                     }}
                     inputProps={{
                       multiline: true,
                       rows: 6,
-                      placeholder: " Write some nice stuff or nothing..."
+                      placeholder: " Write some nice stuff or nothing...",
                     }}
                   />
                 </div>
@@ -843,5 +843,5 @@ export default function SectionContentAreas() {
         </GridContainer>
       </div>
     </div>
-  );
+  )
 }

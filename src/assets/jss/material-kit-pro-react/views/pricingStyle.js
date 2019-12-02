@@ -5,8 +5,8 @@ import {
   mainRaised,
   whiteColor,
   mrAuto,
-  mlAuto
-} from "assets/jss/material-kit-pro-react.js";
+  mlAuto,
+} from "assets/jss/material-kit-pro-react.js"
 
 const pricingStyle = {
   main,
@@ -15,16 +15,16 @@ const pricingStyle = {
   mlAuto,
   container: {
     ...container,
-    zIndex: 1
+    zIndex: 1,
   },
   title: {
     ...title,
     "&, & + h4": {
-      color: whiteColor
-    }
+      color: whiteColor,
+    },
   },
   textCenter: {
-    textAlign: "center"
+    textAlign: "center",
   },
   block: {
     color: "inherit",
@@ -35,33 +35,33 @@ const pricingStyle = {
     borderRadius: "3px",
     textDecoration: "none",
     position: "relative",
-    display: "block"
+    display: "block",
   },
   inlineBlock: {
     display: "inline-block",
     padding: "0px",
-    width: "auto"
+    width: "auto",
   },
   list: {
     marginBottom: "0",
     padding: "0",
-    marginTop: "0"
+    marginTop: "0",
   },
   left: {
     float: "left!important",
-    display: "block"
+    display: "block",
   },
   right: {
     padding: "15px 0",
     margin: "0",
-    float: "right"
+    float: "right",
   },
   icon: {
     width: "18px",
     height: "18px",
     top: "3px",
-    position: "relative"
-  }
-};
+    position: "relative",
+  },
+}
 
-export default pricingStyle;
+export default pricingStyle

@@ -1,18 +1,53 @@
+.page-gsi.formations a {
+  text-decoration: none;
+}
+
+.formation-description {
+  padding: 2rem 1rem 0;
+}
+
+.formation-features {
+  margin: 0;
+}
+
+.contact-page-gsi .contactHome {
+  background: white !important;
+}
+.contact-page-gsi .contactHome:after {
+  background: white !important;
+}
+.contact-page-gsi .contactHome h2, .contact-page-gsi .contactHome h4, .contact-page-gsi .contactHome h5 {
+  color: inherit;
+}
+.contact-page-gsi .contactHome svg {
+  color: #e53935;
+}
+
 .parallax {
   height: 90vh;
   overflow: hidden;
 }
-
-/*
-Button
- */
-.gsiButton {
-  padding: 0;
+.parallax.home:before, .parallax.home:after {
+  z-index: -1;
 }
-.gsiButton a {
-  padding: 1.125rem 2.25rem;
-  color: white;
-  text-decoration: none;
+
+footer {
+  padding: 0 2rem;
+}
+footer a:hover {
+  color: #e53935 !important;
+}
+
+h1 {
+  text-transform: uppercase;
+}
+
+.page-gsi {
+  padding: 4rem 0;
+}
+.page-gsi h2 {
+  color: #3C4858;
+  text-transform: uppercase;
 }
 
 @media (max-width: 812px) and (orientation: landscape) {
@@ -21,7 +56,7 @@ Button
   }
 }
 @media (max-width: 768px) {
-  h1 {
+  .parallax.home h1 {
     font-size: 3.2rem !important;
   }
 

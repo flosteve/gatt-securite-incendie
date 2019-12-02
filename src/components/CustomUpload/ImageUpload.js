@@ -1,45 +1,45 @@
-import React from "react";
+import React from "react"
 // used for making the prop types of this component
-import PropTypes from "prop-types";
+import PropTypes from "prop-types"
 
 // core components
-import Button from "components/CustomButtons/Button.js";
+import Button from "components/CustomButtons/Button.js"
 
-import defaultImage from "assets/img/image_placeholder.jpg";
-import defaultAvatar from "assets/img/placeholder.jpg";
+import defaultImage from "assets/img/image_placeholder.jpg"
+import defaultAvatar from "assets/img/placeholder.jpg"
 
 export default function ImageUpload(props) {
-  const [file, setFile] = React.useState(null);
+  const [file, setFile] = React.useState(null)
   const [imagePreviewUrl, setImagePreviewUrl] = React.useState(
     props.avatar ? defaultAvatar : defaultImage
-  );
-  let fileInput = React.createRef();
+  )
+  let fileInput = React.createRef()
   const handleImageChange = e => {
-    e.preventDefault();
-    let reader = new FileReader();
-    let file = e.target.files[0];
+    e.preventDefault()
+    let reader = new FileReader()
+    let file = e.target.files[0]
     reader.onloadend = () => {
-      setFile(file);
-      setImagePreviewUrl(reader.result);
-    };
-    reader.readAsDataURL(file);
-  };
+      setFile(file)
+      setImagePreviewUrl(reader.result)
+    }
+    reader.readAsDataURL(file)
+  }
   // eslint-disable-next-line
   const handleSubmit = e => {
-    e.preventDefault();
+    e.preventDefault()
     // file is the file/image uploaded
     // in this function you can save the image (file) on form submit
     // you have to call it yourself
-  };
+  }
   const handleClick = () => {
-    fileInput.current.click();
-  };
+    fileInput.current.click()
+  }
   const handleRemove = () => {
-    setFile(null);
-    setImagePreviewUrl(props.avatar ? defaultAvatar : defaultImage);
-    fileInput.current.value = null;
-  };
-  let { avatar, addButtonProps, changeButtonProps, removeButtonProps } = props;
+    setFile(null)
+    setImagePreviewUrl(props.avatar ? defaultAvatar : defaultImage)
+    fileInput.current.value = null
+  }
+  let { avatar, addButtonProps, changeButtonProps, removeButtonProps } = props
   return (
     <div className="fileinput text-center">
       <input type="file" onChange={handleImageChange} ref={fileInput} />
@@ -64,12 +64,12 @@ export default function ImageUpload(props) {
         )}
       </div>
     </div>
-  );
+  )
 }
 
 ImageUpload.propTypes = {
   avatar: PropTypes.bool,
   addButtonProps: PropTypes.object,
   changeButtonProps: PropTypes.object,
-  removeButtonProps: PropTypes.object
-};
+  removeButtonProps: PropTypes.object,
+}

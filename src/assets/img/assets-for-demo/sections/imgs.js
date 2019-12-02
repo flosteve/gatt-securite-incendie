@@ -6,7 +6,7 @@ const imgs = [
   ["p_5", "p_1", "pro_2", "pro_3"],
   ["m_1", "pro_1", "t_2", "t_3"],
   ["team_5", "team_1", "team_2", "team_3"],
-  ["t_1", "team_4", "pro_4", "m_2"]
-];
+  ["t_1", "team_4", "pro_4", "m_2"],
+]
 
-export default imgs;
+export default imgs

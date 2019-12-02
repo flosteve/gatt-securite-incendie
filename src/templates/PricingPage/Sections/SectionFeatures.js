@@ -1,22 +1,22 @@
-import React from "react";
+import React from "react"
 // core components
-import GridContainer from "components/Grid/GridContainer.js";
-import GridItem from "components/Grid/GridItem.js";
-import InfoArea from "components/InfoArea/InfoArea.js";
+import GridContainer from "components/Grid/GridContainer.js"
+import GridItem from "components/Grid/GridItem.js"
+import InfoArea from "components/InfoArea/InfoArea.js"
 // @material-ui/core components
-import { makeStyles } from "@material-ui/core/styles";
+import { makeStyles } from "@material-ui/core/styles"
 // @material-ui icons
-import CardMembership from "@material-ui/icons/CardMembership";
-import CardGiftCard from "@material-ui/icons/CardGiftcard";
-import AttachMoney from "@material-ui/icons/AttachMoney";
-import QuestionAnswer from "@material-ui/icons/QuestionAnswer";
+import CardMembership from "@material-ui/icons/CardMembership"
+import CardGiftCard from "@material-ui/icons/CardGiftcard"
+import AttachMoney from "@material-ui/icons/AttachMoney"
+import QuestionAnswer from "@material-ui/icons/QuestionAnswer"
 
-import featuresStyle from "assets/jss/material-kit-pro-react/views/pricingSections/featuresStyle.js";
+import featuresStyle from "assets/jss/material-kit-pro-react/views/pricingSections/featuresStyle.js"
 
-const useStyles = makeStyles(featuresStyle);
+const useStyles = makeStyles(featuresStyle)
 
 export default function SectionFeatures() {
-  const classes = useStyles();
+  const classes = useStyles()
   return (
     <div className={classes.featuresSection}>
       <div className={classes.textCenter}>
@@ -59,5 +59,5 @@ export default function SectionFeatures() {
         </GridItem>
       </GridContainer>
     </div>
-  );
+  )
 }

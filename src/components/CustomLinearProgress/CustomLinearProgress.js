@@ -1,32 +1,32 @@
-import React from "react";
+import React from "react"
 // nodejs library to set properties for components
-import PropTypes from "prop-types";
+import PropTypes from "prop-types"
 
 // @material-ui/core components
-import { makeStyles } from "@material-ui/core/styles";
-import LinearProgress from "@material-ui/core/LinearProgress";
+import { makeStyles } from "@material-ui/core/styles"
+import LinearProgress from "@material-ui/core/LinearProgress"
 
-import styles from "assets/jss/material-kit-pro-react/components/customLinearProgressStyle.js";
+import styles from "assets/jss/material-kit-pro-react/components/customLinearProgressStyle.js"
 
-const useStyles = makeStyles(styles);
+const useStyles = makeStyles(styles)
 
 export default function CustomLinearProgress(props) {
-  const { color, ...rest } = props;
-  const classes = useStyles();
+  const { color, ...rest } = props
+  const classes = useStyles()
   return (
     <LinearProgress
       {...rest}
       classes={{
         root: classes.root + " " + classes[color + "Background"],
-        bar: classes.bar + " " + classes[color]
+        bar: classes.bar + " " + classes[color],
       }}
     />
-  );
+  )
 }
 
 CustomLinearProgress.defaultProps = {
-  color: "gray"
-};
+  color: "gray",
+}
 
 CustomLinearProgress.propTypes = {
   color: PropTypes.oneOf([
@@ -36,6 +36,6 @@ CustomLinearProgress.propTypes = {
     "success",
     "info",
     "rose",
-    "gray"
-  ])
-};
+    "gray",
+  ]),
+}

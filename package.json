@@ -6,7 +6,7 @@
   "author": "Steve Eraville <steve@eravilleconceptweb.com>",
   "dependencies": {
     "@material-ui/core": "^4.7.0",
-    "@material-ui/icons": "4.2.1",
+    "@material-ui/icons": "^4.2.1",
     "animate.css": "3.7.2",
     "classnames": "2.2.6",
     "dotenv": "^8.2.0",
@@ -19,6 +19,7 @@
     "gatsby-plugin-react-helmet": "^3.1.14",
     "gatsby-plugin-sass": "^2.1.23",
     "gatsby-plugin-sharp": "^2.2.37",
+    "gatsby-plugin-smoothscroll": "^1.0.3",
     "gatsby-source-filesystem": "^2.1.36",
     "gatsby-theme-material-ui": "^1.0.5",
     "gatsby-transformer-sharp": "^2.3.3",
@@ -31,7 +32,9 @@
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
     "react-google-maps": "^9.4.5",
-    "react-helmet": "^5.2.1"
+    "react-helmet": "^5.2.1",
+    "react-swipeable-views": "^0.13.3",
+    "smooth-scroll": "^16.1.0"
   },
   "devDependencies": {
     "prettier": "^1.19.1"

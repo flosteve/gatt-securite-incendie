@@ -4,8 +4,8 @@ import {
   title,
   description,
   cardTitle,
-  grayColor
-} from "assets/jss/material-kit-pro-react.js";
+  grayColor,
+} from "assets/jss/material-kit-pro-react.js"
 
 const teamStyle = {
   mrAuto,
@@ -13,28 +13,28 @@ const teamStyle = {
   title,
   description: {
     ...description,
-    marginBottom: "80px"
+    marginBottom: "80px",
   },
   cardTitle,
   cardDescription: {
-    color: grayColor[0]
+    color: grayColor[0],
   },
   team: {
-    padding: "80px 0px"
+    padding: "80px 0px",
   },
   textCenter: {
-    textAlign: "center!important"
+    textAlign: "center!important",
   },
   img: {
     width: "100%",
-    height: "auto"
+    height: "auto",
   },
   textMuted: {
-    color: grayColor[7] + " !important"
+    color: grayColor[7] + " !important",
   },
   justifyContent: {
-    justifyContent: "center!important"
-  }
-};
+    justifyContent: "center!important",
+  },
+}
 
-export default teamStyle;
+export default teamStyle

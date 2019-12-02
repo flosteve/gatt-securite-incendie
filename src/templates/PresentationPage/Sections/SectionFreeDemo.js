@@ -1,24 +1,24 @@
-import React from "react";
+import React from "react"
 // nodejs library that concatenates classes
-import classNames from "classnames";
+import classNames from "classnames"
 // @material-ui/core components
-import { makeStyles } from "@material-ui/core/styles";
+import { makeStyles } from "@material-ui/core/styles"
 // @material-ui icons
-import Close from "@material-ui/icons/Close";
-import Check from "@material-ui/icons/Check";
+import Close from "@material-ui/icons/Close"
+import Check from "@material-ui/icons/Check"
 // core components
-import GridContainer from "components/Grid/GridContainer.js";
-import GridItem from "components/Grid/GridItem.js";
-import Card from "components/Card/Card.js";
-import CardBody from "components/Card/CardBody.js";
-import Button from "components/CustomButtons/Button.js";
+import GridContainer from "components/Grid/GridContainer.js"
+import GridItem from "components/Grid/GridItem.js"
+import Card from "components/Card/Card.js"
+import CardBody from "components/Card/CardBody.js"
+import Button from "components/CustomButtons/Button.js"
 
-import freeDemoStyle from "assets/jss/material-kit-pro-react/views/presentationSections/freeDemoStyle.js";
+import freeDemoStyle from "assets/jss/material-kit-pro-react/views/presentationSections/freeDemoStyle.js"
 
-const useStyles = makeStyles(freeDemoStyle);
+const useStyles = makeStyles(freeDemoStyle)
 
 export default function SectionFreeDemo() {
-  const classes = useStyles();
+  const classes = useStyles()
   return (
     <div className={classes.section}>
       <div className={classes.container}>
@@ -158,5 +158,5 @@ export default function SectionFreeDemo() {
         </GridContainer>
       </div>
     </div>
-  );
+  )
 }

@@ -1,23 +1,23 @@
-import React from "react";
+import React from "react"
 
 // @material-ui/core components
-import { makeStyles } from "@material-ui/core/styles";
+import { makeStyles } from "@material-ui/core/styles"
 
 // @material-ui/icons
-import Dashboard from "@material-ui/icons/Dashboard";
-import Schedule from "@material-ui/icons/Schedule";
-import List from "@material-ui/icons/List";
+import Dashboard from "@material-ui/icons/Dashboard"
+import Schedule from "@material-ui/icons/Schedule"
+import List from "@material-ui/icons/List"
 
 // core components
-import GridContainer from "components/Grid/GridContainer.js";
-import GridItem from "components/Grid/GridItem.js";
-import NavPills from "components/NavPills/NavPills.js";
-import pillsStyle from "assets/jss/material-kit-pro-react/views/componentsSections/pillsStyle.js";
+import GridContainer from "components/Grid/GridContainer.js"
+import GridItem from "components/Grid/GridItem.js"
+import NavPills from "components/NavPills/NavPills.js"
+import pillsStyle from "assets/jss/material-kit-pro-react/views/componentsSections/pillsStyle.js"
 
-const useStyles = makeStyles(pillsStyle);
+const useStyles = makeStyles(pillsStyle)
 
 export default function SectionPills() {
-  const classes = useStyles();
+  const classes = useStyles()
   return (
     <div className={classes.section}>
       <div className={classes.container}>
@@ -48,7 +48,7 @@ export default function SectionPills() {
                           without revolutionary ROI.
                         </p>
                       </span>
-                    )
+                    ),
                   },
                   {
                     tabButton: "Settings",
@@ -65,7 +65,7 @@ export default function SectionPills() {
                           without functional solutions.
                         </p>
                       </span>
-                    )
+                    ),
                   },
                   {
                     tabButton: "Options",
@@ -82,8 +82,8 @@ export default function SectionPills() {
                           service for state of the art customer service.
                         </p>
                       </span>
-                    )
-                  }
+                    ),
+                  },
                 ]}
               />
             </GridItem>
@@ -94,7 +94,7 @@ export default function SectionPills() {
               <NavPills
                 horizontal={{
                   tabsGrid: { xs: 12, sm: 4, md: 5 },
-                  contentGrid: { xs: 12, sm: 8, md: 7 }
+                  contentGrid: { xs: 12, sm: 8, md: 7 },
                 }}
                 color="rose"
                 tabs={[
@@ -113,7 +113,7 @@ export default function SectionPills() {
                           without revolutionary ROI.
                         </p>
                       </span>
-                    )
+                    ),
                   },
                   {
                     tabButton: "Settings",
@@ -130,7 +130,7 @@ export default function SectionPills() {
                           without functional solutions.
                         </p>
                       </span>
-                    )
+                    ),
                   },
                   {
                     tabButton: "Options",
@@ -147,8 +147,8 @@ export default function SectionPills() {
                           service for state of the art customer service.
                         </p>
                       </span>
-                    )
-                  }
+                    ),
+                  },
                 ]}
               />
             </GridItem>
@@ -190,7 +190,7 @@ export default function SectionPills() {
                           installed base benefits.
                         </p>
                       </span>
-                    )
+                    ),
                   },
                   {
                     tabButton: "Schedule",
@@ -212,7 +212,7 @@ export default function SectionPills() {
                           B2C users after installed base benefits.
                         </p>
                       </span>
-                    )
+                    ),
                   },
                   {
                     tabButton: "Tasks",
@@ -241,8 +241,8 @@ export default function SectionPills() {
                           installed base benefits.
                         </p>
                       </span>
-                    )
-                  }
+                    ),
+                  },
                 ]}
               />
             </GridItem>
@@ -251,7 +251,7 @@ export default function SectionPills() {
                 color="primary"
                 horizontal={{
                   tabsGrid: { xs: 12, sm: 3, md: 4 },
-                  contentGrid: { xs: 12, sm: 9, md: 8 }
+                  contentGrid: { xs: 12, sm: 9, md: 8 },
                 }}
                 tabs={[
                   {
@@ -281,7 +281,7 @@ export default function SectionPills() {
                           installed base benefits.
                         </p>
                       </span>
-                    )
+                    ),
                   },
                   {
                     tabButton: "Schedule",
@@ -303,8 +303,8 @@ export default function SectionPills() {
                           B2C users after installed base benefits.
                         </p>
                       </span>
-                    )
-                  }
+                    ),
+                  },
                 ]}
               />
             </GridItem>
@@ -312,5 +312,5 @@ export default function SectionPills() {
         </div>
       </div>
     </div>
-  );
+  )
 }

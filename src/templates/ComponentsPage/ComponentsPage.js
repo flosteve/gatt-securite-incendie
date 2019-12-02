@@ -1,66 +1,66 @@
 /*eslint-disable*/
-import React from "react";
+import React from "react"
 // nodejs library that concatenates classes
-import classNames from "classnames";
+import classNames from "classnames"
 // @material-ui/core components
-import { makeStyles } from "@material-ui/core/styles";
-import List from "@material-ui/core/List";
-import ListItem from "@material-ui/core/ListItem";
+import { makeStyles } from "@material-ui/core/styles"
+import List from "@material-ui/core/List"
+import ListItem from "@material-ui/core/ListItem"
 // @material-ui/icons
-import Favorite from "@material-ui/icons/Favorite";
+import Favorite from "@material-ui/icons/Favorite"
 // core components
-import Header from "components/Header/Header.js";
-import Footer from "components/Footer/Footer.js";
-import GridContainer from "components/Grid/GridContainer.js";
-import GridItem from "components/Grid/GridItem.js";
-import Parallax from "components/Parallax/Parallax.js";
-import HeaderLinks from "components/Header/HeaderLinks.js";
+import Header from "components/Header/Header.js"
+import Footer from "components/Footer/Footer.js"
+import GridContainer from "components/Grid/GridContainer.js"
+import GridItem from "components/Grid/GridItem.js"
+import Parallax from "components/Parallax/Parallax.js"
+import HeaderLinks from "components/Header/HeaderLinks.js"
 // sections for this page
-import SectionBasics from "./Sections/SectionBasics.js";
-import SectionNavbars from "./Sections/SectionNavbars.js";
-import SectionTabs from "./Sections/SectionTabs.js";
-import SectionPills from "./Sections/SectionPills.js";
-import SectionNotifications from "./Sections/SectionNotifications.js";
-import SectionPreFooter from "./Sections/SectionPreFooter.js";
-import SectionFooter from "./Sections/SectionFooter.js";
-import SectionTypography from "./Sections/SectionTypography.js";
-import SectionCards from "./Sections/SectionCards.js";
-import SectionJavascript from "./Sections/SectionJavascript.js";
-import SectionCarousel from "./Sections/SectionCarousel.js";
+import SectionBasics from "./Sections/SectionBasics.js"
+import SectionNavbars from "./Sections/SectionNavbars.js"
+import SectionTabs from "./Sections/SectionTabs.js"
+import SectionPills from "./Sections/SectionPills.js"
+import SectionNotifications from "./Sections/SectionNotifications.js"
+import SectionPreFooter from "./Sections/SectionPreFooter.js"
+import SectionFooter from "./Sections/SectionFooter.js"
+import SectionTypography from "./Sections/SectionTypography.js"
+import SectionCards from "./Sections/SectionCards.js"
+import SectionJavascript from "./Sections/SectionJavascript.js"
+import SectionCarousel from "./Sections/SectionCarousel.js"
 
-import componentsStyle from "assets/jss/material-kit-pro-react/views/componentsStyle.js";
+import componentsStyle from "assets/jss/material-kit-pro-react/views/componentsStyle.js"
 
-const useStyles = makeStyles(componentsStyle);
+const useStyles = makeStyles(componentsStyle)
 
 export default function Components() {
   React.useEffect(() => {
     var href = window.location.href.substring(
       window.location.href.lastIndexOf("#") + 1
-    );
+    )
     if (window.location.href.lastIndexOf("#") > 0) {
-      document.getElementById(href).scrollIntoView();
+      document.getElementById(href).scrollIntoView()
     }
-    window.addEventListener("scroll", updateView);
-    updateView();
+    window.addEventListener("scroll", updateView)
+    updateView()
     return function cleanup() {
-      window.removeEventListener("scroll", updateView);
-    };
-  });
+      window.removeEventListener("scroll", updateView)
+    }
+  })
   const easeInOutQuad = (t, b, c, d) => {
-    t /= d / 2;
-    if (t < 1) return (c / 2) * t * t + b;
-    t--;
-    return (-c / 2) * (t * (t - 2) - 1) + b;
-  };
+    t /= d / 2
+    if (t < 1) return (c / 2) * t * t + b
+    t--
+    return (-c / 2) * (t * (t - 2) - 1) + b
+  }
   const updateView = () => {
-    var contentSections = document.getElementsByClassName("cd-section");
+    var contentSections = document.getElementsByClassName("cd-section")
     var navigationItems = document
       .getElementById("cd-vertical-nav")
-      .getElementsByTagName("a");
+      .getElementsByTagName("a")
 
     for (let i = 0; i < contentSections.length; i++) {
       var activeSection =
-        parseInt(navigationItems[i].getAttribute("data-number"), 10) - 1;
+        parseInt(navigationItems[i].getAttribute("data-number"), 10) - 1
       if (
         contentSections[i].offsetTop -
           window.innerHeight / 2 +
@@ -72,33 +72,33 @@ export default function Components() {
           document.getElementById("main-panel").offsetTop >
           window.pageYOffset
       ) {
-        navigationItems[activeSection].classList.add("is-selected");
+        navigationItems[activeSection].classList.add("is-selected")
       } else {
-        navigationItems[activeSection].classList.remove("is-selected");
+        navigationItems[activeSection].classList.remove("is-selected")
       }
     }
-  };
+  }
   const smoothScroll = target => {
-    var targetScroll = document.getElementById(target);
-    scrollTo(document.documentElement, targetScroll.offsetTop, 900);
-  };
+    var targetScroll = document.getElementById(target)
+    scrollTo(document.documentElement, targetScroll.offsetTop, 900)
+  }
   const scrollTo = (element, to, duration) => {
     var start = element.scrollTop,
       change = to - start + document.getElementById("main-panel").offsetTop,
       currentTime = 0,
-      increment = 20;
+      increment = 20
 
     var animateScroll = function() {
-      currentTime += increment;
-      var val = easeInOutQuad(currentTime, start, change, duration);
-      element.scrollTop = val;
+      currentTime += increment
+      var val = easeInOutQuad(currentTime, start, change, duration)
+      element.scrollTop = val
       if (currentTime < duration) {
-        setTimeout(animateScroll, increment);
+        setTimeout(animateScroll, increment)
       }
-    };
-    animateScroll();
-  };
-  const classes = useStyles();
+    }
+    animateScroll()
+  }
+  const classes = useStyles()
   return (
     <div>
       <Header
@@ -108,7 +108,7 @@ export default function Components() {
         color="transparent"
         changeColorOnScroll={{
           height: 400,
-          color: "info"
+          color: "info",
         }}
       />
       <Parallax
@@ -163,8 +163,8 @@ export default function Components() {
               data-number="1"
               className=""
               onClick={e => {
-                e.preventDefault();
-                smoothScroll("buttons");
+                e.preventDefault()
+                smoothScroll("buttons")
               }}
             >
               <span className="cd-dot" />
@@ -177,8 +177,8 @@ export default function Components() {
               data-number="2"
               className=""
               onClick={e => {
-                e.preventDefault();
-                smoothScroll("navigation");
+                e.preventDefault()
+                smoothScroll("navigation")
               }}
             >
               <span className="cd-dot" />
@@ -191,8 +191,8 @@ export default function Components() {
               data-number="3"
               className=""
               onClick={e => {
-                e.preventDefault();
-                smoothScroll("notifications");
+                e.preventDefault()
+                smoothScroll("notifications")
               }}
             >
               <span className="cd-dot" />
@@ -205,8 +205,8 @@ export default function Components() {
               data-number="4"
               className=""
               onClick={e => {
-                e.preventDefault();
-                smoothScroll("footers");
+                e.preventDefault()
+                smoothScroll("footers")
               }}
             >
               <span className="cd-dot" />
@@ -219,8 +219,8 @@ export default function Components() {
               data-number="5"
               className=""
               onClick={e => {
-                e.preventDefault();
-                smoothScroll("typography");
+                e.preventDefault()
+                smoothScroll("typography")
               }}
             >
               <span className="cd-dot" />
@@ -233,8 +233,8 @@ export default function Components() {
               data-number="6"
               className=""
               onClick={e => {
-                e.preventDefault();
-                smoothScroll("contentAreas");
+                e.preventDefault()
+                smoothScroll("contentAreas")
               }}
             >
               <span className="cd-dot" />
@@ -247,8 +247,8 @@ export default function Components() {
               data-number="7"
               className=""
               onClick={e => {
-                e.preventDefault();
-                smoothScroll("cards");
+                e.preventDefault()
+                smoothScroll("cards")
               }}
             >
               <span className="cd-dot" />
@@ -261,8 +261,8 @@ export default function Components() {
               data-number="8"
               className=""
               onClick={e => {
-                e.preventDefault();
-                smoothScroll("morphingCards");
+                e.preventDefault()
+                smoothScroll("morphingCards")
               }}
             >
               <span className="cd-dot" />
@@ -275,8 +275,8 @@ export default function Components() {
               data-number="9"
               className=""
               onClick={e => {
-                e.preventDefault();
-                smoothScroll("javascriptComponents");
+                e.preventDefault()
+                smoothScroll("javascriptComponents")
               }}
             >
               <span className="cd-dot" />
@@ -339,5 +339,5 @@ export default function Components() {
         }
       />
     </div>
-  );
+  )
 }

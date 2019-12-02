@@ -1,0 +1,14 @@
+.contact-page-gsi {
+  .contactHome {
+    background: white !important;
+    &:after {
+      background: white !important;
+    }
+    h2, h4, h5 {
+      color: inherit;
+    }
+    svg {
+      color: #e53935;
+    }
+  }
+}

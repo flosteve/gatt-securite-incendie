@@ -1,34 +1,34 @@
 /*eslint-disable*/
-import React from "react";
+import React from "react"
 // @material-ui/core components
-import { makeStyles } from "@material-ui/core/styles";
-import List from "@material-ui/core/List";
-import ListItem from "@material-ui/core/ListItem";
+import { makeStyles } from "@material-ui/core/styles"
+import List from "@material-ui/core/List"
+import ListItem from "@material-ui/core/ListItem"
 // @material-ui/icons
-import Favorite from "@material-ui/icons/Favorite";
+import Favorite from "@material-ui/icons/Favorite"
 // core components
-import Header from "components/Header/Header.js";
-import HeaderLinks from "components/Header/HeaderLinks.js";
-import Footer from "components/Footer/Footer.js";
-import GridContainer from "components/Grid/GridContainer.js";
-import GridItem from "components/Grid/GridItem.js";
-import Parallax from "components/Parallax/Parallax.js";
+import Header from "components/Header/Header.js"
+import HeaderLinks from "components/Header/HeaderLinks.js"
+import Footer from "components/Footer/Footer.js"
+import GridContainer from "components/Grid/GridContainer.js"
+import GridItem from "components/Grid/GridItem.js"
+import Parallax from "components/Parallax/Parallax.js"
 // sections for this page
-import SectionPills from "./Sections/SectionPills.js";
-import SectionInterested from "./Sections/SectionInterested.js";
-import SectionImage from "./Sections/SectionImage.js";
-import SubscribeLine from "./Sections/SubscribeLine.js";
+import SectionPills from "./Sections/SectionPills.js"
+import SectionInterested from "./Sections/SectionInterested.js"
+import SectionImage from "./Sections/SectionImage.js"
+import SubscribeLine from "./Sections/SubscribeLine.js"
 
-import blogPostsPageStyle from "assets/jss/material-kit-pro-react/views/blogPostsPageStyle.js";
+import blogPostsPageStyle from "assets/jss/material-kit-pro-react/views/blogPostsPageStyle.js"
 
-const useStyles = makeStyles(blogPostsPageStyle);
+const useStyles = makeStyles(blogPostsPageStyle)
 
 export default function BlogPostsPage() {
   React.useEffect(() => {
-    window.scrollTo(0, 0);
-    document.body.scrollTop = 0;
-  });
-  const classes = useStyles();
+    window.scrollTo(0, 0)
+    document.body.scrollTop = 0
+  })
+  const classes = useStyles()
   return (
     <div>
       <Header
@@ -38,7 +38,7 @@ export default function BlogPostsPage() {
         color="transparent"
         changeColorOnScroll={{
           height: 400,
-          color: "info"
+          color: "info",
         }}
       />
       <Parallax image={require("assets/img/bg10.jpg")} filter="dark" small>
@@ -114,5 +114,5 @@ export default function BlogPostsPage() {
         }
       />
     </div>
-  );
+  )
 }

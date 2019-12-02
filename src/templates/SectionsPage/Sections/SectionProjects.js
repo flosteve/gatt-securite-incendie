@@ -1,43 +1,43 @@
 /* eslint-disable */
-import React from "react";
+import React from "react"
 // @material-ui/core components
-import { makeStyles } from "@material-ui/core/styles";
-import Icon from "@material-ui/core/Icon";
+import { makeStyles } from "@material-ui/core/styles"
+import Icon from "@material-ui/core/Icon"
 // @material-ui/icons
-import Build from "@material-ui/icons/Build";
-import Subject from "@material-ui/icons/Subject";
-import FormatPaint from "@material-ui/icons/FormatPaint";
-import Code from "@material-ui/icons/Code";
-import Dashboard from "@material-ui/icons/Dashboard";
-import Timeline from "@material-ui/icons/Timeline";
-import Group from "@material-ui/icons/Group";
+import Build from "@material-ui/icons/Build"
+import Subject from "@material-ui/icons/Subject"
+import FormatPaint from "@material-ui/icons/FormatPaint"
+import Code from "@material-ui/icons/Code"
+import Dashboard from "@material-ui/icons/Dashboard"
+import Timeline from "@material-ui/icons/Timeline"
+import Group from "@material-ui/icons/Group"
 // core components
-import GridContainer from "components/Grid/GridContainer.js";
-import GridItem from "components/Grid/GridItem.js";
-import NavPills from "components/NavPills/NavPills.js";
-import Card from "components/Card/Card.js";
-import CardBody from "components/Card/CardBody.js";
-import CardHeader from "components/Card/CardHeader.js";
-import Button from "components/CustomButtons/Button.js";
-import Muted from "components/Typography/Muted.js";
-import InfoArea from "components/InfoArea/InfoArea.js";
-import Badge from "components/Badge/Badge.js";
+import GridContainer from "components/Grid/GridContainer.js"
+import GridItem from "components/Grid/GridItem.js"
+import NavPills from "components/NavPills/NavPills.js"
+import Card from "components/Card/Card.js"
+import CardBody from "components/Card/CardBody.js"
+import CardHeader from "components/Card/CardHeader.js"
+import Button from "components/CustomButtons/Button.js"
+import Muted from "components/Typography/Muted.js"
+import InfoArea from "components/InfoArea/InfoArea.js"
+import Badge from "components/Badge/Badge.js"
 
-import projectsStyle from "assets/jss/material-kit-pro-react/views/sectionsSections/projectsStyle.js";
+import projectsStyle from "assets/jss/material-kit-pro-react/views/sectionsSections/projectsStyle.js"
 
-import office2 from "assets/img/examples/office2.jpg";
-import cardBlog3 from "assets/img/examples/card-blog3.jpg";
-import cardProject1 from "assets/img/examples/card-project1.jpg";
-import cardProject2 from "assets/img/examples/card-project2.jpg";
-import cardProject3 from "assets/img/examples/card-project3.jpg";
-import cardProject4 from "assets/img/examples/card-project4.jpg";
-import cardProject5 from "assets/img/examples/card-project5.jpg";
-import cardProject6 from "assets/img/examples/card-project6.jpg";
+import office2 from "assets/img/examples/office2.jpg"
+import cardBlog3 from "assets/img/examples/card-blog3.jpg"
+import cardProject1 from "assets/img/examples/card-project1.jpg"
+import cardProject2 from "assets/img/examples/card-project2.jpg"
+import cardProject3 from "assets/img/examples/card-project3.jpg"
+import cardProject4 from "assets/img/examples/card-project4.jpg"
+import cardProject5 from "assets/img/examples/card-project5.jpg"
+import cardProject6 from "assets/img/examples/card-project6.jpg"
 
-const useStyles = makeStyles(projectsStyle);
+const useStyles = makeStyles(projectsStyle)
 
 export default function SectionProjects({ ...rest }) {
-  const classes = useStyles();
+  const classes = useStyles()
   return (
     <div className="cd-section" {...rest}>
       {/* Project 1 START */}
@@ -63,7 +63,7 @@ export default function SectionProjects({ ...rest }) {
                   { tabButton: "Marketing", tabContent: "" },
                   { tabButton: "Development", tabContent: "" },
                   { tabButton: "Productivity", tabContent: "" },
-                  { tabButton: "Web Design", tabContent: "" }
+                  { tabButton: "Web Design", tabContent: "" },
                 ]}
               />
               <div className={classes.tabSpace} />
@@ -192,7 +192,7 @@ export default function SectionProjects({ ...rest }) {
                       style={{
                         backgroundImage:
                           "url('https://s3.amazonaws.com/creativetim_bucket/products/83/original/opt_mk_react_thumbnail.jpg?1525851474')",
-                        opacity: "1"
+                        opacity: "1",
                       }}
                     />
                   </CardHeader>
@@ -234,7 +234,7 @@ export default function SectionProjects({ ...rest }) {
                       style={{
                         backgroundImage:
                           "url('https://s3.amazonaws.com/creativetim_bucket/products/66/thumb/opt_lbdp_react_thumbnail.jpg?1509466309')",
-                        opacity: "1"
+                        opacity: "1",
                       }}
                     />
                   </CardHeader>
@@ -276,7 +276,7 @@ export default function SectionProjects({ ...rest }) {
                       style={{
                         backgroundImage:
                           "url('https://s3.amazonaws.com/creativetim_bucket/products/73/original/opt_nudp_react_thumbnail.jpg?1518533306')",
-                        opacity: "1"
+                        opacity: "1",
                       }}
                     />
                   </CardHeader>
@@ -529,5 +529,5 @@ export default function SectionProjects({ ...rest }) {
       </div>
       {/* Project 4 END */}
     </div>
-  );
+  )
 }

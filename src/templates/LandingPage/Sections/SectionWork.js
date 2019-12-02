@@ -1,21 +1,21 @@
-import React from "react";
+import React from "react"
 // @material-ui/core components
-import { makeStyles } from "@material-ui/core/styles";
+import { makeStyles } from "@material-ui/core/styles"
 
 // @material-ui/icons
 
 // core components
-import GridContainer from "components/Grid/GridContainer.js";
-import GridItem from "components/Grid/GridItem.js";
-import CustomInput from "components/CustomInput/CustomInput.js";
-import Button from "components/CustomButtons/Button.js";
+import GridContainer from "components/Grid/GridContainer.js"
+import GridItem from "components/Grid/GridItem.js"
+import CustomInput from "components/CustomInput/CustomInput.js"
+import Button from "components/CustomButtons/Button.js"
 
-import workStyle from "assets/jss/material-kit-pro-react/views/landingPageSections/workStyle.js";
+import workStyle from "assets/jss/material-kit-pro-react/views/landingPageSections/workStyle.js"
 
-const useStyles = makeStyles(workStyle);
+const useStyles = makeStyles(workStyle)
 
 export default function SectionWork() {
-  const classes = useStyles();
+  const classes = useStyles()
   return (
     <div className={classes.section}>
       <GridContainer justify="center">
@@ -34,7 +34,7 @@ export default function SectionWork() {
                   labelText="Your Name"
                   id="name"
                   formControlProps={{
-                    fullWidth: true
+                    fullWidth: true,
                   }}
                 />
               </GridItem>
@@ -43,7 +43,7 @@ export default function SectionWork() {
                   labelText="Your Email"
                   id="email"
                   formControlProps={{
-                    fullWidth: true
+                    fullWidth: true,
                   }}
                 />
               </GridItem>
@@ -52,11 +52,11 @@ export default function SectionWork() {
                 id="message"
                 formControlProps={{
                   fullWidth: true,
-                  className: classes.textArea
+                  className: classes.textArea,
                 }}
                 inputProps={{
                   multiline: true,
-                  rows: 5
+                  rows: 5,
                 }}
               />
               <GridItem
@@ -72,5 +72,5 @@ export default function SectionWork() {
         </GridItem>
       </GridContainer>
     </div>
-  );
+  )
 }

@@ -1,22 +1,22 @@
-import React from "react";
+import React from "react"
 // nodejs library that concatenates classes
-import classNames from "classnames";
+import classNames from "classnames"
 // core components
-import GridContainer from "components/Grid/GridContainer.js";
-import GridItem from "components/Grid/GridItem.js";
-import NavPills from "components/NavPills/NavPills.js";
-import Card from "components/Card/Card.js";
-import CardBody from "components/Card/CardBody.js";
-import Button from "components/CustomButtons/Button.js";
+import GridContainer from "components/Grid/GridContainer.js"
+import GridItem from "components/Grid/GridItem.js"
+import NavPills from "components/NavPills/NavPills.js"
+import Card from "components/Card/Card.js"
+import CardBody from "components/Card/CardBody.js"
+import Button from "components/CustomButtons/Button.js"
 // @material-ui/core components
-import { makeStyles } from "@material-ui/core/styles";
+import { makeStyles } from "@material-ui/core/styles"
 
-import pricingStyle from "assets/jss/material-kit-pro-react/views/pricingSections/pricingStyle.js";
+import pricingStyle from "assets/jss/material-kit-pro-react/views/pricingSections/pricingStyle.js"
 
-const useStyles = makeStyles(pricingStyle);
+const useStyles = makeStyles(pricingStyle)
 
 export default function SectionPricing() {
-  const classes = useStyles();
+  const classes = useStyles()
   return (
     <div className={classes.pricingSection}>
       <GridContainer>
@@ -34,11 +34,11 @@ export default function SectionPricing() {
             color="rose"
             tabs={[
               {
-                tabButton: "monthly"
+                tabButton: "monthly",
               },
               {
-                tabButton: "yearly"
-              }
+                tabButton: "yearly",
+              },
             ]}
           />
         </GridItem>
@@ -135,5 +135,5 @@ export default function SectionPricing() {
         </GridItem>
       </GridContainer>
     </div>
-  );
+  )
 }

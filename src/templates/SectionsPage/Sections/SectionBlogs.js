@@ -1,33 +1,33 @@
-import React from "react";
+import React from "react"
 // @material-ui/core components
-import { makeStyles } from "@material-ui/core/styles";
+import { makeStyles } from "@material-ui/core/styles"
 // @material-ui/icons
-import TrendingUp from "@material-ui/icons/TrendingUp";
+import TrendingUp from "@material-ui/icons/TrendingUp"
 // core components
-import GridContainer from "components/Grid/GridContainer.js";
-import GridItem from "components/Grid/GridItem.js";
-import Card from "components/Card/Card.js";
-import CardBody from "components/Card/CardBody.js";
-import CardHeader from "components/Card/CardHeader.js";
-import Info from "components/Typography/Info.js";
-import Danger from "components/Typography/Danger.js";
-import Success from "components/Typography/Success.js";
-import Button from "components/CustomButtons/Button.js";
+import GridContainer from "components/Grid/GridContainer.js"
+import GridItem from "components/Grid/GridItem.js"
+import Card from "components/Card/Card.js"
+import CardBody from "components/Card/CardBody.js"
+import CardHeader from "components/Card/CardHeader.js"
+import Info from "components/Typography/Info.js"
+import Danger from "components/Typography/Danger.js"
+import Success from "components/Typography/Success.js"
+import Button from "components/CustomButtons/Button.js"
 
-import blogsStyle from "assets/jss/material-kit-pro-react/views/sectionsSections/blogsStyle.js";
+import blogsStyle from "assets/jss/material-kit-pro-react/views/sectionsSections/blogsStyle.js"
 
-import cardBlog4 from "assets/img/examples/card-blog4.jpg";
-import office2 from "assets/img/office2.jpg";
-import blog5 from "assets/img/examples/blog5.jpg";
-import blog6 from "assets/img/examples/blog6.jpg";
-import blog7 from "assets/img/examples/blog7.jpg";
-import blog8 from "assets/img/examples/blog8.jpg";
-import bg5 from "assets/img/bg5.jpg";
+import cardBlog4 from "assets/img/examples/card-blog4.jpg"
+import office2 from "assets/img/office2.jpg"
+import blog5 from "assets/img/examples/blog5.jpg"
+import blog6 from "assets/img/examples/blog6.jpg"
+import blog7 from "assets/img/examples/blog7.jpg"
+import blog8 from "assets/img/examples/blog8.jpg"
+import bg5 from "assets/img/bg5.jpg"
 
-const useStyles = makeStyles(blogsStyle);
+const useStyles = makeStyles(blogsStyle)
 
 export default function SectionBlogs({ ...rest }) {
-  const classes = useStyles();
+  const classes = useStyles()
   return (
     <div className="cd-section" {...rest}>
       {/* Blogs 1 START */}
@@ -53,7 +53,7 @@ export default function SectionBlogs({ ...rest }) {
                         className={classes.coloredShadow}
                         style={{
                           backgroundImage: `url(${cardBlog4})`,
-                          opacity: "1"
+                          opacity: "1",
                         }}
                       />
                     </CardHeader>
@@ -131,7 +131,7 @@ export default function SectionBlogs({ ...rest }) {
                         className={classes.coloredShadow}
                         style={{
                           backgroundImage: `url(${office2})`,
-                          opacity: "1"
+                          opacity: "1",
                         }}
                       />
                     </CardHeader>
@@ -166,7 +166,7 @@ export default function SectionBlogs({ ...rest }) {
                         className={classes.coloredShadow}
                         style={{
                           backgroundImage: `url(${cardBlog4})`,
-                          opacity: "1"
+                          opacity: "1",
                         }}
                       />
                     </CardHeader>
@@ -202,7 +202,7 @@ export default function SectionBlogs({ ...rest }) {
                         className={classes.coloredShadow}
                         style={{
                           backgroundImage: `url(${blog5})`,
-                          opacity: "1"
+                          opacity: "1",
                         }}
                       />
                     </CardHeader>
@@ -237,7 +237,7 @@ export default function SectionBlogs({ ...rest }) {
                         className={classes.coloredShadow}
                         style={{
                           backgroundImage: `url(${blog7})`,
-                          opacity: "1"
+                          opacity: "1",
                         }}
                       />
                     </CardHeader>
@@ -294,14 +294,14 @@ export default function SectionBlogs({ ...rest }) {
                         className={classes.coloredShadow}
                         style={{
                           backgroundImage: `url(${cardBlog4})`,
-                          opacity: "1"
+                          opacity: "1",
                         }}
                       />
                       <div
                         className={classes.coloredShadow}
                         style={{
                           backgroundImage: `url(${cardBlog4})`,
-                          opacity: "1"
+                          opacity: "1",
                         }}
                       />
                     </CardHeader>
@@ -348,14 +348,14 @@ export default function SectionBlogs({ ...rest }) {
                         className={classes.coloredShadow}
                         style={{
                           backgroundImage: `url(${office2})`,
-                          opacity: "1"
+                          opacity: "1",
                         }}
                       />
                       <div
                         className={classes.coloredShadow}
                         style={{
                           backgroundImage: `url(${office2})`,
-                          opacity: "1"
+                          opacity: "1",
                         }}
                       />
                     </CardHeader>
@@ -404,14 +404,14 @@ export default function SectionBlogs({ ...rest }) {
                         className={classes.coloredShadow}
                         style={{
                           backgroundImage: `url(${blog8})`,
-                          opacity: "1"
+                          opacity: "1",
                         }}
                       />
                       <div
                         className={classes.coloredShadow}
                         style={{
                           backgroundImage: `url(${blog8})`,
-                          opacity: "1"
+                          opacity: "1",
                         }}
                       />
                     </CardHeader>
@@ -533,5 +533,5 @@ export default function SectionBlogs({ ...rest }) {
       </div>
       {/* Blogs 4 END */}
     </div>
-  );
+  )
 }

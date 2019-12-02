@@ -1,62 +1,62 @@
 /*eslint-disable*/
-import React from "react";
+import React from "react"
 // nodejs library that concatenates classes
-import classNames from "classnames";
+import classNames from "classnames"
 // @material-ui/core components
-import { makeStyles } from "@material-ui/core/styles";
-import Tooltip from "@material-ui/core/Tooltip";
-import List from "@material-ui/core/List";
-import ListItem from "@material-ui/core/ListItem";
+import { makeStyles } from "@material-ui/core/styles"
+import Tooltip from "@material-ui/core/Tooltip"
+import List from "@material-ui/core/List"
+import ListItem from "@material-ui/core/ListItem"
 // @material-ui/icons
-import Camera from "@material-ui/icons/Camera";
-import Palette from "@material-ui/icons/Palette";
-import People from "@material-ui/icons/People";
-import Add from "@material-ui/icons/Add";
-import Favorite from "@material-ui/icons/Favorite";
+import Camera from "@material-ui/icons/Camera"
+import Palette from "@material-ui/icons/Palette"
+import People from "@material-ui/icons/People"
+import Add from "@material-ui/icons/Add"
+import Favorite from "@material-ui/icons/Favorite"
 // core components
-import Header from "components/Header/Header.js";
-import Footer from "components/Footer/Footer.js";
-import GridContainer from "components/Grid/GridContainer.js";
-import GridItem from "components/Grid/GridItem.js";
-import HeaderLinks from "components/Header/HeaderLinks.js";
-import NavPills from "components/NavPills/NavPills.js";
-import Card from "components/Card/Card.js";
-import CardBody from "components/Card/CardBody.js";
-import CardHeader from "components/Card/CardHeader.js";
-import Badge from "components/Badge/Badge.js";
-import Muted from "components/Typography/Muted.js";
-import Parallax from "components/Parallax/Parallax.js";
-import Clearfix from "components/Clearfix/Clearfix.js";
-import Button from "components/CustomButtons/Button.js";
+import Header from "components/Header/Header.js"
+import Footer from "components/Footer/Footer.js"
+import GridContainer from "components/Grid/GridContainer.js"
+import GridItem from "components/Grid/GridItem.js"
+import HeaderLinks from "components/Header/HeaderLinks.js"
+import NavPills from "components/NavPills/NavPills.js"
+import Card from "components/Card/Card.js"
+import CardBody from "components/Card/CardBody.js"
+import CardHeader from "components/Card/CardHeader.js"
+import Badge from "components/Badge/Badge.js"
+import Muted from "components/Typography/Muted.js"
+import Parallax from "components/Parallax/Parallax.js"
+import Clearfix from "components/Clearfix/Clearfix.js"
+import Button from "components/CustomButtons/Button.js"
 
-import christian from "assets/img/faces/christian.jpg";
-import oluEletu from "assets/img/examples/olu-eletu.jpg";
-import clemOnojeghuo from "assets/img/examples/clem-onojeghuo.jpg";
-import cynthiaDelRio from "assets/img/examples/cynthia-del-rio.jpg";
-import mariyaGeorgieva from "assets/img/examples/mariya-georgieva.jpg";
-import clemOnojegaw from "assets/img/examples/clem-onojegaw.jpg";
-import darrenColeshill from "assets/img/examples/darren-coleshill.jpg";
-import avatar from "assets/img/faces/avatar.jpg";
-import marc from "assets/img/faces/marc.jpg";
-import kendall from "assets/img/faces/kendall.jpg";
-import cardProfile2Square from "assets/img/faces/card-profile2-square.jpg";
+import christian from "assets/img/faces/christian.jpg"
+import oluEletu from "assets/img/examples/olu-eletu.jpg"
+import clemOnojeghuo from "assets/img/examples/clem-onojeghuo.jpg"
+import cynthiaDelRio from "assets/img/examples/cynthia-del-rio.jpg"
+import mariyaGeorgieva from "assets/img/examples/mariya-georgieva.jpg"
+import clemOnojegaw from "assets/img/examples/clem-onojegaw.jpg"
+import darrenColeshill from "assets/img/examples/darren-coleshill.jpg"
+import avatar from "assets/img/faces/avatar.jpg"
+import marc from "assets/img/faces/marc.jpg"
+import kendall from "assets/img/faces/kendall.jpg"
+import cardProfile2Square from "assets/img/faces/card-profile2-square.jpg"
 
-import profilePageStyle from "assets/jss/material-kit-pro-react/views/profilePageStyle.js";
+import profilePageStyle from "assets/jss/material-kit-pro-react/views/profilePageStyle.js"
 
-const useStyles = makeStyles(profilePageStyle);
+const useStyles = makeStyles(profilePageStyle)
 
 export default function ProfilePage({ ...rest }) {
   React.useEffect(() => {
-    window.scrollTo(0, 0);
-    document.body.scrollTop = 0;
-  });
-  const classes = useStyles();
+    window.scrollTo(0, 0)
+    document.body.scrollTop = 0
+  })
+  const classes = useStyles()
   const imageClasses = classNames(
     classes.imgRaised,
     classes.imgRoundedCircle,
     classes.imgFluid
-  );
-  const navImageClasses = classNames(classes.imgRounded, classes.imgGallery);
+  )
+  const navImageClasses = classNames(classes.imgRounded, classes.imgGallery)
   return (
     <div>
       <Header
@@ -66,7 +66,7 @@ export default function ProfilePage({ ...rest }) {
         fixed
         changeColorOnScroll={{
           height: 200,
-          color: "info"
+          color: "info",
         }}
         {...rest}
       />
@@ -161,7 +161,7 @@ export default function ProfilePage({ ...rest }) {
                             <Card
                               background
                               style={{
-                                backgroundImage: "url(" + mariyaGeorgieva + ")"
+                                backgroundImage: "url(" + mariyaGeorgieva + ")",
                               }}
                             >
                               <CardBody background className={classes.cardBody}>
@@ -183,7 +183,7 @@ export default function ProfilePage({ ...rest }) {
                             <Card
                               background
                               style={{
-                                backgroundImage: "url(" + clemOnojeghuo + ")"
+                                backgroundImage: "url(" + clemOnojeghuo + ")",
                               }}
                             >
                               <CardBody background className={classes.cardBody}>
@@ -202,7 +202,7 @@ export default function ProfilePage({ ...rest }) {
                             <Card
                               background
                               style={{
-                                backgroundImage: "url(" + oluEletu + ")"
+                                backgroundImage: "url(" + oluEletu + ")",
                               }}
                             >
                               <CardBody background className={classes.cardBody}>
@@ -221,7 +221,7 @@ export default function ProfilePage({ ...rest }) {
                             <Card
                               background
                               style={{
-                                backgroundImage: "url(" + darrenColeshill + ")"
+                                backgroundImage: "url(" + darrenColeshill + ")",
                               }}
                             >
                               <CardBody background className={classes.cardBody}>
@@ -275,7 +275,7 @@ export default function ProfilePage({ ...rest }) {
                         <Badge color="rose">Luxury</Badge>
                       </GridItem>
                     </GridContainer>
-                  )
+                  ),
                 },
                 {
                   tabButton: "Connections",
@@ -300,7 +300,7 @@ export default function ProfilePage({ ...rest }) {
                                     className={classes.coloredShadow}
                                     style={{
                                       backgroundImage: "url(" + avatar + ")",
-                                      opacity: "1"
+                                      opacity: "1",
                                     }}
                                   />
                                 </CardHeader>
@@ -340,7 +340,7 @@ export default function ProfilePage({ ...rest }) {
                                     className={classes.coloredShadow}
                                     style={{
                                       backgroundImage: "url(" + marc + ")",
-                                      opacity: "1"
+                                      opacity: "1",
                                     }}
                                   />
                                 </CardHeader>
@@ -382,7 +382,7 @@ export default function ProfilePage({ ...rest }) {
                                     className={classes.coloredShadow}
                                     style={{
                                       backgroundImage: "url(" + kendall + ")",
-                                      opacity: "1"
+                                      opacity: "1",
                                     }}
                                   />
                                 </CardHeader>
@@ -422,7 +422,7 @@ export default function ProfilePage({ ...rest }) {
                                     style={{
                                       backgroundImage:
                                         "url(" + cardProfile2Square + ")",
-                                      opacity: "1"
+                                      opacity: "1",
                                     }}
                                   />
                                 </CardHeader>
@@ -445,7 +445,7 @@ export default function ProfilePage({ ...rest }) {
                         </GridItem>
                       </GridContainer>
                     </div>
-                  )
+                  ),
                 },
                 {
                   tabButton: "Media",
@@ -482,8 +482,8 @@ export default function ProfilePage({ ...rest }) {
                         />
                       </GridItem>
                     </GridContainer>
-                  )
-                }
+                  ),
+                },
               ]}
             />
           </div>
@@ -544,5 +544,5 @@ export default function ProfilePage({ ...rest }) {
         }
       />
     </div>
-  );
+  )
 }

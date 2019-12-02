@@ -1,31 +1,31 @@
-import React from "react";
+import React from "react"
 
 // @material-ui/core components
-import { makeStyles } from "@material-ui/core/styles";
+import { makeStyles } from "@material-ui/core/styles"
 
 // @material-ui/icons
 
 // core components
-import GridContainer from "components/Grid/GridContainer.js";
-import GridItem from "components/Grid/GridItem.js";
-import Small from "components/Typography/Small.js";
-import Danger from "components/Typography/Danger.js";
-import Warning from "components/Typography/Warning.js";
-import Success from "components/Typography/Success.js";
-import Info from "components/Typography/Info.js";
-import Primary from "components/Typography/Primary.js";
-import Muted from "components/Typography/Muted.js";
-import Quote from "components/Typography/Quote.js";
-import SectionContentAreas from "./SectionContentAreas.js";
+import GridContainer from "components/Grid/GridContainer.js"
+import GridItem from "components/Grid/GridItem.js"
+import Small from "components/Typography/Small.js"
+import Danger from "components/Typography/Danger.js"
+import Warning from "components/Typography/Warning.js"
+import Success from "components/Typography/Success.js"
+import Info from "components/Typography/Info.js"
+import Primary from "components/Typography/Primary.js"
+import Muted from "components/Typography/Muted.js"
+import Quote from "components/Typography/Quote.js"
+import SectionContentAreas from "./SectionContentAreas.js"
 
-import typographyStyle from "assets/jss/material-kit-pro-react/views/componentsSections/typographyStyle.js";
+import typographyStyle from "assets/jss/material-kit-pro-react/views/componentsSections/typographyStyle.js"
 
-import image from "assets/img/faces/avatar.jpg";
+import image from "assets/img/faces/avatar.jpg"
 
-const useStyles = makeStyles(typographyStyle);
+const useStyles = makeStyles(typographyStyle)
 
 export default function SectionTypography() {
-  const classes = useStyles();
+  const classes = useStyles()
   return (
     <div className={classes.section}>
       <div className={classes.container}>
@@ -203,5 +203,5 @@ export default function SectionTypography() {
         <SectionContentAreas />
       </div>
     </div>
-  );
+  )
 }

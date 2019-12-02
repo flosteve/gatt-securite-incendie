@@ -1,5 +1,5 @@
 import React from "react"
-import { graphql, Link, useStaticQuery } from "gatsby"
+import { graphql, useStaticQuery } from "gatsby"
 
 import Seo from "../components/Seo/Seo"
 import Layout from "../components/Layout/Layout"
@@ -9,6 +9,7 @@ import GridItem from "../components/Grid/GridItem"
 import Button from "../components/CustomButtons/Button.js"
 import InfoArea from "../components/InfoArea/InfoArea.js"
 import Img from "gatsby-image"
+import scrollTo from "gatsby-plugin-smoothscroll"
 
 import { makeStyles } from "@material-ui/core"
 import presentationStyle from "../assets/jss/material-kit-pro-react/views/presentationStyle"
@@ -60,7 +61,8 @@ const IndexPage = () => {
       <Seo title="Accueil" />
       <Parallax
         image={data.file.childImageSharp.fluid.src}
-        className="parallax"
+        className="parallax home"
+        filter="dark"
       >
         <div className={classes.container}>
           <GridContainer>
@@ -73,13 +75,9 @@ const IndexPage = () => {
                 <Button
                   size="lg"
                   color="danger"
-                  className="gsiButton"
-                  children={
-                    <Link to={"/contact"}>
-                      <LibraryBooksIcon />
-                      Demandez Votre devis
-                    </Link>
-                  }
+                  startIcon={<LibraryBooksIcon />}
+                  children={<span> Demandez Votre devis</span>}
+                  onClick={() => scrollTo("#contact-home-gsi")}
                 />
               </div>
             </GridItem>
@@ -127,7 +125,7 @@ const IndexPage = () => {
             </GridItem>
           </GridContainer>
         </div>
-        <SectionContacts />
+        <SectionContacts id="contact-home-gsi" />
       </div>
     </Layout>
   )

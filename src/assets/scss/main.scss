@@ -1,17 +1,37 @@
+@import "pages/formations";
+@import "pages/singleFormation";
+@import "pages/contact";
+
+
 .parallax {
   height: 90vh;
   overflow: hidden;
+  &.home {
+    &:before, &:after {
+      z-index: -1;
+    }
+  }
 }
 
-/*
-Button
- */
-.gsiButton {
-  padding: 0;
+footer {
+  padding: 0 2rem;
   a {
-    padding: 1.125rem 2.25rem ;
-    color: white;
-    text-decoration: none;
+    &:hover {
+      color: #e53935 !important;
+    }
+  }
+
+}
+
+h1 {
+  text-transform: uppercase;
+}
+
+.page-gsi {
+  padding: 4rem 0;
+  h2 {
+    color: #3C4858;
+    text-transform: uppercase;
   }
 }
 
@@ -22,10 +42,11 @@ Button
 }
 
 @media (max-width: 768px) {
-  h1 {
-    font-size: 3.2rem !important;
+  .parallax.home {
+    h1 {
+      font-size: 3.2rem !important;
+    }
   }
-
   .contactHome {
     padding: 30px 0;
   }

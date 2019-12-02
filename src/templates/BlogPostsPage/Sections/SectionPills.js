@@ -1,27 +1,27 @@
-import React from "react";
+import React from "react"
 // @material-ui/core components
-import { makeStyles } from "@material-ui/core/styles";
-import Tooltip from "@material-ui/core/Tooltip";
+import { makeStyles } from "@material-ui/core/styles"
+import Tooltip from "@material-ui/core/Tooltip"
 // @material-ui/icons
-import FormatAlignLeft from "@material-ui/icons/FormatAlignLeft";
+import FormatAlignLeft from "@material-ui/icons/FormatAlignLeft"
 // core components
-import GridContainer from "components/Grid/GridContainer.js";
-import GridItem from "components/Grid/GridItem.js";
-import NavPills from "components/NavPills/NavPills.js";
-import Card from "components/Card/Card.js";
-import CardBody from "components/Card/CardBody.js";
-import Button from "components/CustomButtons/Button.js";
+import GridContainer from "../../../components/Grid/GridContainer.js"
+import GridItem from "../../../components/Grid/GridItem.js"
+import NavPills from "../../../components/NavPills/NavPills.js"
+import Card from "../../../components/Card/Card.js"
+import CardBody from "../../../components/Card/CardBody.js"
+import Button from "../../../components/CustomButtons/Button.js"
 
-import office2 from "assets/img/examples/office2.jpg";
-import blog8 from "assets/img/examples/blog8.jpg";
-import cardProject6 from "assets/img/examples/card-project6.jpg";
+import office2 from "../../../assets/img/examples/office2.jpg"
+import blog8 from "../../../assets/img/examples/blog8.jpg"
+import cardProject6 from "../../../assets/img/examples/card-project6.jpg"
 
-import sectionPillsStyle from "assets/jss/material-kit-pro-react/views/blogPostsSections/sectionPillsStyle.js";
+import sectionPillsStyle from "../../../assets/jss/material-kit-pro-react/views/blogPostsSections/sectionPillsStyle.js"
 
-const useStyles = makeStyles(sectionPillsStyle);
+const useStyles = makeStyles(sectionPillsStyle)
 
 export default function SectionPills() {
-  const classes = useStyles();
+  const classes = useStyles()
   return (
     <div className={classes.section}>
       <GridContainer justify="center">
@@ -31,24 +31,24 @@ export default function SectionPills() {
             tabs={[
               {
                 tabButton: "All",
-                tabContent: ""
+                tabContent: "",
               },
               {
                 tabButton: "World",
-                tabContent: ""
+                tabContent: "",
               },
               {
                 tabButton: "Arts",
-                tabContent: ""
+                tabContent: "",
               },
               {
                 tabButton: "Tech",
-                tabContent: ""
+                tabContent: "",
               },
               {
                 tabButton: "Business",
-                tabContent: ""
-              }
+                tabContent: "",
+              },
             ]}
           />
           <div className={classes.tabSpace} />
@@ -139,5 +139,5 @@ export default function SectionPills() {
         </GridItem>
       </GridContainer>
     </div>
-  );
+  )
 }

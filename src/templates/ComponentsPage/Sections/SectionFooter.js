@@ -1,36 +1,37 @@
 /*eslint-disable*/
-import React from "react";
+import React from "react"
 // nodejs library that concatenates classes
-import classNames from "classnames";
+import classNames from "classnames"
 // @material-ui/core components
-import { makeStyles } from "@material-ui/core/styles";
-import List from "@material-ui/core/List";
-import ListItem from "@material-ui/core/ListItem";
+import { makeStyles } from "@material-ui/core/styles"
+import List from "@material-ui/core/List"
+import ListItem from "@material-ui/core/ListItem"
 // @material-ui/icons
-import Mail from "@material-ui/icons/Mail";
-import Favorite from "@material-ui/icons/Favorite";
+import Mail from "@material-ui/icons/Mail"
+import Favorite from "@material-ui/icons/Favorite"
 // core components
-import GridContainer from "components/Grid/GridContainer.js";
-import GridItem from "components/Grid/GridItem.js";
-import Button from "components/CustomButtons/Button.js";
-import CustomInput from "components/CustomInput/CustomInput.js";
-import Footer from "components/Footer/Footer.js";
+import GridContainer from "components/Grid/GridContainer.js"
+import GridItem from "components/Grid/GridItem.js"
+import Button from "components/CustomButtons/Button.js"
+import CustomInput from "components/CustomInput/CustomInput.js"
+import Footer from "components/Footer/Footer.js"
 
-import face1 from "assets/img/faces/card-profile6-square.jpg";
-import face2 from "assets/img/faces/christian.jpg";
-import face3 from "assets/img/faces/card-profile4-square.jpg";
-import face4 from "assets/img/faces/card-profile1-square.jpg";
-import face5 from "assets/img/faces/marc.jpg";
-import face6 from "assets/img/faces/kendall.jpg";
-import face7 from "assets/img/faces/card-profile5-square.jpg";
-import face8 from "assets/img/faces/card-profile2-square.jpg";
+import face1 from "assets/img/faces/card-profile6-square.jpg"
+import face2 from "assets/img/faces/christian.jpg"
+import face3 from "assets/img/faces/card-profile4-square.jpg"
+import face4 from "assets/img/faces/card-profile1-square.jpg"
+import face5 from "assets/img/faces/marc.jpg"
+import face6 from "assets/img/faces/kendall.jpg"
+import face7 from "assets/img/faces/card-profile5-square.jpg"
+import face8 from "assets/img/faces/card-profile2-square.jpg"
 
-import styles from "assets/jss/material-kit-pro-react/views/componentsSections/footerStyle.js";
+import styles from "../../../assets/jss/material-kit-pro-react/views/componentsSections/footerStyle.js"
+import Link from "gatsby-theme-material-ui/src/components/gatsby-link"
 
-const useStyles = makeStyles(styles);
+const useStyles = makeStyles(styles)
 
 export default function SectionFooter() {
-  const classes = useStyles();
+  const classes = useStyles()
   return (
     <div className={classes.section}>
       <div className={classes.container}>
@@ -44,50 +45,26 @@ export default function SectionFooter() {
           content={
             <div>
               <div className={classes.left}>
-                <a
-                  href="https://www.creative-tim.com/product/material-kit-pro-react?ref=mkpr-footer-components"
-                  target="_blank"
-                  className={classes.footerBrand}
-                >
-                  Material Kit PRO React
-                </a>
+                <Link to="/" className={classes.footerBrand}>
+                  Gatt Sécurité Incendie
+                </Link>
               </div>
               <div className={classes.pullCenter}>
                 <List className={classes.list}>
                   <ListItem className={classes.inlineBlock}>
-                    <a
-                      href="https://www.creative-tim.com/?ref=mkpr-footer-components"
-                      target="_blank"
-                      className={classes.block}
-                    >
-                      Creative Tim
-                    </a>
+                    <Link to="/mentions-legales" className={classes.block}>
+                      Mentions Légales
+                    </Link>
                   </ListItem>
                   <ListItem className={classes.inlineBlock}>
-                    <a
-                      href="https://www.creative-tim.com/presentation?ref=mkpr-footer-components"
-                      target="_blank"
-                      className={classes.block}
-                    >
-                      About us
-                    </a>
+                    <Link to="/contact" className={classes.block}>
+                      Contact
+                    </Link>
                   </ListItem>
                   <ListItem className={classes.inlineBlock}>
-                    <a
-                      href="//blog.creative-tim.com/"
-                      className={classes.block}
-                    >
-                      Blog
-                    </a>
-                  </ListItem>
-                  <ListItem className={classes.inlineBlock}>
-                    <a
-                      href="https://www.creative-tim.com/license?ref=mkpr-footer-components"
-                      target="_blank"
-                      className={classes.block}
-                    >
-                      Licenses
-                    </a>
+                    <Link to="faq" className={classes.block}>
+                      FAQ
+                    </Link>
                   </ListItem>
                 </List>
               </div>
@@ -719,10 +696,10 @@ export default function SectionFooter() {
                     id="footeremail"
                     formControlProps={{
                       fullWidth: false,
-                      className: classes.customFormControl
+                      className: classes.customFormControl,
                     }}
                     inputProps={{
-                      placeholder: "Your Email..."
+                      placeholder: "Your Email...",
                     }}
                   />
                   <Button color="primary" justIcon>
@@ -735,5 +712,5 @@ export default function SectionFooter() {
         </Footer>
       </div>
     </div>
-  );
+  )
 }

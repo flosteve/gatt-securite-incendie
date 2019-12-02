@@ -1,73 +1,73 @@
 /*eslint-disable*/
-import React from "react";
+import React from "react"
 // nodejs library that concatenates classes
-import classNames from "classnames";
+import classNames from "classnames"
 // react component used to create nice image meadia player
-import ImageGallery from "react-image-gallery";
+import ImageGallery from "react-image-gallery"
 // @material-ui/core components
-import { makeStyles } from "@material-ui/core/styles";
-import FormControl from "@material-ui/core/FormControl";
-import Select from "@material-ui/core/Select";
-import MenuItem from "@material-ui/core/MenuItem";
-import List from "@material-ui/core/List";
-import ListItem from "@material-ui/core/ListItem";
+import { makeStyles } from "@material-ui/core/styles"
+import FormControl from "@material-ui/core/FormControl"
+import Select from "@material-ui/core/Select"
+import MenuItem from "@material-ui/core/MenuItem"
+import List from "@material-ui/core/List"
+import ListItem from "@material-ui/core/ListItem"
 // @material-ui/icons
-import ShoppingCart from "@material-ui/icons/ShoppingCart";
-import LocalShipping from "@material-ui/icons/LocalShipping";
-import VerifiedUser from "@material-ui/icons/VerifiedUser";
-import Favorite from "@material-ui/icons/Favorite";
+import ShoppingCart from "@material-ui/icons/ShoppingCart"
+import LocalShipping from "@material-ui/icons/LocalShipping"
+import VerifiedUser from "@material-ui/icons/VerifiedUser"
+import Favorite from "@material-ui/icons/Favorite"
 // core components
-import Header from "components/Header/Header.js";
-import HeaderLinks from "components/Header/HeaderLinks.js";
-import Parallax from "components/Parallax/Parallax.js";
-import GridContainer from "components/Grid/GridContainer.js";
-import GridItem from "components/Grid/GridItem.js";
-import Footer from "components/Footer/Footer.js";
-import Button from "components/CustomButtons/Button.js";
-import Accordion from "components/Accordion/Accordion.js";
-import InfoArea from "components/InfoArea/InfoArea.js";
-import Card from "components/Card/Card.js";
-import CardHeader from "components/Card/CardHeader.js";
-import CardBody from "components/Card/CardBody.js";
-import CardFooter from "components/Card/CardFooter.js";
-import Tooltip from "@material-ui/core/Tooltip";
+import Header from "components/Header/Header.js"
+import HeaderLinks from "components/Header/HeaderLinks.js"
+import Parallax from "components/Parallax/Parallax.js"
+import GridContainer from "components/Grid/GridContainer.js"
+import GridItem from "components/Grid/GridItem.js"
+import Footer from "components/Footer/Footer.js"
+import Button from "components/CustomButtons/Button.js"
+import Accordion from "components/Accordion/Accordion.js"
+import InfoArea from "components/InfoArea/InfoArea.js"
+import Card from "components/Card/Card.js"
+import CardHeader from "components/Card/CardHeader.js"
+import CardBody from "components/Card/CardBody.js"
+import CardFooter from "components/Card/CardFooter.js"
+import Tooltip from "@material-ui/core/Tooltip"
 
-import productStyle from "assets/jss/material-kit-pro-react/views/productStyle.js";
+import productStyle from "assets/jss/material-kit-pro-react/views/productStyle.js"
 
 // images
-import cardProduct1 from "assets/img/examples/card-product1.jpg";
-import cardProduct3 from "assets/img/examples/card-product3.jpg";
-import cardProduct4 from "assets/img/examples/card-product4.jpg";
-import cardProduct2 from "assets/img/examples/card-product2.jpg";
-import product1 from "assets/img/examples/product1.jpg";
-import product2 from "assets/img/examples/product2.jpg";
-import product3 from "assets/img/examples/product3.jpg";
-import product4 from "assets/img/examples/product4.jpg";
+import cardProduct1 from "assets/img/examples/card-product1.jpg"
+import cardProduct3 from "assets/img/examples/card-product3.jpg"
+import cardProduct4 from "assets/img/examples/card-product4.jpg"
+import cardProduct2 from "assets/img/examples/card-product2.jpg"
+import product1 from "assets/img/examples/product1.jpg"
+import product2 from "assets/img/examples/product2.jpg"
+import product3 from "assets/img/examples/product3.jpg"
+import product4 from "assets/img/examples/product4.jpg"
 
-const useStyles = makeStyles(productStyle);
+const useStyles = makeStyles(productStyle)
 
 export default function ProductPage() {
-  const [colorSelect, setColorSelect] = React.useState("0");
-  const [sizeSelect, setSizeSelect] = React.useState("0");
-  const classes = useStyles();
+  const [colorSelect, setColorSelect] = React.useState("0")
+  const [sizeSelect, setSizeSelect] = React.useState("0")
+  const classes = useStyles()
   const images = [
     {
       original: product3,
-      thumbnail: product3
+      thumbnail: product3,
     },
     {
       original: product4,
-      thumbnail: product4
+      thumbnail: product4,
     },
     {
       original: product1,
-      thumbnail: product1
+      thumbnail: product1,
     },
     {
       original: product2,
-      thumbnail: product2
-    }
-  ];
+      thumbnail: product2,
+    },
+  ]
   return (
     <div className={classes.productPage}>
       <Header
@@ -77,7 +77,7 @@ export default function ProductPage() {
         color="transparent"
         changeColorOnScroll={{
           height: 100,
-          color: "rose"
+          color: "rose",
         }}
       />
       <Parallax
@@ -125,7 +125,7 @@ export default function ProductPage() {
                           flattering cutouts through the torso and back. Wear
                           yours with mirrored sunglasses on vacation.
                         </p>
-                      )
+                      ),
                     },
                     {
                       title: "Designer Information",
@@ -139,7 +139,7 @@ export default function ProductPage() {
                           Collection - a range of luxe city staples with a {'"'}
                           downtown romantic{'"'} theme.
                         </p>
-                      )
+                      ),
                     },
                     {
                       title: "Details and Care",
@@ -154,8 +154,8 @@ export default function ProductPage() {
                           <li>84% cotton, 14% nylon, 2% elastane</li>
                           <li>Dry clean</li>
                         </ul>
-                      )
-                    }
+                      ),
+                    },
                   ]}
                 />
                 <GridContainer className={classes.pickSize}>
@@ -167,22 +167,22 @@ export default function ProductPage() {
                     >
                       <Select
                         MenuProps={{
-                          className: classes.selectMenu
+                          className: classes.selectMenu,
                         }}
                         classes={{
-                          select: classes.select
+                          select: classes.select,
                         }}
                         value={colorSelect}
                         onChange={event => setColorSelect(event.target.value)}
                         inputProps={{
                           name: "colorSelect",
-                          id: "color-select"
+                          id: "color-select",
                         }}
                       >
                         <MenuItem
                           classes={{
                             root: classes.selectMenuItem,
-                            selected: classes.selectMenuItemSelected
+                            selected: classes.selectMenuItemSelected,
                           }}
                           value="0"
                         >
@@ -191,7 +191,7 @@ export default function ProductPage() {
                         <MenuItem
                           classes={{
                             root: classes.selectMenuItem,
-                            selected: classes.selectMenuItemSelected
+                            selected: classes.selectMenuItemSelected,
                           }}
                           value="1"
                         >
@@ -200,7 +200,7 @@ export default function ProductPage() {
                         <MenuItem
                           classes={{
                             root: classes.selectMenuItem,
-                            selected: classes.selectMenuItemSelected
+                            selected: classes.selectMenuItemSelected,
                           }}
                           value="2"
                         >
@@ -217,22 +217,22 @@ export default function ProductPage() {
                     >
                       <Select
                         MenuProps={{
-                          className: classes.selectMenu
+                          className: classes.selectMenu,
                         }}
                         classes={{
-                          select: classes.select
+                          select: classes.select,
                         }}
                         value={sizeSelect}
                         onChange={event => setSizeSelect(event.target.value)}
                         inputProps={{
                           name: "sizeSelect",
-                          id: "size-select"
+                          id: "size-select",
                         }}
                       >
                         <MenuItem
                           classes={{
                             root: classes.selectMenuItem,
-                            selected: classes.selectMenuItemSelected
+                            selected: classes.selectMenuItemSelected,
                           }}
                           value="0"
                         >
@@ -241,7 +241,7 @@ export default function ProductPage() {
                         <MenuItem
                           classes={{
                             root: classes.selectMenuItem,
-                            selected: classes.selectMenuItemSelected
+                            selected: classes.selectMenuItemSelected,
                           }}
                           value="1"
                         >
@@ -250,7 +250,7 @@ export default function ProductPage() {
                         <MenuItem
                           classes={{
                             root: classes.selectMenuItem,
-                            selected: classes.selectMenuItemSelected
+                            selected: classes.selectMenuItemSelected,
                           }}
                           value="2"
                         >
@@ -516,5 +516,5 @@ export default function ProductPage() {
         }
       />
     </div>
-  );
+  )
 }

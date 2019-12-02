@@ -1,64 +1,64 @@
-import React from "react";
+import React from "react"
 // used for making the prop types of this component
-import PropTypes from "prop-types";
+import PropTypes from "prop-types"
 // @material-ui/core components
-import { makeStyles } from "@material-ui/core/styles";
+import { makeStyles } from "@material-ui/core/styles"
 // core components
-import CustomInput from "components/CustomInput/CustomInput.js";
-import Button from "components/CustomButtons/Button.js";
+import CustomInput from "components/CustomInput/CustomInput.js"
+import Button from "components/CustomButtons/Button.js"
 
-import styles from "assets/jss/material-kit-pro-react/components/customFileInputStyle.js";
+import styles from "assets/jss/material-kit-pro-react/components/customFileInputStyle.js"
 
-const useStyles = makeStyles(styles);
+const useStyles = makeStyles(styles)
 
 export default function CustomFileInput(props) {
-  const [fileNames, setFileNames] = React.useState("");
+  const [fileNames, setFileNames] = React.useState("")
   // eslint-disable-next-line
-  const [files, setFiles] = React.useState(null);
-  let hiddenFile = React.createRef();
+  const [files, setFiles] = React.useState(null)
+  let hiddenFile = React.createRef()
   const onFocus = e => {
-    hiddenFile.current.click(e);
-  };
+    hiddenFile.current.click(e)
+  }
   // eslint-disable-next-line
   const handleSubmit = e => {
-    e.preventDefault();
+    e.preventDefault()
     // files is the file/image uploaded
     // in this function you can save the image (files) on form submit
     // you have to call it yourself
-  };
+  }
   const addFile = e => {
-    let fileNames = "";
-    let files = e.target.files;
+    let fileNames = ""
+    let files = e.target.files
     for (let i = 0; i < e.target.files.length; i++) {
-      fileNames = fileNames + e.target.files[i].name;
+      fileNames = fileNames + e.target.files[i].name
       if (props.multiple && i !== e.target.files.length - 1) {
-        fileNames = fileNames + ", ";
+        fileNames = fileNames + ", "
       }
     }
-    setFiles(files);
-    setFileNames(fileNames);
-  };
+    setFiles(files)
+    setFileNames(fileNames)
+  }
   const {
     id,
     endButton,
     startButton,
     inputProps,
     formControlProps,
-    multiple
-  } = props;
-  const classes = useStyles();
+    multiple,
+  } = props
+  const classes = useStyles()
   if (inputProps && inputProps.type && inputProps.type === "file") {
-    inputProps.type = "text";
+    inputProps.type = "text"
   }
-  let buttonStart;
-  let buttonEnd;
+  let buttonStart
+  let buttonEnd
   if (startButton) {
     buttonStart = (
       <Button {...startButton.buttonProps}>
         {startButton.icon !== undefined ? startButton.icon : null}
         {startButton.text !== undefined ? startButton.text : null}
       </Button>
-    );
+    )
   }
   if (endButton) {
     buttonEnd = (
@@ -66,7 +66,7 @@ export default function CustomFileInput(props) {
         {endButton.icon !== undefined ? endButton.icon : null}
         {endButton.text !== undefined ? endButton.text : null}
       </Button>
-    );
+    )
   }
   return (
     <div className={classes.inputFileWrapper}>
@@ -80,23 +80,23 @@ export default function CustomFileInput(props) {
       <CustomInput
         id={id}
         formControlProps={{
-          ...formControlProps
+          ...formControlProps,
         }}
         inputProps={{
           ...inputProps,
           onClick: onFocus,
           value: fileNames,
           endAdornment: buttonEnd,
-          startAdornment: buttonStart
+          startAdornment: buttonStart,
         }}
       />
     </div>
-  );
+  )
 }
 
 CustomFileInput.defaultProps = {
-  multiple: false
-};
+  multiple: false,
+}
 
 CustomFileInput.propTypes = {
   id: PropTypes.string,
@@ -104,5 +104,5 @@ CustomFileInput.propTypes = {
   startButton: PropTypes.object,
   inputProps: PropTypes.object,
   formControlProps: PropTypes.object,
-  multiple: PropTypes.bool
-};
+  multiple: PropTypes.bool,
+}

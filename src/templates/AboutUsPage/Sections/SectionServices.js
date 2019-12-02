@@ -1,22 +1,22 @@
-import React from "react";
+import React from "react"
 // nodejs library that concatenates classes
-import classNames from "classnames";
+import classNames from "classnames"
 // @material-ui/core components
-import { makeStyles } from "@material-ui/core/styles";
+import { makeStyles } from "@material-ui/core/styles"
 // @material-ui/icons
-import Gesture from "@material-ui/icons/Gesture";
-import Build from "@material-ui/icons/Build";
+import Gesture from "@material-ui/icons/Gesture"
+import Build from "@material-ui/icons/Build"
 // core components
-import GridContainer from "components/Grid/GridContainer.js";
-import GridItem from "components/Grid/GridItem.js";
-import InfoArea from "components/InfoArea/InfoArea.js";
+import GridContainer from "components/Grid/GridContainer.js"
+import GridItem from "components/Grid/GridItem.js"
+import InfoArea from "components/InfoArea/InfoArea.js"
 
-import servicesStyle from "assets/jss/material-kit-pro-react/views/aboutUsSections/servicesStyle.js";
+import servicesStyle from "assets/jss/material-kit-pro-react/views/aboutUsSections/servicesStyle.js"
 
-const useStyles = makeStyles(servicesStyle);
+const useStyles = makeStyles(servicesStyle)
 
 export default function SectionServices() {
-  const classes = useStyles();
+  const classes = useStyles()
   return (
     <div className={classes.services}>
       <GridContainer>
@@ -90,5 +90,5 @@ export default function SectionServices() {
         </GridItem>
       </GridContainer>
     </div>
-  );
+  )
 }

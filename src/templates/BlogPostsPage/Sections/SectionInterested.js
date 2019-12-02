@@ -1,28 +1,28 @@
-import React from "react";
+import React from "react"
 // @material-ui/core components
-import { makeStyles } from "@material-ui/core/styles";
+import { makeStyles } from "@material-ui/core/styles"
 // @material-ui/icons
-import TrendingUp from "@material-ui/icons/TrendingUp";
+import TrendingUp from "@material-ui/icons/TrendingUp"
 // core components
-import GridContainer from "components/Grid/GridContainer.js";
-import GridItem from "components/Grid/GridItem.js";
-import Card from "components/Card/Card.js";
-import CardBody from "components/Card/CardBody.js";
-import CardHeader from "components/Card/CardHeader.js";
-import Info from "components/Typography/Info.js";
-import Success from "components/Typography/Success.js";
-import Danger from "components/Typography/Danger.js";
+import GridContainer from "components/Grid/GridContainer.js"
+import GridItem from "components/Grid/GridItem.js"
+import Card from "components/Card/Card.js"
+import CardBody from "components/Card/CardBody.js"
+import CardHeader from "components/Card/CardHeader.js"
+import Info from "components/Typography/Info.js"
+import Success from "components/Typography/Success.js"
+import Danger from "components/Typography/Danger.js"
 
-import bg5 from "assets/img/bg5.jpg";
-import blog5 from "assets/img/examples/blog5.jpg";
-import blog6 from "assets/img/examples/blog6.jpg";
+import bg5 from "assets/img/bg5.jpg"
+import blog5 from "assets/img/examples/blog5.jpg"
+import blog6 from "assets/img/examples/blog6.jpg"
 
-import sectionInterestedStyle from "assets/jss/material-kit-pro-react/views/blogPostsSections/sectionInterestedStyle.js";
+import sectionInterestedStyle from "assets/jss/material-kit-pro-react/views/blogPostsSections/sectionInterestedStyle.js"
 
-const useStyles = makeStyles(sectionInterestedStyle);
+const useStyles = makeStyles(sectionInterestedStyle)
 
 export default function SectionInterested() {
-  const classes = useStyles();
+  const classes = useStyles()
   return (
     <div className={classes.section}>
       <h3 className={classes.title + " " + classes.textCenter}>
@@ -40,7 +40,7 @@ export default function SectionInterested() {
                 className={classes.coloredShadow}
                 style={{
                   backgroundImage: "url(" + bg5 + ")",
-                  opacity: "1"
+                  opacity: "1",
                 }}
               />
             </CardHeader>
@@ -72,7 +72,7 @@ export default function SectionInterested() {
                 className={classes.coloredShadow}
                 style={{
                   backgroundImage: "url(" + blog5 + ")",
-                  opacity: "1"
+                  opacity: "1",
                 }}
               />
             </CardHeader>
@@ -104,7 +104,7 @@ export default function SectionInterested() {
                 className={classes.coloredShadow}
                 style={{
                   backgroundImage: "url(" + blog6 + ")",
-                  opacity: "1"
+                  opacity: "1",
                 }}
               />
             </CardHeader>
@@ -130,5 +130,5 @@ export default function SectionInterested() {
         </GridItem>
       </GridContainer>
     </div>
-  );
+  )
 }

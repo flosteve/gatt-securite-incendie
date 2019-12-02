@@ -2,8 +2,8 @@ import {
   title,
   blackColor,
   grayColor,
-  hexToRgb
-} from "assets/jss/material-kit-pro-react.js";
+  hexToRgb,
+} from "assets/jss/material-kit-pro-react.js"
 
 const mediaStyle = {
   media: {
@@ -13,15 +13,15 @@ const mediaStyle = {
     "& p": {
       color: grayColor[0],
       fontSize: "1rem",
-      lineHeight: "1.6em"
+      lineHeight: "1.6em",
     },
     "& $media $mediaBody": {
-      paddingRight: "0px"
-    }
+      paddingRight: "0px",
+    },
   },
   mediaLink: {
     padding: "10px",
-    float: "left !important"
+    float: "left !important",
   },
   mediaAvatar: {
     margin: "0 auto",
@@ -39,32 +39,32 @@ const mediaStyle = {
       hexToRgb(blackColor) +
       ", 0.2)",
     "& img": {
-      width: "100%"
-    }
+      width: "100%",
+    },
   },
   mediaBody: {
     paddingRight: "10px",
     WebkitBoxFlex: "1",
-    flex: "1"
+    flex: "1",
   },
   mediaHeading: {
     ...title,
     marginTop: "10px",
     marginBottom: "10px",
     "& small": {
-      fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif'
-    }
+      fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
+    },
   },
   mediaFooter: {
     "& button, & a": {
-      marginBottom: "20px"
+      marginBottom: "20px",
     },
     "&:after": {
       display: "table",
       content: '" "',
-      clear: "both"
-    }
-  }
-};
+      clear: "both",
+    },
+  },
+}
 
-export default mediaStyle;
+export default mediaStyle

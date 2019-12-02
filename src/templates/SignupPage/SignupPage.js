@@ -1,56 +1,56 @@
 /*eslint-disable*/
-import React from "react";
+import React from "react"
 // @material-ui/core components
-import { makeStyles } from "@material-ui/core/styles";
-import InputAdornment from "@material-ui/core/InputAdornment";
-import Checkbox from "@material-ui/core/Checkbox";
-import FormControlLabel from "@material-ui/core/FormControlLabel";
-import List from "@material-ui/core/List";
-import ListItem from "@material-ui/core/ListItem";
-import Icon from "@material-ui/core/Icon";
+import { makeStyles } from "@material-ui/core/styles"
+import InputAdornment from "@material-ui/core/InputAdornment"
+import Checkbox from "@material-ui/core/Checkbox"
+import FormControlLabel from "@material-ui/core/FormControlLabel"
+import List from "@material-ui/core/List"
+import ListItem from "@material-ui/core/ListItem"
+import Icon from "@material-ui/core/Icon"
 // @material-ui/icons
-import Timeline from "@material-ui/icons/Timeline";
-import Code from "@material-ui/icons/Code";
-import Group from "@material-ui/icons/Group";
-import Face from "@material-ui/icons/Face";
-import Email from "@material-ui/icons/Email";
-import Check from "@material-ui/icons/Check";
-import Favorite from "@material-ui/icons/Favorite";
+import Timeline from "@material-ui/icons/Timeline"
+import Code from "@material-ui/icons/Code"
+import Group from "@material-ui/icons/Group"
+import Face from "@material-ui/icons/Face"
+import Email from "@material-ui/icons/Email"
+import Check from "@material-ui/icons/Check"
+import Favorite from "@material-ui/icons/Favorite"
 // core components
-import Header from "components/Header/Header.js";
-import HeaderLinks from "components/Header/HeaderLinks.js";
-import Footer from "components/Footer/Footer.js";
-import GridContainer from "components/Grid/GridContainer.js";
-import GridItem from "components/Grid/GridItem.js";
-import Button from "components/CustomButtons/Button.js";
-import Card from "components/Card/Card.js";
-import CardBody from "components/Card/CardBody.js";
-import InfoArea from "components/InfoArea/InfoArea.js";
-import CustomInput from "components/CustomInput/CustomInput.js";
+import Header from "components/Header/Header.js"
+import HeaderLinks from "components/Header/HeaderLinks.js"
+import Footer from "components/Footer/Footer.js"
+import GridContainer from "components/Grid/GridContainer.js"
+import GridItem from "components/Grid/GridItem.js"
+import Button from "components/CustomButtons/Button.js"
+import Card from "components/Card/Card.js"
+import CardBody from "components/Card/CardBody.js"
+import InfoArea from "components/InfoArea/InfoArea.js"
+import CustomInput from "components/CustomInput/CustomInput.js"
 
-import signupPageStyle from "assets/jss/material-kit-pro-react/views/signupPageStyle.js";
+import signupPageStyle from "assets/jss/material-kit-pro-react/views/signupPageStyle.js"
 
-import image from "assets/img/bg7.jpg";
+import image from "assets/img/bg7.jpg"
 
-const useStyles = makeStyles(signupPageStyle);
+const useStyles = makeStyles(signupPageStyle)
 
 export default function SignUpPage({ ...rest }) {
-  const [checked, setChecked] = React.useState([1]);
+  const [checked, setChecked] = React.useState([1])
   const handleToggle = value => {
-    const currentIndex = checked.indexOf(value);
-    const newChecked = [...checked];
+    const currentIndex = checked.indexOf(value)
+    const newChecked = [...checked]
     if (currentIndex === -1) {
-      newChecked.push(value);
+      newChecked.push(value)
     } else {
-      newChecked.splice(currentIndex, 1);
+      newChecked.splice(currentIndex, 1)
     }
-    setChecked(newChecked);
-  };
+    setChecked(newChecked)
+  }
   React.useEffect(() => {
-    window.scrollTo(0, 0);
-    document.body.scrollTop = 0;
-  });
-  const classes = useStyles();
+    window.scrollTo(0, 0)
+    document.body.scrollTop = 0
+  })
+  const classes = useStyles()
   return (
     <div>
       <Header
@@ -65,7 +65,7 @@ export default function SignUpPage({ ...rest }) {
         style={{
           backgroundImage: "url(" + image + ")",
           backgroundSize: "cover",
-          backgroundPosition: "top center"
+          backgroundPosition: "top center",
         }}
       >
         <div className={classes.container}>
@@ -120,7 +120,7 @@ export default function SignUpPage({ ...rest }) {
                         <CustomInput
                           formControlProps={{
                             fullWidth: true,
-                            className: classes.customFormControlClasses
+                            className: classes.customFormControlClasses,
                           }}
                           inputProps={{
                             startAdornment: (
@@ -131,13 +131,13 @@ export default function SignUpPage({ ...rest }) {
                                 <Face className={classes.inputAdornmentIcon} />
                               </InputAdornment>
                             ),
-                            placeholder: "First Name..."
+                            placeholder: "First Name...",
                           }}
                         />
                         <CustomInput
                           formControlProps={{
                             fullWidth: true,
-                            className: classes.customFormControlClasses
+                            className: classes.customFormControlClasses,
                           }}
                           inputProps={{
                             startAdornment: (
@@ -148,13 +148,13 @@ export default function SignUpPage({ ...rest }) {
                                 <Email className={classes.inputAdornmentIcon} />
                               </InputAdornment>
                             ),
-                            placeholder: "Email..."
+                            placeholder: "Email...",
                           }}
                         />
                         <CustomInput
                           formControlProps={{
                             fullWidth: true,
-                            className: classes.customFormControlClasses
+                            className: classes.customFormControlClasses,
                           }}
                           inputProps={{
                             startAdornment: (
@@ -167,12 +167,12 @@ export default function SignUpPage({ ...rest }) {
                                 </Icon>
                               </InputAdornment>
                             ),
-                            placeholder: "Password..."
+                            placeholder: "Password...",
                           }}
                         />
                         <FormControlLabel
                           classes={{
-                            label: classes.label
+                            label: classes.label,
                           }}
                           control={
                             <Checkbox
@@ -184,7 +184,7 @@ export default function SignUpPage({ ...rest }) {
                               icon={<Check className={classes.uncheckedIcon} />}
                               classes={{
                                 checked: classes.checked,
-                                root: classes.checkRoot
+                                root: classes.checkRoot,
                               }}
                               checked={checked.indexOf(1) !== -1 ? true : false}
                             />
@@ -267,5 +267,5 @@ export default function SignUpPage({ ...rest }) {
         />
       </div>
     </div>
-  );
+  )
 }

@@ -85,7 +85,10 @@ export default function HeaderLinks(props) {
           }}
           buttonIcon={Apps}
           dropdownList={[
-            <Link to="/installation" className={classes.dropdownLink}>
+            <Link
+              to="/installation-maintenance"
+              className={classes.dropdownLink}
+            >
               <LineStyle className={classes.dropdownIcons} /> Installation /
               Maintenance
             </Link>,
@@ -105,17 +108,17 @@ export default function HeaderLinks(props) {
         />
       </ListItem>
       <ListItem className={classes.listItem}>
-        <Link to={"/entreprise"} className={classes.navLink}>
+        <Link to={"/la-societe"} className={classes.navLink}>
           <BusinessIcon />
           Entreprise
         </Link>
       </ListItem>
-      <ListItem className={classes.listItem}>
-        <Link to={"/contact"} className={classes.navLink}>
-          <EmailIcon />
-          Contact
-        </Link>
-      </ListItem>
+      {/*<ListItem className={classes.listItem}>*/}
+      {/*  <Link to={"/contact"} className={classes.navLink}>*/}
+      {/*    <EmailIcon />*/}
+      {/*    Contact*/}
+      {/*  </Link>*/}
+      {/*</ListItem>*/}
     </List>
   )
 }

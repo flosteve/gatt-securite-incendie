@@ -1,44 +1,44 @@
 /*eslint-disable*/
-import React from "react";
+import React from "react"
 // nodejs library that concatenates classes
-import classNames from "classnames";
+import classNames from "classnames"
 // @material-ui/core components
-import { makeStyles } from "@material-ui/core/styles";
-import List from "@material-ui/core/List";
-import ListItem from "@material-ui/core/ListItem";
-import Tooltip from "@material-ui/core/Tooltip";
+import { makeStyles } from "@material-ui/core/styles"
+import List from "@material-ui/core/List"
+import ListItem from "@material-ui/core/ListItem"
+import Tooltip from "@material-ui/core/Tooltip"
 // @material-ui/icons
-import Favorite from "@material-ui/icons/Favorite";
-import Close from "@material-ui/icons/Close";
-import Remove from "@material-ui/icons/Remove";
-import Add from "@material-ui/icons/Add";
-import KeyboardArrowRight from "@material-ui/icons/KeyboardArrowRight";
+import Favorite from "@material-ui/icons/Favorite"
+import Close from "@material-ui/icons/Close"
+import Remove from "@material-ui/icons/Remove"
+import Add from "@material-ui/icons/Add"
+import KeyboardArrowRight from "@material-ui/icons/KeyboardArrowRight"
 // core components
-import Header from "components/Header/Header.js";
-import HeaderLinks from "components/Header/HeaderLinks.js";
-import Parallax from "components/Parallax/Parallax.js";
-import GridContainer from "components/Grid/GridContainer.js";
-import GridItem from "components/Grid/GridItem.js";
-import Footer from "components/Footer/Footer.js";
-import Table from "components/Table/Table.js";
-import Button from "components/CustomButtons/Button.js";
-import Card from "components/Card/Card.js";
-import CardBody from "components/Card/CardBody.js";
+import Header from "components/Header/Header.js"
+import HeaderLinks from "components/Header/HeaderLinks.js"
+import Parallax from "components/Parallax/Parallax.js"
+import GridContainer from "components/Grid/GridContainer.js"
+import GridItem from "components/Grid/GridItem.js"
+import Footer from "components/Footer/Footer.js"
+import Table from "components/Table/Table.js"
+import Button from "components/CustomButtons/Button.js"
+import Card from "components/Card/Card.js"
+import CardBody from "components/Card/CardBody.js"
 
-import shoppingCartStyle from "assets/jss/material-kit-pro-react/views/shoppingCartStyle.js";
+import shoppingCartStyle from "assets/jss/material-kit-pro-react/views/shoppingCartStyle.js"
 
-import product1 from "assets/img/product1.jpg";
-import product2 from "assets/img/product2.jpg";
-import product3 from "assets/img/product3.jpg";
+import product1 from "assets/img/product1.jpg"
+import product2 from "assets/img/product2.jpg"
+import product3 from "assets/img/product3.jpg"
 
-const useStyles = makeStyles(shoppingCartStyle);
+const useStyles = makeStyles(shoppingCartStyle)
 
 export default function ShoppingCartPage() {
   React.useEffect(() => {
-    window.scrollTo(0, 0);
-    document.body.scrollTop = 0;
-  });
-  const classes = useStyles();
+    window.scrollTo(0, 0)
+    document.body.scrollTop = 0
+  })
+  const classes = useStyles()
   return (
     <div>
       <Header
@@ -48,7 +48,7 @@ export default function ShoppingCartPage() {
         color="transparent"
         changeColorOnScroll={{
           height: 300,
-          color: "info"
+          color: "info",
         }}
       />
 
@@ -87,7 +87,7 @@ export default function ShoppingCartPage() {
                   "PRICE",
                   "QTY",
                   "AMOUNT",
-                  ""
+                  "",
                 ]}
                 tableData={[
                   [
@@ -142,7 +142,7 @@ export default function ShoppingCartPage() {
                       <Button link className={classes.actionButton}>
                         <Close />
                       </Button>
-                    </Tooltip>
+                    </Tooltip>,
                   ],
                   [
                     <div className={classes.imgContainer} key={1}>
@@ -194,7 +194,7 @@ export default function ShoppingCartPage() {
                       <Button link className={classes.actionButton}>
                         <Close />
                       </Button>
-                    </Tooltip>
+                    </Tooltip>,
                   ],
                   [
                     <div className={classes.imgContainer} key={1}>
@@ -248,7 +248,7 @@ export default function ShoppingCartPage() {
                       <Button link className={classes.actionButton}>
                         <Close />
                       </Button>
-                    </Tooltip>
+                    </Tooltip>,
                   ],
                   {
                     purchase: true,
@@ -264,9 +264,9 @@ export default function ShoppingCartPage() {
                         <Button color="info" round>
                           Complete Purchase <KeyboardArrowRight />
                         </Button>
-                      )
-                    }
-                  }
+                      ),
+                    },
+                  },
                 ]}
                 tableShopping
                 customHeadCellClasses={[
@@ -275,7 +275,7 @@ export default function ShoppingCartPage() {
                   classes.description,
                   classes.textRight,
                   classes.textRight,
-                  classes.textRight
+                  classes.textRight,
                 ]}
                 customHeadClassesForCells={[0, 2, 3, 4, 5, 6]}
                 customCellClasses={[
@@ -284,7 +284,7 @@ export default function ShoppingCartPage() {
                   classes.customFont,
                   classes.tdNumber,
                   classes.tdNumber + " " + classes.tdNumberAndButtonGroup,
-                  classes.tdNumber + " " + classes.textCenter
+                  classes.tdNumber + " " + classes.textCenter,
                 ]}
                 customClassesForCells={[1, 2, 3, 4, 5, 6]}
               />
@@ -350,5 +350,5 @@ export default function ShoppingCartPage() {
         }
       />
     </div>
-  );
+  )
 }

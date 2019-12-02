@@ -1,87 +1,87 @@
 /*eslint-disable*/
-import React from "react";
+import React from "react"
 // react plugin for creating date-time-picker
-import Datetime from "react-datetime";
+import Datetime from "react-datetime"
 // @material-ui/core components
-import { makeStyles } from "@material-ui/core/styles";
-import Slide from "@material-ui/core/Slide";
-import Dialog from "@material-ui/core/Dialog";
-import DialogTitle from "@material-ui/core/DialogTitle";
-import DialogContent from "@material-ui/core/DialogContent";
-import DialogActions from "@material-ui/core/DialogActions";
-import InputLabel from "@material-ui/core/InputLabel";
-import InputAdornment from "@material-ui/core/InputAdornment";
-import FormControl from "@material-ui/core/FormControl";
-import FormControlLabel from "@material-ui/core/FormControlLabel";
-import Tooltip from "@material-ui/core/Tooltip";
-import Popover from "@material-ui/core/Popover";
-import Checkbox from "@material-ui/core/Checkbox";
-import Icon from "@material-ui/core/Icon";
+import { makeStyles } from "@material-ui/core/styles"
+import Slide from "@material-ui/core/Slide"
+import Dialog from "@material-ui/core/Dialog"
+import DialogTitle from "@material-ui/core/DialogTitle"
+import DialogContent from "@material-ui/core/DialogContent"
+import DialogActions from "@material-ui/core/DialogActions"
+import InputLabel from "@material-ui/core/InputLabel"
+import InputAdornment from "@material-ui/core/InputAdornment"
+import FormControl from "@material-ui/core/FormControl"
+import FormControlLabel from "@material-ui/core/FormControlLabel"
+import Tooltip from "@material-ui/core/Tooltip"
+import Popover from "@material-ui/core/Popover"
+import Checkbox from "@material-ui/core/Checkbox"
+import Icon from "@material-ui/core/Icon"
 // @material-ui/icons
-import LibraryBooks from "@material-ui/icons/LibraryBooks";
-import Close from "@material-ui/icons/Close";
-import Notifications from "@material-ui/icons/Notifications";
-import AccountCircle from "@material-ui/icons/AccountCircle";
-import Assignment from "@material-ui/icons/Assignment";
-import Mail from "@material-ui/icons/Mail";
-import Face from "@material-ui/icons/Face";
-import Timeline from "@material-ui/icons/Timeline";
-import Code from "@material-ui/icons/Code";
-import Group from "@material-ui/icons/Group";
-import Email from "@material-ui/icons/Email";
-import Check from "@material-ui/icons/Check";
-import AttachFile from "@material-ui/icons/AttachFile";
-import Layers from "@material-ui/icons/Layers";
+import LibraryBooks from "@material-ui/icons/LibraryBooks"
+import Close from "@material-ui/icons/Close"
+import Notifications from "@material-ui/icons/Notifications"
+import AccountCircle from "@material-ui/icons/AccountCircle"
+import Assignment from "@material-ui/icons/Assignment"
+import Mail from "@material-ui/icons/Mail"
+import Face from "@material-ui/icons/Face"
+import Timeline from "@material-ui/icons/Timeline"
+import Code from "@material-ui/icons/Code"
+import Group from "@material-ui/icons/Group"
+import Email from "@material-ui/icons/Email"
+import Check from "@material-ui/icons/Check"
+import AttachFile from "@material-ui/icons/AttachFile"
+import Layers from "@material-ui/icons/Layers"
 // core components
-import GridContainer from "components/Grid/GridContainer.js";
-import GridItem from "components/Grid/GridItem.js";
-import Button from "components/CustomButtons/Button.js";
-import Instruction from "components/Instruction/Instruction.js";
-import Card from "components/Card/Card.js";
-import CardHeader from "components/Card/CardHeader.js";
-import CardBody from "components/Card/CardBody.js";
-import CustomInput from "components/CustomInput/CustomInput.js";
-import CustomFileInput from "components/CustomFileInput/CustomFileInput.js";
-import InfoArea from "components/InfoArea/InfoArea.js";
-import Accordion from "components/Accordion/Accordion.js";
-import ImageUpload from "components/CustomUpload/ImageUpload.js";
+import GridContainer from "components/Grid/GridContainer.js"
+import GridItem from "components/Grid/GridItem.js"
+import Button from "components/CustomButtons/Button.js"
+import Instruction from "components/Instruction/Instruction.js"
+import Card from "components/Card/Card.js"
+import CardHeader from "components/Card/CardHeader.js"
+import CardBody from "components/Card/CardBody.js"
+import CustomInput from "components/CustomInput/CustomInput.js"
+import CustomFileInput from "components/CustomFileInput/CustomFileInput.js"
+import InfoArea from "components/InfoArea/InfoArea.js"
+import Accordion from "components/Accordion/Accordion.js"
+import ImageUpload from "components/CustomUpload/ImageUpload.js"
 
-import javascriptStyles from "assets/jss/material-kit-pro-react/views/componentsSections/javascriptStyles.js";
+import javascriptStyles from "assets/jss/material-kit-pro-react/views/componentsSections/javascriptStyles.js"
 
-import dg1 from "assets/img/dg1.jpg";
-import dg2 from "assets/img/dg2.jpg";
+import dg1 from "assets/img/dg1.jpg"
+import dg2 from "assets/img/dg2.jpg"
 
-const useStyles = makeStyles(javascriptStyles);
+const useStyles = makeStyles(javascriptStyles)
 
 const Transition = React.forwardRef(function Transition(props, ref) {
-  return <Slide direction="down" ref={ref} {...props} />;
-});
+  return <Slide direction="down" ref={ref} {...props} />
+})
 
-Transition.displayName = "Transition";
+Transition.displayName = "Transition"
 
 export default function SectionJavascript() {
-  const [anchorElLeft, setAnchorElLeft] = React.useState(null);
-  const [anchorElTop, setAnchorElTop] = React.useState(null);
-  const [anchorElBottom, setAnchorElBottom] = React.useState(null);
-  const [anchorElRight, setAnchorElRight] = React.useState(null);
-  const [checked, setChecked] = React.useState([]);
-  const [classicModal, setClassicModal] = React.useState(false);
-  const [noticeModal, setNoticeModal] = React.useState(false);
-  const [smallModal, setSmallModal] = React.useState(false);
-  const [loginModal, setLoginModal] = React.useState(false);
-  const [signupModal, setSignupModal] = React.useState(false);
+  const [anchorElLeft, setAnchorElLeft] = React.useState(null)
+  const [anchorElTop, setAnchorElTop] = React.useState(null)
+  const [anchorElBottom, setAnchorElBottom] = React.useState(null)
+  const [anchorElRight, setAnchorElRight] = React.useState(null)
+  const [checked, setChecked] = React.useState([])
+  const [classicModal, setClassicModal] = React.useState(false)
+  const [noticeModal, setNoticeModal] = React.useState(false)
+  const [smallModal, setSmallModal] = React.useState(false)
+  const [loginModal, setLoginModal] = React.useState(false)
+  const [signupModal, setSignupModal] = React.useState(false)
   const handleToggle = value => {
-    const currentIndex = checked.indexOf(value);
-    const newChecked = [...checked];
+    const currentIndex = checked.indexOf(value)
+    const newChecked = [...checked]
 
     if (currentIndex === -1) {
-      newChecked.push(value);
+      newChecked.push(value)
     } else {
-      newChecked.splice(currentIndex, 1);
+      newChecked.splice(currentIndex, 1)
     }
-    setChecked(newChecked);
-  };
-  const classes = useStyles();
+    setChecked(newChecked)
+  }
+  const classes = useStyles()
   return (
     <div className={classes.section + " cd-section"} id="javascriptComponents">
       <div className={classes.container}>
@@ -102,7 +102,7 @@ export default function SectionJavascript() {
                 <Dialog
                   classes={{
                     root: classes.modalRoot,
-                    paper: classes.modal
+                    paper: classes.modal,
                   }}
                   open={classicModal}
                   TransitionComponent={Transition}
@@ -167,7 +167,7 @@ export default function SectionJavascript() {
                 <Dialog
                   classes={{
                     root: classes.modalRoot,
-                    paper: classes.modal
+                    paper: classes.modal,
                   }}
                   open={noticeModal}
                   TransitionComponent={Transition}
@@ -268,7 +268,7 @@ export default function SectionJavascript() {
                 <Dialog
                   classes={{
                     root: classes.modalRoot,
-                    paper: classes.modal + " " + classes.modalSmall
+                    paper: classes.modal + " " + classes.modalSmall,
                   }}
                   open={smallModal}
                   TransitionComponent={Transition}
@@ -338,7 +338,7 @@ export default function SectionJavascript() {
                 <Dialog
                   classes={{
                     root: classes.modalRoot,
-                    paper: classes.modal + " " + classes.modalLogin
+                    paper: classes.modal + " " + classes.modalLogin,
                   }}
                   open={loginModal}
                   TransitionComponent={Transition}
@@ -412,7 +412,7 @@ export default function SectionJavascript() {
                           <CustomInput
                             id="login-modal-first"
                             formControlProps={{
-                              fullWidth: true
+                              fullWidth: true,
                             }}
                             inputProps={{
                               startAdornment: (
@@ -420,13 +420,13 @@ export default function SectionJavascript() {
                                   <Face className={classes.icon} />
                                 </InputAdornment>
                               ),
-                              placeholder: "First Name..."
+                              placeholder: "First Name...",
                             }}
                           />
                           <CustomInput
                             id="login-modal-email"
                             formControlProps={{
-                              fullWidth: true
+                              fullWidth: true,
                             }}
                             inputProps={{
                               startAdornment: (
@@ -434,13 +434,13 @@ export default function SectionJavascript() {
                                   <Mail className={classes.icon} />
                                 </InputAdornment>
                               ),
-                              placeholder: "Email..."
+                              placeholder: "Email...",
                             }}
                           />
                           <CustomInput
                             id="login-modal-pass"
                             formControlProps={{
-                              fullWidth: true
+                              fullWidth: true,
                             }}
                             inputProps={{
                               startAdornment: (
@@ -450,7 +450,7 @@ export default function SectionJavascript() {
                                   </Icon>
                                 </InputAdornment>
                               ),
-                              placeholder: "Password..."
+                              placeholder: "Password...",
                             }}
                           />
                         </CardBody>
@@ -478,7 +478,7 @@ export default function SectionJavascript() {
                 <Dialog
                   classes={{
                     root: classes.modalRoot,
-                    paper: classes.modal + " " + classes.modalSignup
+                    paper: classes.modal + " " + classes.modalSignup,
                   }}
                   open={signupModal}
                   TransitionComponent={Transition}
@@ -586,7 +586,7 @@ export default function SectionJavascript() {
                             <CustomInput
                               formControlProps={{
                                 fullWidth: true,
-                                className: classes.customFormControlClasses
+                                className: classes.customFormControlClasses,
                               }}
                               inputProps={{
                                 startAdornment: (
@@ -599,13 +599,13 @@ export default function SectionJavascript() {
                                     />
                                   </InputAdornment>
                                 ),
-                                placeholder: "First Name..."
+                                placeholder: "First Name...",
                               }}
                             />
                             <CustomInput
                               formControlProps={{
                                 fullWidth: true,
-                                className: classes.customFormControlClasses
+                                className: classes.customFormControlClasses,
                               }}
                               inputProps={{
                                 startAdornment: (
@@ -618,13 +618,13 @@ export default function SectionJavascript() {
                                     />
                                   </InputAdornment>
                                 ),
-                                placeholder: "Email..."
+                                placeholder: "Email...",
                               }}
                             />
                             <CustomInput
                               formControlProps={{
                                 fullWidth: true,
-                                className: classes.customFormControlClasses
+                                className: classes.customFormControlClasses,
                               }}
                               inputProps={{
                                 startAdornment: (
@@ -639,12 +639,12 @@ export default function SectionJavascript() {
                                     </Icon>
                                   </InputAdornment>
                                 ),
-                                placeholder: "Password..."
+                                placeholder: "Password...",
                               }}
                             />
                             <FormControlLabel
                               classes={{
-                                label: classes.label
+                                label: classes.label,
                               }}
                               control={
                                 <Checkbox
@@ -658,7 +658,7 @@ export default function SectionJavascript() {
                                   }
                                   classes={{
                                     checked: classes.checked,
-                                    root: classes.checkRoot
+                                    root: classes.checkRoot,
                                   }}
                                 />
                               }
@@ -727,18 +727,18 @@ export default function SectionJavascript() {
             </Button>
             <Popover
               classes={{
-                paper: classes.popover
+                paper: classes.popover,
               }}
               open={Boolean(anchorElLeft)}
               anchorEl={anchorElLeft}
               onClose={() => setAnchorElLeft(null)}
               anchorOrigin={{
                 vertical: "center",
-                horizontal: "left"
+                horizontal: "left",
               }}
               transformOrigin={{
                 vertical: "center",
-                horizontal: "right"
+                horizontal: "right",
               }}
             >
               <h3 className={classes.popoverHeader}>Popover on left</h3>
@@ -752,18 +752,18 @@ export default function SectionJavascript() {
             </Button>
             <Popover
               classes={{
-                paper: classes.popover
+                paper: classes.popover,
               }}
               open={Boolean(anchorElTop)}
               anchorEl={anchorElTop}
               onClose={() => setAnchorElTop(null)}
               anchorOrigin={{
                 vertical: "top",
-                horizontal: "center"
+                horizontal: "center",
               }}
               transformOrigin={{
                 vertical: "bottom",
-                horizontal: "center"
+                horizontal: "center",
               }}
             >
               <h3 className={classes.popoverHeader}>Popover on top</h3>
@@ -776,18 +776,18 @@ export default function SectionJavascript() {
             </Button>
             <Popover
               classes={{
-                paper: classes.popover
+                paper: classes.popover,
               }}
               open={Boolean(anchorElBottom)}
               anchorEl={anchorElBottom}
               onClose={() => setAnchorElBottom(null)}
               anchorOrigin={{
                 vertical: "bottom",
-                horizontal: "center"
+                horizontal: "center",
               }}
               transformOrigin={{
                 vertical: "top",
-                horizontal: "center"
+                horizontal: "center",
               }}
             >
               <h3 className={classes.popoverHeader}>Popover on bottom</h3>
@@ -800,18 +800,18 @@ export default function SectionJavascript() {
             </Button>
             <Popover
               classes={{
-                paper: classes.popover
+                paper: classes.popover,
               }}
               open={Boolean(anchorElRight)}
               anchorEl={anchorElRight}
               onClose={() => setAnchorElRight(null)}
               anchorOrigin={{
                 vertical: "center",
-                horizontal: "right"
+                horizontal: "right",
               }}
               transformOrigin={{
                 vertical: "center",
-                horizontal: "left"
+                horizontal: "left",
               }}
             >
               <h3 className={classes.popoverHeader}>Popover on right</h3>
@@ -871,18 +871,18 @@ export default function SectionJavascript() {
                   {
                     title: "Collapsible group Item #1",
                     content:
-                      "Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS."
+                      "Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.",
                   },
                   {
                     title: "Collapsible group Item #2",
                     content:
-                      "Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS."
+                      "Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.",
                   },
                   {
                     title: "Collapsible group Item #3",
                     content:
-                      "Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS."
-                  }
+                      "Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.",
+                  },
                 ]}
               />
             </GridItem>
@@ -915,45 +915,45 @@ export default function SectionJavascript() {
               <h4>Simple Material Input</h4>
               <CustomFileInput
                 formControlProps={{
-                  fullWidth: true
+                  fullWidth: true,
                 }}
                 inputProps={{
-                  placeholder: "Simple chooser..."
+                  placeholder: "Simple chooser...",
                 }}
               />
               <CustomFileInput
                 formControlProps={{
-                  fullWidth: true
+                  fullWidth: true,
                 }}
                 inputProps={{
-                  placeholder: "Single File..."
+                  placeholder: "Single File...",
                 }}
                 endButton={{
                   buttonProps: {
                     round: true,
                     color: "primary",
                     justIcon: true,
-                    fileButton: true
+                    fileButton: true,
                   },
-                  icon: <AttachFile />
+                  icon: <AttachFile />,
                 }}
               />
               <CustomFileInput
                 multiple
                 formControlProps={{
-                  fullWidth: true
+                  fullWidth: true,
                 }}
                 inputProps={{
-                  placeholder: "Multiple File..."
+                  placeholder: "Multiple File...",
                 }}
                 endButton={{
                   buttonProps: {
                     round: true,
                     color: "info",
                     justIcon: true,
-                    fileButton: true
+                    fileButton: true,
                   },
-                  icon: <Layers />
+                  icon: <Layers />,
                 }}
               />
             </GridItem>
@@ -964,5 +964,5 @@ export default function SectionJavascript() {
         </div>
       </div>
     </div>
-  );
+  )
 }

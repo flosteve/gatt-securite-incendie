@@ -1,22 +1,22 @@
-import React from "react";
+import React from "react"
 // nodejs library that concatenates classes
-import classNames from "classnames";
+import classNames from "classnames"
 // react components for routing our app without refresh
-import { Link } from "react-router-dom";
+import { Link } from "react-router-dom"
 // core components
-import GridContainer from "components/Grid/GridContainer.js";
-import GridItem from "components/Grid/GridItem.js";
+import GridContainer from "components/Grid/GridContainer.js"
+import GridItem from "components/Grid/GridItem.js"
 // core components
-import Button from "components/CustomButtons/Button.js";
+import Button from "components/CustomButtons/Button.js"
 // @material-ui/core components
-import { makeStyles } from "@material-ui/core/styles";
+import { makeStyles } from "@material-ui/core/styles"
 
-import sectionsStyle from "assets/jss/material-kit-pro-react/views/presentationSections/sectionsStyle.js";
+import sectionsStyle from "assets/jss/material-kit-pro-react/views/presentationSections/sectionsStyle.js"
 
 // images array used in rendering a function for this section
-import imgs from "assets/img/assets-for-demo/sections/imgs.js";
+import imgs from "assets/img/assets-for-demo/sections/imgs.js"
 
-const useStyles = makeStyles(sectionsStyle);
+const useStyles = makeStyles(sectionsStyle)
 
 export default function SectionSections() {
   const renderContainerFluid = cssClass => {
@@ -38,13 +38,13 @@ export default function SectionSections() {
                   key={el[index]}
                 />
               </GridItem>
-            );
+            )
           })}
         </GridContainer>
-      );
-    });
-  };
-  const classes = useStyles();
+      )
+    })
+  }
+  const classes = useStyles()
   return (
     <div className={classes.sectionSections}>
       <div className={classes.container}>
@@ -79,5 +79,5 @@ export default function SectionSections() {
         {renderContainerFluid(classes.photoGallery)}
       </div>
     </div>
-  );
+  )
 }

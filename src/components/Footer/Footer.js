@@ -41,8 +41,7 @@ export default function Footer(props) {
           " "
         )}
         {content}
-        <div className={classes.clearFix} />© {new Date().getFullYear()}, Tout
-        droits réservés - Gatt Sécurité Incendie
+        <div className={classes.clearFix} />
       </div>
     </footer>
   )

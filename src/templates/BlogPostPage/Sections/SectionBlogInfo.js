@@ -1,23 +1,23 @@
-import React from "react";
+import React from "react"
 // @material-ui/core components
-import { makeStyles } from "@material-ui/core/styles";
+import { makeStyles } from "@material-ui/core/styles"
 // @material-ui/icons
 // core components
-import GridContainer from "components/Grid/GridContainer.js";
-import GridItem from "components/Grid/GridItem.js";
-import Badge from "components/Badge/Badge.js";
-import Button from "components/CustomButtons/Button.js";
-import Card from "components/Card/Card.js";
-import CardAvatar from "components/Card/CardAvatar.js";
+import GridContainer from "components/Grid/GridContainer.js"
+import GridItem from "components/Grid/GridItem.js"
+import Badge from "components/Badge/Badge.js"
+import Button from "components/CustomButtons/Button.js"
+import Card from "components/Card/Card.js"
+import CardAvatar from "components/Card/CardAvatar.js"
 
-import profileImage from "assets/img/faces/card-profile1-square.jpg";
+import profileImage from "assets/img/faces/card-profile1-square.jpg"
 
-import sectionBlogInfoStyle from "assets/jss/material-kit-pro-react/views/blogPostSections/sectionBlogInfoStyle.js";
+import sectionBlogInfoStyle from "assets/jss/material-kit-pro-react/views/blogPostSections/sectionBlogInfoStyle.js"
 
-const useStyles = makeStyles(sectionBlogInfoStyle);
+const useStyles = makeStyles(sectionBlogInfoStyle)
 
 export default function SectionBlogInfo() {
-  const classes = useStyles();
+  const classes = useStyles()
   return (
     <div className={classes.section}>
       <GridContainer justify="center">
@@ -69,5 +69,5 @@ export default function SectionBlogInfo() {
         </GridItem>
       </GridContainer>
     </div>
-  );
+  )
 }

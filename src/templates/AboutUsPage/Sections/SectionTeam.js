@@ -1,28 +1,28 @@
-import React from "react";
+import React from "react"
 // nodejs library that concatenates classes
-import classNames from "classnames";
+import classNames from "classnames"
 // core components
-import GridContainer from "components/Grid/GridContainer.js";
-import GridItem from "components/Grid/GridItem.js";
-import Card from "components/Card/Card.js";
-import CardAvatar from "components/Card/CardAvatar.js";
-import CardBody from "components/Card/CardBody.js";
-import CardFooter from "components/Card/CardFooter.js";
-import Button from "components/CustomButtons/Button.js";
+import GridContainer from "components/Grid/GridContainer.js"
+import GridItem from "components/Grid/GridItem.js"
+import Card from "components/Card/Card.js"
+import CardAvatar from "components/Card/CardAvatar.js"
+import CardBody from "components/Card/CardBody.js"
+import CardFooter from "components/Card/CardFooter.js"
+import Button from "components/CustomButtons/Button.js"
 // @material-ui/core components
-import { makeStyles } from "@material-ui/core/styles";
+import { makeStyles } from "@material-ui/core/styles"
 
-import teamStyle from "assets/jss/material-kit-pro-react/views/aboutUsSections/teamStyle.js";
+import teamStyle from "../../../assets/jss/material-kit-pro-react/views/aboutUsSections/teamStyle.js"
 
-import FaceMarc from "assets/img/faces/marc.jpg";
-import FaceChristian from "assets/img/faces/christian.jpg";
-import FaceKendall from "assets/img/faces/kendall.jpg";
-import FaceAvatar from "assets/img/faces/avatar.jpg";
+import FaceMarc from "assets/img/faces/marc.jpg"
+import FaceChristian from "assets/img/faces/christian.jpg"
+import FaceKendall from "assets/img/faces/kendall.jpg"
+import FaceAvatar from "assets/img/faces/avatar.jpg"
 
-const useStyles = makeStyles(teamStyle);
+const useStyles = makeStyles(teamStyle)
 
 export default function SectionTeam() {
-  const classes = useStyles();
+  const classes = useStyles()
   return (
     <div className={classes.team}>
       <GridContainer>
@@ -166,5 +166,5 @@ export default function SectionTeam() {
         </GridItem>
       </GridContainer>
     </div>
-  );
+  )
 }

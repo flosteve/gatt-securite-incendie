@@ -1,44 +1,44 @@
-import React from "react";
+import React from "react"
 // nodejs library that concatenates classes
-import classNames from "classnames";
+import classNames from "classnames"
 // react component for creating beautiful carousel
-import Carousel from "react-slick";
+import Carousel from "react-slick"
 // @material-ui/core components
-import { makeStyles } from "@material-ui/core/styles";
-import List from "@material-ui/core/List";
-import ListItem from "@material-ui/core/ListItem";
+import { makeStyles } from "@material-ui/core/styles"
+import List from "@material-ui/core/List"
+import ListItem from "@material-ui/core/ListItem"
 // @material-ui/icons
-import Share from "@material-ui/icons/Share";
-import ShoppingCart from "@material-ui/icons/ShoppingCart";
+import Share from "@material-ui/icons/Share"
+import ShoppingCart from "@material-ui/icons/ShoppingCart"
 // core components
-import Header from "components/Header/Header.js";
-import Button from "components/CustomButtons/Button.js";
-import GridContainer from "components/Grid/GridContainer.js";
-import GridItem from "components/Grid/GridItem.js";
-import Card from "components/Card/Card.js";
-import CardBody from "components/Card/CardBody.js";
-import CustomInput from "components/CustomInput/CustomInput.js";
+import Header from "components/Header/Header.js"
+import Button from "components/CustomButtons/Button.js"
+import GridContainer from "components/Grid/GridContainer.js"
+import GridItem from "components/Grid/GridItem.js"
+import Card from "components/Card/Card.js"
+import CardBody from "components/Card/CardBody.js"
+import CustomInput from "components/CustomInput/CustomInput.js"
 
-import headersStyle from "assets/jss/material-kit-pro-react/views/sectionsSections/headersStyle.js";
+import headersStyle from "assets/jss/material-kit-pro-react/views/sectionsSections/headersStyle.js"
 
-import bg12 from "assets/img/bg12.jpg";
-import office2 from "assets/img/examples/office2.jpg";
-import dg1 from "assets/img/dg1.jpg";
-import dg2 from "assets/img/dg2.jpg";
-import dg3 from "assets/img/dg3.jpg";
+import bg12 from "assets/img/bg12.jpg"
+import office2 from "assets/img/examples/office2.jpg"
+import dg1 from "assets/img/dg1.jpg"
+import dg2 from "assets/img/dg2.jpg"
+import dg3 from "assets/img/dg3.jpg"
 
-const useStyles = makeStyles(headersStyle);
+const useStyles = makeStyles(headersStyle)
 
 export default function SectionHeaders({ ...rest }) {
-  const classes = useStyles();
+  const classes = useStyles()
   const settings = {
     dots: true,
     infinite: true,
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
-    autoplay: false
-  };
+    autoplay: false,
+  }
   return (
     // we've set the className to cd-section so we can make smooth scroll to it
     <div className="cd-section" {...rest}>
@@ -295,11 +295,11 @@ export default function SectionHeaders({ ...rest }) {
                           <CustomInput
                             id="name"
                             inputProps={{
-                              placeholder: "Company name"
+                              placeholder: "Company name",
                             }}
                             formControlProps={{
                               fullWidth: true,
-                              className: classes.formControl
+                              className: classes.formControl,
                             }}
                           />
                         </GridItem>
@@ -307,11 +307,11 @@ export default function SectionHeaders({ ...rest }) {
                           <CustomInput
                             id="email"
                             inputProps={{
-                              placeholder: "Company email"
+                              placeholder: "Company email",
                             }}
                             formControlProps={{
                               fullWidth: true,
-                              className: classes.formControl
+                              className: classes.formControl,
                             }}
                           />
                         </GridItem>
@@ -321,11 +321,11 @@ export default function SectionHeaders({ ...rest }) {
                             inputProps={{
                               placeholder: "Company password",
                               type: "password",
-                              autoComplete: "off"
+                              autoComplete: "off",
                             }}
                             formControlProps={{
                               fullWidth: true,
-                              className: classes.formControl
+                              className: classes.formControl,
                             }}
                           />
                         </GridItem>
@@ -522,5 +522,5 @@ export default function SectionHeaders({ ...rest }) {
       </div>
       {/* HEADER 3 END */}
     </div>
-  );
+  )
 }

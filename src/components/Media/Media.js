@@ -1,14 +1,14 @@
-import React from "react";
+import React from "react"
 // nodejs library to set properties for components
-import PropTypes from "prop-types";
+import PropTypes from "prop-types"
 // @material-ui/core components
-import { makeStyles } from "@material-ui/core/styles";
+import { makeStyles } from "@material-ui/core/styles"
 // @material-ui/icons
 // core components
 
-import styles from "assets/jss/material-kit-pro-react/components/mediaStyle.js";
+import styles from "assets/jss/material-kit-pro-react/components/mediaStyle.js"
 
-const useStyles = makeStyles(styles);
+const useStyles = makeStyles(styles)
 
 export default function Media(props) {
   const {
@@ -20,8 +20,8 @@ export default function Media(props) {
     footer,
     innerMedias,
     ...rest
-  } = props;
-  const classes = useStyles();
+  } = props
+  const classes = useStyles()
   return (
     <div {...rest} className={classes.media}>
       <a href={avatarLink} className={classes.mediaLink}>
@@ -37,18 +37,18 @@ export default function Media(props) {
         <div className={classes.mediaFooter}>{footer}</div>
         {innerMedias !== undefined
           ? innerMedias.map(prop => {
-              return prop;
+              return prop
             })
           : null}
       </div>
     </div>
-  );
+  )
 }
 
 Media.defaultProps = {
   avatarLink: "#pablo",
-  avatarAlt: "..."
-};
+  avatarAlt: "...",
+}
 
 Media.propTypes = {
   avatarLink: PropTypes.string,
@@ -57,5 +57,5 @@ Media.propTypes = {
   title: PropTypes.node,
   body: PropTypes.node,
   footer: PropTypes.node,
-  innerMedias: PropTypes.arrayOf(PropTypes.object)
-};
+  innerMedias: PropTypes.arrayOf(PropTypes.object),
+}

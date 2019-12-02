@@ -1,43 +1,43 @@
-import React from "react";
+import React from "react"
 // react component for creating beautiful carousel
-import Carousel from "react-slick";
+import Carousel from "react-slick"
 // @material-ui/core components
-import { makeStyles } from "@material-ui/core/styles";
+import { makeStyles } from "@material-ui/core/styles"
 // @material-ui/icons
-import FormatQuote from "@material-ui/icons/FormatQuote";
-import Star from "@material-ui/icons/Star";
+import FormatQuote from "@material-ui/icons/FormatQuote"
+import Star from "@material-ui/icons/Star"
 // core components
-import GridContainer from "components/Grid/GridContainer.js";
-import GridItem from "components/Grid/GridItem.js";
-import Card from "components/Card/Card.js";
-import CardBody from "components/Card/CardBody.js";
-import CardFooter from "components/Card/CardFooter.js";
-import CardAvatar from "components/Card/CardAvatar.js";
-import Muted from "components/Typography/Muted.js";
-import Warning from "components/Typography/Warning.js";
+import GridContainer from "components/Grid/GridContainer.js"
+import GridItem from "components/Grid/GridItem.js"
+import Card from "components/Card/Card.js"
+import CardBody from "components/Card/CardBody.js"
+import CardFooter from "components/Card/CardFooter.js"
+import CardAvatar from "components/Card/CardAvatar.js"
+import Muted from "components/Typography/Muted.js"
+import Warning from "components/Typography/Warning.js"
 
-import testimonialsStyle from "assets/jss/material-kit-pro-react/views/sectionsSections/testimonialsStyle.js";
+import testimonialsStyle from "assets/jss/material-kit-pro-react/views/sectionsSections/testimonialsStyle.js"
 
-import dg2 from "assets/img/dg2.jpg";
-import cardProfile1Square from "assets/img/faces/card-profile1-square.jpg";
-import cardProfile2Square from "assets/img/faces/card-profile2-square.jpg";
-import cardProfile4Square from "assets/img/faces/card-profile4-square.jpg";
-import cardProfile6Square from "assets/img/faces/card-profile6-square.jpg";
-import kendall from "assets/img/faces/kendall.jpg";
-import christian from "assets/img/faces/christian.jpg";
+import dg2 from "assets/img/dg2.jpg"
+import cardProfile1Square from "assets/img/faces/card-profile1-square.jpg"
+import cardProfile2Square from "assets/img/faces/card-profile2-square.jpg"
+import cardProfile4Square from "assets/img/faces/card-profile4-square.jpg"
+import cardProfile6Square from "assets/img/faces/card-profile6-square.jpg"
+import kendall from "assets/img/faces/kendall.jpg"
+import christian from "assets/img/faces/christian.jpg"
 
-const useStyles = makeStyles(testimonialsStyle);
+const useStyles = makeStyles(testimonialsStyle)
 
 export default function SectionTestimonials({ ...rest }) {
-  const classes = useStyles();
+  const classes = useStyles()
   const settings = {
     dots: true,
     infinite: true,
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
-    autoplay: false
-  };
+    autoplay: false,
+  }
   return (
     <div className="cd-section" {...rest}>
       {/* Testimonials 1 START */}
@@ -321,5 +321,5 @@ export default function SectionTestimonials({ ...rest }) {
       </div>
       {/* Testimonials 3 END */}
     </div>
-  );
+  )
 }

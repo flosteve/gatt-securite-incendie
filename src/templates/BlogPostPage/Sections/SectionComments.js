@@ -1,27 +1,27 @@
-import React from "react";
+import React from "react"
 // @material-ui/core components
-import { makeStyles } from "@material-ui/core/styles";
-import Tooltip from "@material-ui/core/Tooltip";
+import { makeStyles } from "@material-ui/core/styles"
+import Tooltip from "@material-ui/core/Tooltip"
 // @material-ui/icons
-import Reply from "@material-ui/icons/Reply";
-import Favorite from "@material-ui/icons/Favorite";
+import Reply from "@material-ui/icons/Reply"
+import Favorite from "@material-ui/icons/Favorite"
 // core components
-import GridContainer from "components/Grid/GridContainer.js";
-import GridItem from "components/Grid/GridItem.js";
-import Media from "components/Media/Media.js";
-import Button from "components/CustomButtons/Button.js";
-import CustomInput from "components/CustomInput/CustomInput.js";
+import GridContainer from "components/Grid/GridContainer.js"
+import GridItem from "components/Grid/GridItem.js"
+import Media from "components/Media/Media.js"
+import Button from "components/CustomButtons/Button.js"
+import CustomInput from "components/CustomInput/CustomInput.js"
 
-import profile4 from "assets/img/faces/card-profile4-square.jpg";
-import profile1 from "assets/img/faces/card-profile1-square.jpg";
-import profile6 from "assets/img/faces/card-profile6-square.jpg";
+import profile4 from "assets/img/faces/card-profile4-square.jpg"
+import profile1 from "assets/img/faces/card-profile1-square.jpg"
+import profile6 from "assets/img/faces/card-profile6-square.jpg"
 
-import sectionCommentsStyle from "assets/jss/material-kit-pro-react/views/blogPostSections/sectionCommentsStyle.js";
+import sectionCommentsStyle from "assets/jss/material-kit-pro-react/views/blogPostSections/sectionCommentsStyle.js"
 
-const useStyles = makeStyles(sectionCommentsStyle);
+const useStyles = makeStyles(sectionCommentsStyle)
 
 export default function SectionComments() {
-  const classes = useStyles();
+  const classes = useStyles()
   return (
     <div className={classes.section}>
       <GridContainer justify="center">
@@ -149,7 +149,7 @@ export default function SectionComments() {
                       </Button>
                     </Tooltip>
                   }
-                />
+                />,
               ]}
             />
           </div>
@@ -161,11 +161,11 @@ export default function SectionComments() {
                 labelText=" Write some nice stuff or nothing..."
                 id="nice"
                 formControlProps={{
-                  fullWidth: true
+                  fullWidth: true,
                 }}
                 inputProps={{
                   multiline: true,
-                  rows: 5
+                  rows: 5,
                 }}
               />
             }
@@ -178,5 +178,5 @@ export default function SectionComments() {
         </GridItem>
       </GridContainer>
     </div>
-  );
+  )
 }
