@@ -23,6 +23,14 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
+      resolve: "gatsby-source-graphql",
+      options: {
+        typeName: "WPGraphQL",
+        fieldName: "wpgraphql",
+        url: `https://gattsecuriteincendie.com/graphql`,
+      },
+    },
+    {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: "Gatt Sécurité Incendie",
@@ -43,7 +51,7 @@ module.exports = {
           fonts: {
             google: [
               {
-                family: `Montserrat`,
+                family: `Poppins`,
                 variants: [`300`, `400`, `500`, "600", "700"],
               },
               {

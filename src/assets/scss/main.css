@@ -9,6 +9,15 @@
 .formation-features {
   margin: 0;
 }
+.formation-features h3 {
+  padding-top: 1rem;
+}
+.formation-features svg, .formation-features li div {
+  margin-bottom: 1rem;
+}
+.formation-features svg {
+  color: #f44336;
+}
 
 .contact-page-gsi .contactHome {
   background: white !important;
@@ -20,7 +29,7 @@
   color: inherit;
 }
 .contact-page-gsi .contactHome svg {
-  color: #e53935;
+  color: #f44336;
 }
 
 .parallax {
@@ -35,7 +44,7 @@ footer {
   padding: 0 2rem;
 }
 footer a:hover {
-  color: #e53935 !important;
+  color: #f44336 !important;
 }
 
 h1 {
@@ -48,6 +57,10 @@ h1 {
 .page-gsi h2 {
   color: #3C4858;
   text-transform: uppercase;
+}
+.page-gsi button.page-tooltip {
+  display: flex;
+  margin: 1rem auto;
 }
 
 @media (max-width: 812px) and (orientation: landscape) {

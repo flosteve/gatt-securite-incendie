@@ -80,7 +80,7 @@ const Formations = () => {
               >
                 <CardBody background>
                   <h6 className={classes.category}>Hydraulique</h6>
-                  <Link to="/formations/hydraulique">
+                  <Link to="/formations/la-formation-hydraulique">
                     <h3 className={classes.cardTitle}>
                       La Formation Hydraulique
                     </h3>
@@ -90,7 +90,7 @@ const Formations = () => {
                     consectetur adipisicing elit. Ad adipisci et illo maiores
                     nihil sunt. Ad omnis qui saepe vel.
                   </p>
-                  <Link to={"/formations/hydraulique"}>
+                  <Link to={"/formations/la-formation-hydraulique"}>
                     <Button round color="danger">
                       <LibraryBooksIcon /> Voir le détail
                     </Button>
@@ -106,7 +106,7 @@ const Formations = () => {
               >
                 <CardBody background>
                   <h6 className={classes.category}>Évacuation</h6>
-                  <Link to="/formations/evacuation">
+                  <Link to="/formations/la-formation-evacuation">
                     <h3 className={classes.cardTitle}>
                       La Formation Évacuation
                     </h3>
@@ -116,7 +116,7 @@ const Formations = () => {
                     consectetur adipisicing elit. Ad adipisci et illo maiores
                     nihil sunt. Ad omnis qui saepe vel.
                   </p>
-                  <Link to={"/formations/evacuation"}>
+                  <Link to={"/formations/la-formation-evacuation"}>
                     <Button round color="danger">
                       <LibraryBooksIcon /> Voir le détail
                     </Button>
@@ -132,7 +132,7 @@ const Formations = () => {
               >
                 <CardBody background>
                   <h6 className={classes.category}>ESI</h6>
-                  <Link to="/formations/esi">
+                  <Link to="/formations/la-formation-esi">
                     <h3 className={classes.cardTitle}>La Formation ESI</h3>
                   </Link>
                   <p className={classes.category}>
@@ -140,7 +140,7 @@ const Formations = () => {
                     consectetur adipisicing elit. Ad adipisci et illo maiores
                     nihil sunt. Ad omnis qui saepe vel.
                   </p>
-                  <Link to={"/formations/esi"}>
+                  <Link to={"/formations/la-formation-esi"}>
                     <Button round color="danger">
                       <LibraryBooksIcon /> Voir le détail
                     </Button>
@@ -156,7 +156,7 @@ const Formations = () => {
               >
                 <CardBody background>
                   <h6 className={classes.category}>EPI</h6>
-                  <Link to="/formations/epi">
+                  <Link to="/formations/la-formation-epi">
                     <h3 className={classes.cardTitle}>La Formation EPI</h3>
                   </Link>
                   <p className={classes.category}>
@@ -164,7 +164,7 @@ const Formations = () => {
                     consectetur adipisicing elit. Ad adipisci et illo maiores
                     nihil sunt. Ad omnis qui saepe vel.
                   </p>
-                  <Link to={"/formations/epi"}>
+                  <Link to={"/formations/la-formation-epi"}>
                     <Button round color="danger">
                       <LibraryBooksIcon /> Voir le détail
                     </Button>
@@ -180,7 +180,7 @@ const Formations = () => {
               >
                 <CardBody background>
                   <h6 className={classes.category}>Extincteur</h6>
-                  <Link to="/formations/manipulation-extincteur">
+                  <Link to="/formations/formation-manipulation-des-extincteurs">
                     <h3 className={classes.cardTitle}>
                       La Formation manipulation des extincteurs
                     </h3>
@@ -190,7 +190,9 @@ const Formations = () => {
                     consectetur adipisicing elit. Ad adipisci et illo maiores
                     nihil sunt. Ad omnis qui saepe vel.
                   </p>
-                  <Link to={"/formations/manipulation-extincteur"}>
+                  <Link
+                    to={"/formations/formation-manipulation-des-extincteurs"}
+                  >
                     <Button round color="danger">
                       <LibraryBooksIcon /> Voir le détail
                     </Button>

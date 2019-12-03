@@ -1,3 +1,5 @@
+@import "color";
+
 @import "pages/formations";
 @import "pages/singleFormation";
 @import "pages/contact";
@@ -17,7 +19,7 @@ footer {
   padding: 0 2rem;
   a {
     &:hover {
-      color: #e53935 !important;
+      color: $primaryDark !important;
     }
   }
 
@@ -32,6 +34,10 @@ h1 {
   h2 {
     color: #3C4858;
     text-transform: uppercase;
+  }
+  button.page-tooltip {
+      display: flex;
+      margin: 1rem auto;
   }
 }
 

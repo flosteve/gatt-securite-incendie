@@ -1,46 +1,32 @@
 import React from "react"
 
-import Layout from "../components/Layout/Layout"
-import Seo from "../components/Seo/Seo"
-import Parallax from "../components/Parallax/Parallax"
-import { makeStyles, Paper } from "@material-ui/core"
-import { graphql, useStaticQuery } from "gatsby"
-import aboutUsStyle from "../assets/jss/material-kit-pro-react/views/aboutUsStyle"
+import Layout from "../../components/Layout/Layout"
+import Seo from "../../components/Seo/Seo"
+import Parallax from "../../components/Parallax/Parallax"
+import { makeStyles, Paper, Box } from "@material-ui/core"
+import { graphql } from "gatsby"
+import aboutUsStyle from "../../assets/jss/material-kit-pro-react/views/aboutUsStyle"
 import classNames from "classnames"
-import GridContainer from "../components/Grid/GridContainer"
-import GridItem from "../components/Grid/GridItem"
-import Card from "../components/Card/Card.js"
-import CardBody from "../components/Card/CardBody.js"
-import CardFooter from "../components/Card/CardFooter.js"
-import Button from "../components/CustomButtons/Button.js"
+import GridContainer from "../../components/Grid/GridContainer"
+import GridItem from "../../components/Grid/GridItem"
+import Card from "../../components/Card/Card.js"
+import CardBody from "../../components/Card/CardBody.js"
 
-import SectionContacts from "../templates/SectionsPage/Sections/SectionContacts"
+import SectionContacts from "../../templates/SectionsPage/Sections/SectionContacts"
 import Img from "gatsby-image"
 
-const useStyles = makeStyles(aboutUsStyle)
-const Audit = () => {
-  const data = useStaticQuery(graphql`
-    query SinglePostFormation {
-      site {
-        siteMetadata {
-          title
-          description
-        }
-      }
-      file(relativePath: { eq: "formation.jpeg" }) {
-        childImageSharp {
-          fluid(maxWidth: 1280, maxHeight: 900, quality: 100) {
-            ...GatsbyImageSharpFluid_withWebp_tracedSVG
-          }
-        }
-      }
-    }
-  `)
+import TrackChangesIcon from "@material-ui/icons/TrackChanges"
+import SchoolIcon from "@material-ui/icons/School"
+import CheckCircleIcon from "@material-ui/icons/CheckCircle"
+import AvTimerIcon from "@material-ui/icons/AvTimer"
 
+const useStyles = makeStyles(aboutUsStyle)
+
+const Audit = ({ data }) => {
   const classes = useStyles()
   return (
     <Layout>
-      <Seo title="Single Formation" />
+      <Seo title={data.wpgraphql.formations.nodes[0].title} />
       <Parallax
         image={data.file.childImageSharp.fluid.src}
         className="parallax"
@@ -70,7 +56,12 @@ const Audit = () => {
               <GridContainer>
                 <GridItem xs={12}>
                   <Paper elevation={20}>
-                    <Img fluid={data.file.childImageSharp.fluid} />
+                    <Img
+                      fluid={
+                        data.wpgraphql.formations.nodes[0].formations
+                          .imageFormation.imageFile.childImageSharp.fluid
+                      }
+                    />
                   </Paper>
                 </GridItem>
                 <GridItem
@@ -79,17 +70,33 @@ const Audit = () => {
                     classes.mlAuto + " formation-description " + classes.mrAuto
                   }
                 >
-                  <h2>Titre de la formation</h2>
-                  <p>
-                    PROGRAMME THÉORIQUE: – La réglementation – Le feu : causes
-                    et conséquences d’un incendie – Le triangle du feu – Les
-                    classes de feux – L’alarme – Information sur vos consignes
-                    de sécurité interne – Les différents types d’extincteurs et
-                    leurs rôles – L’effet des produits extincteurs sur un feu –
-                    Les règles de sécurité sur les extincteurs – Distance
-                    d’attaque du feu PROGRAMME PRATIQUE: Apprentissage de
-                    l’extinction de divers feux par la mise en situation.
-                  </p>
+                  <h2>{data.wpgraphql.formations.nodes[0].title}</h2>
+                  {data.wpgraphql.formations.nodes[0].formations
+                    .programmeTheorique && (
+                    <Box>
+                      <h3>Programme Théorique</h3>
+                      <p
+                        dangerouslySetInnerHTML={{
+                          __html:
+                            data.wpgraphql.formations.nodes[0].formations
+                              .programmeTheorique,
+                        }}
+                      />
+                    </Box>
+                  )}
+                  {data.wpgraphql.formations.nodes[0].formations
+                    .programmePratique && (
+                    <Box>
+                      <h3>Programme Pratique</h3>
+                      <p
+                        dangerouslySetInnerHTML={{
+                          __html:
+                            data.wpgraphql.formations.nodes[0].formations
+                              .programmePratique || "",
+                        }}
+                      />
+                    </Box>
+                  )}
                 </GridItem>
               </GridContainer>
             </GridItem>
@@ -102,23 +109,58 @@ const Audit = () => {
                         Caractéristiques
                       </h3>
                       <ul>
-                        <li>
-                          <b>Objectifs: </b>
-                          Permettre à l’ensemble du personnel de manipuler les
-                          extincteurs à feu
-                        </li>
-                        <li>
-                          <b>Pédagogie: </b> La méthode utilisée est basée
-                          essentiellement sur le visuel et la mémoire, avec la
-                          remise d’un support pédagogique spécifique.
-                        </li>
-                        <li>
-                          <b>Validation: </b> Attestation de formation
-                        </li>
-                        <li>
-                          <b>Durée: </b> De 2 heures à 1/2 journée suivant le
-                          nombre de participants
-                        </li>
+                        {data.wpgraphql.formations.nodes[0].formations
+                          .objectifs && (
+                          <li>
+                            <TrackChangesIcon />
+                            <div
+                              dangerouslySetInnerHTML={{
+                                __html:
+                                  data.wpgraphql.formations.nodes[0].formations
+                                    .objectifs,
+                              }}
+                            />
+                          </li>
+                        )}
+                        {data.wpgraphql.formations.nodes[0].formations
+                          .pedagogie && (
+                          <li>
+                            <SchoolIcon />
+                            <div
+                              dangerouslySetInnerHTML={{
+                                __html:
+                                  data.wpgraphql.formations.nodes[0].formations
+                                    .pedagogie,
+                              }}
+                            />
+                          </li>
+                        )}
+                        {data.wpgraphql.formations.nodes[0].formations
+                          .validation && (
+                          <li>
+                            <CheckCircleIcon />
+                            <div
+                              dangerouslySetInnerHTML={{
+                                __html:
+                                  data.wpgraphql.formations.nodes[0].formations
+                                    .validation,
+                              }}
+                            />
+                          </li>
+                        )}
+                        {data.wpgraphql.formations.nodes[0].formations
+                          .duree && (
+                          <li>
+                            <AvTimerIcon />
+                            <div
+                              dangerouslySetInnerHTML={{
+                                __html:
+                                  data.wpgraphql.formations.nodes[0].formations
+                                    .duree || "",
+                              }}
+                            />
+                          </li>
+                        )}
                       </ul>
                     </CardBody>
                   </Card>
@@ -134,3 +176,43 @@ const Audit = () => {
 }
 
 export default Audit
+
+export const data = graphql`
+  query SinglePostFormation($id: Int!) {
+    file(relativePath: { eq: "formation.jpeg" }) {
+      childImageSharp {
+        fluid(maxWidth: 1280, maxHeight: 900, quality: 100) {
+          ...GatsbyImageSharpFluid_withWebp_tracedSVG
+        }
+      }
+    }
+    wpgraphql {
+      formations(where: { id: $id }) {
+        nodes {
+          title
+          slug
+          formationId
+          formations {
+            duree
+            fieldGroupName
+            objectifs
+            pedagogie
+            programmePratique
+            programmeTheorique
+            validation
+            imageFormation {
+              sourceUrl
+              imageFile {
+                childImageSharp {
+                  fluid(maxWidth: 1280, maxHeight: 900, quality: 100) {
+                    ...GatsbyImageSharpFluid_withWebp_tracedSVG
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+`
