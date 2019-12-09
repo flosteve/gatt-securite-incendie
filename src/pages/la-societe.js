@@ -12,18 +12,29 @@ import Seo from '../components/Seo/Seo';
 import Parallax from '../components/Parallax/Parallax';
 import GridContainer from '../components/Grid/GridContainer';
 import GridItem from '../components/Grid/GridItem';
-import SectionContacts from '../templates/SectionsPage/Sections/SectionContacts';
 /*
 Style
  */
 import aboutUsStyle from '../assets/jss/material-kit-pro-react/views/aboutUsStyle';
+import styles from '../assets/jss/material-kit-pro-react/views/componentsSections/preFooter.js';
+
 import classNames from 'classnames';
+import { GatsbyLink } from 'gatsby-theme-material-ui';
+import Button from '../components/CustomButtons/Button';
 
 const useStyles = makeStyles(aboutUsStyle);
+const useStyles2 = makeStyles(styles);
 
 const Societe = () => {
     const data = useStaticQuery(graphql`
         query Societe {
+            file(relativePath: { eq: "contact_gsi.jpg" }) {
+                childImageSharp {
+                    fluid(maxWidth: 1600, maxHeight: 1067, quality: 100) {
+                        ...GatsbyImageSharpFluid_withWebp_tracedSVG
+                    }
+                }
+            }
             wpgraphql {
                 pageBy(pageId: 117) {
                     banniere {
@@ -34,7 +45,7 @@ const Societe = () => {
                                 childImageSharp {
                                     fluid(
                                         maxWidth: 1600
-                                        maxHeight: 900
+                                        maxHeight: 1200
                                         quality: 100
                                     ) {
                                         ...GatsbyImageSharpFluid_withWebp_tracedSVG
@@ -49,24 +60,11 @@ const Societe = () => {
                     }
                 }
             }
-
-            site {
-                siteMetadata {
-                    title
-                    description
-                }
-            }
-            file(relativePath: { eq: "banner_home_gsi.jpeg" }) {
-                childImageSharp {
-                    fluid(maxWidth: 1600, maxHeight: 900, quality: 100) {
-                        ...GatsbyImageSharpFluid_withWebp_tracedSVG
-                    }
-                }
-            }
         }
     `);
 
     const classes = useStyles();
+    const classesPrefooter = useStyles2();
 
     return (
         <Layout>
@@ -121,7 +119,47 @@ const Societe = () => {
                         </GridItem>
                     </GridContainer>
                 </div>
-                <SectionContacts />
+                <div
+                    className={classNames(
+                        classesPrefooter.subscribeLine,
+                        classesPrefooter.subscribeLineImage
+                    )}
+                    style={{
+                        backgroundImage: `url(${data.file.childImageSharp.fluid.src})`,
+                    }}
+                >
+                    <div className={`prefooter ${classesPrefooter.container}`}>
+                        <GridContainer>
+                            <GridItem
+                                xs={12}
+                                sm={6}
+                                md={6}
+                                className={classNames(
+                                    classesPrefooter.mlAuto,
+                                    classesPrefooter.mrAuto
+                                )}
+                            >
+                                <div className={classes.textCenter}>
+                                    <h2 className={classesPrefooter.title}>
+                                        Contact
+                                    </h2>
+                                    <p>
+                                        Besoin d'un produit ? D'une formation ?
+                                        D'un plan ? Ou simplement une question ?
+                                        Nous serons ravis de vous aider.
+                                    </p>
+                                </div>
+                                <div className="contact-pre-footer">
+                                    <GatsbyLink to="/contact">
+                                        <Button color="danger">
+                                            Contactez-nous
+                                        </Button>
+                                    </GatsbyLink>
+                                </div>
+                            </GridItem>
+                        </GridContainer>
+                    </div>
+                </div>
             </div>
         </Layout>
     );
