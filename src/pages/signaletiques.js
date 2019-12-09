@@ -1,96 +1,243 @@
-import React from "react"
+/*
+Core
+ */
+import React from 'react';
+import {
+    makeStyles,
+    Slide,
+    Dialog,
+    DialogActions,
+    DialogContent,
+    DialogContentText,
+    DialogTitle,
+    Box,
+} from '@material-ui/core';
+import { graphql, useStaticQuery } from 'gatsby';
+/*
+Components & Templates
+ */
+import Layout from '../components/Layout/Layout';
+import Seo from '../components/Seo/Seo';
+import Parallax from '../components/Parallax/Parallax';
+import GridContainer from '../components/Grid/GridContainer';
+import GridItem from '../components/Grid/GridItem';
+import Button from '../components/CustomButtons/Button';
+/*
+Style
+ */
+import aboutUsStyle from '../assets/jss/material-kit-pro-react/views/aboutUsStyle';
+import styles from '../assets/jss/material-kit-pro-react/views/componentsSections/preFooter.js';
 
-import Layout from "../components/Layout/Layout"
-import Seo from "../components/Seo/Seo"
-import Parallax from "../components/Parallax/Parallax"
-import { makeStyles } from "@material-ui/core"
-import { graphql, useStaticQuery } from "gatsby"
-import aboutUsStyle from "../assets/jss/material-kit-pro-react/views/aboutUsStyle"
-import classNames from "classnames"
-import GridContainer from "../components/Grid/GridContainer"
-import GridItem from "../components/Grid/GridItem"
-import SectionContacts from "../templates/SectionsPage/Sections/SectionContacts"
+import classNames from 'classnames';
+/*
+Assets
+ */
+import GavelIcon from '@material-ui/icons/Gavel';
+import { GatsbyLink } from 'gatsby-theme-material-ui';
 
-const useStyles = makeStyles(aboutUsStyle)
+const useStyles = makeStyles(aboutUsStyle);
+const useStyles2 = makeStyles(styles);
+
+const Transition = React.forwardRef(function Transition(props, ref) {
+    return <Slide direction="up" ref={ref} {...props} timeout={1000} />;
+});
+
 const Signaletique = () => {
-  const data = useStaticQuery(graphql`
-    query Signaletique {
-      site {
-        siteMetadata {
-          title
-          description
-        }
-      }
-      file(relativePath: { eq: "plans.png" }) {
-        childImageSharp {
-          fluid(maxWidth: 1024, maxHeight: 1024, quality: 100) {
-            ...GatsbyImageSharpFluid_withWebp_tracedSVG
-          }
-        }
-      }
-    }
-  `)
+    const classes = useStyles();
+    const classesPrefooter = useStyles2();
+    const [open, setOpen] = React.useState(false);
 
-  const classes = useStyles()
-  return (
-    <Layout>
-      <Seo title="Signalétique" />
-      <Parallax
-        image={data.file.childImageSharp.fluid.src}
-        className="parallax"
-        filter="dark"
-        small
-      >
-        <div className={classes.container}>
-          <GridContainer justify="center">
-            <GridItem
-              md={8}
-              sm={8}
-              className={classNames(
-                classes.mlAuto,
-                classes.mrAuto,
-                classes.textCenter
-              )}
+    const handleClickOpen = () => {
+        setOpen(true);
+    };
+
+    const handleClose = () => {
+        setOpen(false);
+    };
+
+    const data = useStaticQuery(graphql`
+        query Signaletique {
+            file(relativePath: { eq: "contact_gsi.jpg" }) {
+                childImageSharp {
+                    fluid(maxWidth: 1600, maxHeight: 1067, quality: 100) {
+                        ...GatsbyImageSharpFluid_withWebp_tracedSVG
+                    }
+                }
+            }
+            wpgraphql {
+                pageBy(pageId: 345) {
+                    banniere {
+                        titreDeLaPage
+                        imageDeBanniere {
+                            sourceUrl
+                            imageFile {
+                                childImageSharp {
+                                    fluid(
+                                        maxWidth: 1024
+                                        maxHeight: 900
+                                        quality: 100
+                                    ) {
+                                        ...GatsbyImageSharpFluid_withWebp_tracedSVG
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    contenu_page_prestation {
+                        paragrapheDeReglementation
+                        texteDuLienReglementation
+                    }
+                    contenu_page {
+                        titreDuParagraphe
+                        contenuDuParagraphe
+                    }
+                }
+            }
+        }
+    `);
+
+    return (
+        <Layout>
+            <Seo title={data.wpgraphql.pageBy.banniere.titreDeLaPage} />
+            <Parallax
+                image={
+                    data.wpgraphql.pageBy.banniere.imageDeBanniere.imageFile
+                        .childImageSharp.fluid.src
+                }
+                className="parallax"
+                filter="dark"
+                small
             >
-              <h1 className={classes.title}>Signalétique</h1>
-            </GridItem>
-          </GridContainer>
-        </div>
-      </Parallax>
-      <div className={classNames(classes.main, classes.mainRaised)}>
-        <div className={classes.container}>
-          <GridContainer className="page-gsi">
-            <GridItem xs={12} className={classes.mlAuto + " " + classes.mrAuto}>
-              <h2>Ce que nous proposons</h2>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet
-                aut beatae consequatur debitis dolor dolorum est eum ex facere
-                fugit harum impedit in iure magnam molestias natus officia porro
-                quae quisquam quod repellendus sequi similique sint sunt
-                suscipit temporibus, tenetur vel velit voluptate voluptatum?
-                Doloremque illum ipsum laudantium possimus quos ullam, velit
-                voluptas! Adipisci, asperiores deserunt ducimus fugit maxime
-                minus neque praesentium quis rerum totam. Aliquid fugit placeat
-                quis suscipit veritatis! Culpa optio quia quidem voluptatum? Aut
-                porro qui repudiandae suscipit. Cum ducimus minima voluptates.
-              </p>
-              <h2>Pourquoi</h2>
-              <p>
-                Art. R4224-17 : « Les installations et dispositifs techniques et
-                de sécurité des lieux de travail sont entretenus et vérifiés
-                suivant une périodicité appropriée. Toute défectuosité
-                susceptible d’affecter la santé et la sécurité des travailleurs
-                est éliminée le plus rapidement possible. » Nous vous proposons
-                un accompagnement et des conseils adaptés à votre entreprise
-                selon la réglementation.
-              </p>
-            </GridItem>
-          </GridContainer>
-        </div>
-        <SectionContacts />
-      </div>
-    </Layout>
-  )
-}
+                <div className={classes.container}>
+                    <GridContainer justify="center">
+                        <GridItem
+                            md={8}
+                            sm={8}
+                            className={classNames(
+                                classes.mlAuto,
+                                classes.mrAuto,
+                                classes.textCenter
+                            )}
+                        >
+                            <h1 className={classes.title}>
+                                {data.wpgraphql.pageBy.banniere.titreDeLaPage}
+                            </h1>
+                        </GridItem>
+                    </GridContainer>
+                </div>
+            </Parallax>
+            <div className={classNames(classes.main, classes.mainRaised)}>
+                <div className={classes.container}>
+                    <GridContainer className="page-gsi">
+                        <GridItem
+                            xs={12}
+                            className={classes.mlAuto + ' ' + classes.mrAuto}
+                        >
+                            <h2>
+                                {
+                                    data.wpgraphql.pageBy.contenu_page
+                                        .titreDuParagraphe
+                                }
+                            </h2>
+                            <div
+                                dangerouslySetInnerHTML={{
+                                    __html:
+                                        data.wpgraphql.pageBy.contenu_page
+                                            .contenuDuParagraphe,
+                                }}
+                            />
+                            <Box className="page-modal-reglementation">
+                                <Button
+                                    color="danger"
+                                    children={
+                                        data.wpgraphql.pageBy
+                                            .contenu_page_prestation
+                                            .texteDuLienReglementation
+                                    }
+                                    startIcon={<GavelIcon />}
+                                    onClick={handleClickOpen}
+                                />
+                            </Box>
+                            <Dialog
+                                open={open}
+                                TransitionComponent={Transition}
+                                keepMounted
+                                onClose={handleClose}
+                                aria-labelledby="alert-dialog-reglementation-titre"
+                                aria-describedby="alert-dialog-reglementation-description"
+                                className="alert-dialog-reglementation"
+                            >
+                                <DialogTitle id="alert-dialog-slide-title">
+                                    Réglementation
+                                </DialogTitle>
+                                <DialogContent>
+                                    <DialogContentText id="alert-dialog-slide-description">
+                                        <div
+                                            dangerouslySetInnerHTML={{
+                                                __html:
+                                                    data.wpgraphql.pageBy
+                                                        .contenu_page_prestation
+                                                        .paragrapheDeReglementation,
+                                            }}
+                                        />
+                                    </DialogContentText>
+                                </DialogContent>
+                                <DialogActions className="alert-dialog-button-container">
+                                    <Button
+                                        onClick={handleClose}
+                                        color="danger"
+                                    >
+                                        Ok
+                                    </Button>
+                                </DialogActions>
+                            </Dialog>
+                        </GridItem>
+                    </GridContainer>
+                </div>
+                <div
+                    className={classNames(
+                        classesPrefooter.subscribeLine,
+                        classesPrefooter.subscribeLineImage
+                    )}
+                    style={{
+                        backgroundImage: `url(${data.file.childImageSharp.fluid.src})`,
+                    }}
+                >
+                    <div className={`prefooter ${classesPrefooter.container}`}>
+                        <GridContainer>
+                            <GridItem
+                                xs={12}
+                                sm={6}
+                                md={6}
+                                className={classNames(
+                                    classesPrefooter.mlAuto,
+                                    classesPrefooter.mrAuto
+                                )}
+                            >
+                                <div className={classes.textCenter}>
+                                    <h2 className={classesPrefooter.title}>
+                                        Contact
+                                    </h2>
+                                    <p>
+                                        Besoin d'un produit ? D'une formation ?
+                                        D'un plan ? Ou simplement une question ?
+                                        Nous serons ravis de vous aider.
+                                    </p>
+                                </div>
+                                <div className="contact-pre-footer">
+                                    <GatsbyLink to="/contact">
+                                        <Button color="danger">
+                                            Contactez-nous
+                                        </Button>
+                                    </GatsbyLink>
+                                </div>
+                            </GridItem>
+                        </GridContainer>
+                    </div>
+                </div>
+            </div>
+        </Layout>
+    );
+};
 
-export default Signaletique
+export default Signaletique;

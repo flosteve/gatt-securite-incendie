@@ -58,9 +58,34 @@ h1 {
   color: #3C4858;
   text-transform: uppercase;
 }
-.page-gsi button.page-tooltip {
+.page-gsi .page-modal-reglementation {
   display: flex;
+  justify-content: center;
   margin: 1rem auto;
+}
+
+/*
+Modal
+ */
+.alert-dialog-reglementation #alert-dialog-slide-title {
+  text-transform: uppercase;
+}
+.alert-dialog-reglementation .alert-dialog-button-container {
+  justify-content: center;
+}
+
+/*
+Pre Footer
+ */
+.prefooter p {
+  color: white;
+}
+.prefooter .contact-pre-footer {
+  display: flex;
+  justify-content: center;
+}
+.prefooter .contact-pre-footer a {
+  text-decoration: none;
 }
 
 @media (max-width: 812px) and (orientation: landscape) {

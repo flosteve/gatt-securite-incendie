@@ -35,11 +35,41 @@ h1 {
     color: #3C4858;
     text-transform: uppercase;
   }
-  button.page-tooltip {
+  .page-modal-reglementation {
       display: flex;
+    justify-content: center;
       margin: 1rem auto;
   }
 }
+
+/*
+Modal
+ */
+.alert-dialog-reglementation {
+  #alert-dialog-slide-title {
+    text-transform: uppercase;
+  }
+  .alert-dialog-button-container {
+    justify-content: center;
+  }
+}
+
+/*
+Pre Footer
+ */
+.prefooter {
+  p {
+    color: white;
+  }
+  .contact-pre-footer {
+    display: flex;
+    justify-content: center;
+    a {
+      text-decoration: none;
+    }
+  }
+}
+
 
 @media (max-width: 812px) and (orientation: landscape) {
   .parallax {
