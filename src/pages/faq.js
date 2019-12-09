@@ -9,21 +9,55 @@ import aboutUsStyle from '../assets/jss/material-kit-pro-react/views/aboutUsStyl
 import classNames from 'classnames';
 import GridContainer from '../components/Grid/GridContainer';
 import GridItem from '../components/Grid/GridItem';
-import SectionContacts from '../templates/SectionsPage/Sections/SectionContacts';
+import Accordion from '../components/Accordion/Accordion';
+import { GatsbyLink } from 'gatsby-theme-material-ui';
+import Button from '../components/CustomButtons/Button';
+import styles from '../assets/jss/material-kit-pro-react/views/componentsSections/preFooter.js';
 
 const useStyles = makeStyles(aboutUsStyle);
+const useStyles2 = makeStyles(styles);
+
 const Faq = () => {
     const data = useStaticQuery(graphql`
         query Faq {
-            site {
-                siteMetadata {
-                    title
-                    description
+            wpgraphql {
+                pageBy(pageId: 309) {
+                    banniere {
+                        titreDeLaPage
+                        imageDeBanniere {
+                            sourceUrl
+                            imageFile {
+                                childImageSharp {
+                                    fluid(
+                                        maxWidth: 1280
+                                        maxHeight: 900
+                                        quality: 100
+                                    ) {
+                                        ...GatsbyImageSharpFluid_withWebp_tracedSVG
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    contenu_page_prestation {
+                        paragrapheDeReglementation
+                        texteDuLienReglementation
+                    }
+                    contenu_page {
+                        titreDuParagraphe
+                        contenuDuParagraphe
+                    }
+                    type_equipements {
+                        tabsTypeEquipements {
+                            tabContent
+                            tabButton
+                        }
+                    }
                 }
             }
-            file(relativePath: { eq: "faq.jpg" }) {
+            file(relativePath: { eq: "contact_gsi.jpg" }) {
                 childImageSharp {
-                    fluid(maxWidth: 1280, maxHeight: 774, quality: 100) {
+                    fluid(maxWidth: 1600, maxHeight: 1067, quality: 100) {
                         ...GatsbyImageSharpFluid_withWebp_tracedSVG
                     }
                 }
@@ -32,11 +66,16 @@ const Faq = () => {
     `);
 
     const classes = useStyles();
+    const classesPrefooter = useStyles2();
+
     return (
         <Layout>
-            <Seo title="FAQ" />
+            <Seo title={data.wpgraphql.pageBy.banniere.titreDeLaPage} />
             <Parallax
-                image={data.file.childImageSharp.fluid.src}
+                image={
+                    data.wpgraphql.pageBy.banniere.imageDeBanniere.imageFile
+                        .childImageSharp.fluid.src
+                }
                 className="parallax"
                 filter="dark"
                 small
@@ -52,7 +91,9 @@ const Faq = () => {
                                 classes.textCenter
                             )}
                         >
-                            <h1 className={classes.title}>FAQ</h1>
+                            <h1 className={classes.title}>
+                                {data.wpgraphql.pageBy.banniere.titreDeLaPage}
+                            </h1>
                         </GridItem>
                     </GridContainer>
                 </div>
@@ -62,29 +103,81 @@ const Faq = () => {
                     <GridContainer className="page-gsi">
                         <GridItem
                             xs={12}
+                            sm={8}
+                            md={8}
                             className={classes.mlAuto + ' ' + classes.mrAuto}
                         >
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur
-                                adipisicing elit. Amet aut beatae consequatur
-                                debitis dolor dolorum est eum ex facere fugit
-                                harum impedit in iure magnam molestias natus
-                                officia porro quae quisquam quod repellendus
-                                sequi similique sint sunt suscipit temporibus,
-                                tenetur vel velit voluptate voluptatum?
-                                Doloremque illum ipsum laudantium possimus quos
-                                ullam, velit voluptas! Adipisci, asperiores
-                                deserunt ducimus fugit maxime minus neque
-                                praesentium quis rerum totam. Aliquid fugit
-                                placeat quis suscipit veritatis! Culpa optio
-                                quia quidem voluptatum? Aut porro qui
-                                repudiandae suscipit. Cum ducimus minima
-                                voluptates.
-                            </p>
+                            <h2>
+                                {
+                                    data.wpgraphql.pageBy.contenu_page
+                                        .titreDuParagraphe
+                                }
+                            </h2>
+                            <Accordion
+                                active={0}
+                                activeColor="danger"
+                                collapses={[
+                                    {
+                                        title: 'Question 1',
+                                        content:
+                                            "Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.",
+                                    },
+                                    {
+                                        title: 'Question 2',
+                                        content:
+                                            "Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.",
+                                    },
+                                    {
+                                        title: 'Question 3',
+                                        content:
+                                            "Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.",
+                                    },
+                                ]}
+                            />
                         </GridItem>
                     </GridContainer>
                 </div>
-                <SectionContacts />
+                <div
+                    className={classNames(
+                        classesPrefooter.subscribeLine,
+                        classesPrefooter.subscribeLineImage
+                    )}
+                    style={{
+                        backgroundImage: `url(${data.file.childImageSharp.fluid.src})`,
+                    }}
+                >
+                    <div className={`prefooter ${classesPrefooter.container}`}>
+                        <GridContainer>
+                            <GridItem
+                                xs={12}
+                                sm={6}
+                                md={6}
+                                className={classNames(
+                                    classesPrefooter.mlAuto,
+                                    classesPrefooter.mrAuto
+                                )}
+                            >
+                                <div className={classes.textCenter}>
+                                    <h2 className={classesPrefooter.title}>
+                                        Contact
+                                    </h2>
+                                    <p>
+                                        Besoin d'un produit ? D'une formation ?
+                                        D'un plan ? Ou simplement une question ?
+                                        Nous serons ravis de vous aider.
+                                    </p>
+                                </div>
+                                <div className="contact-pre-footer">
+                                    <GatsbyLink to="/contact">
+                                        <Button color="danger">
+                                            Contactez-nous
+                                        </Button>
+                                    </GatsbyLink>
+                                </div>
+                            </GridItem>
+                        </GridContainer>
+                    </div>
+                </div>
             </div>
         </Layout>
     );
