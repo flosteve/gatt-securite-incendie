@@ -186,7 +186,7 @@ const IndexPage = () => {
             )}
 
             <div className={classNames(classes.main, classes.mainRaised)}>
-                <div className={classes.features3}>
+                <div className="nos-offres-section">
                     <GridContainer className={classes.gridContainer}>
                         <GridItem xs={12} sm={12} md={6}>
                             <div

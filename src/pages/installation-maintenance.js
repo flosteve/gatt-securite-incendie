@@ -13,6 +13,7 @@ import Parallax from '../components/Parallax/Parallax';
 import GridContainer from '../components/Grid/GridContainer';
 import GridItem from '../components/Grid/GridItem';
 import NavPills from '../components/NavPills/NavPills';
+import formatInArrayOfObjects from '../utils/formatInArrayOfObject';
 /*
 Style
  */
@@ -77,22 +78,6 @@ const Installation = () => {
 
     const classes = useStyles();
 
-    const formatTabs = tabsTypeEquipements => {
-        const arrayTabs = [];
-
-        tabsTypeEquipements.map(tab => {
-            const currentTab = {
-                tabContent: (
-                    <div dangerouslySetInnerHTML={{ __html: tab.tabContent }} />
-                ),
-                tabButton: tab.tabButton,
-            };
-            arrayTabs.push(currentTab);
-            return '';
-        });
-        return arrayTabs;
-    };
-
     return (
         <Layout>
             <Seo title={data.wpgraphql.pageBy.banniere.titreDeLaPage} />
@@ -138,7 +123,7 @@ const Installation = () => {
                                     tabsGrid: { xs: 12, sm: 4, md: 5 },
                                     contentGrid: { xs: 12, sm: 8, md: 7 },
                                 }}
-                                tabs={formatTabs(
+                                tabs={formatInArrayOfObjects.formatTabs(
                                     data.wpgraphql.pageBy.type_equipements
                                         .tabsTypeEquipements
                                 )}

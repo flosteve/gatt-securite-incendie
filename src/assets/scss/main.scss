@@ -1,4 +1,6 @@
-@import "color";
+@import "../variables/color";
+@import "../variables/mixins";
+@import "../variables/breakpoints";
 
 @import "pages/formations";
 @import "pages/singleFormation";
@@ -8,7 +10,15 @@
 .parallax {
   height: 90vh;
   overflow: hidden;
+  @include sm {
+    height: 40vh;
+    min-height: 40vh;
+  }
   &.home {
+    @include sm {
+      height: 65vh;
+      min-height: 65vh;
+    }
     &:before, &:after {
       z-index: -1;
     }
@@ -39,6 +49,29 @@ h1 {
       display: flex;
     justify-content: center;
       margin: 1rem auto;
+  }
+  @include sm {
+    padding: 2rem 0;
+  }
+}
+/*
+Home Page
+ */
+.nos-offres-section {
+  padding: 4rem 0;
+  @include sm {
+    padding: 2rem 0;
+  }
+}
+#contact-home-gsi {
+  .contactHome {
+    padding: 2rem 0;
+  }
+}
+.contactHome {
+  padding: 2rem 0;
+  @include sm {
+    padding: 0;
   }
 }
 
@@ -83,11 +116,8 @@ Pre Footer
       font-size: 3.2rem !important;
     }
   }
-  .contactHome {
-    padding: 30px 0;
-  }
 
   .formHome {
-    padding: 30px 15px 0;
+    padding: 30px 0 0;
   }
 }

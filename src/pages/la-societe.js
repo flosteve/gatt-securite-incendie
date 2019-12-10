@@ -16,14 +16,12 @@ import GridItem from '../components/Grid/GridItem';
 Style
  */
 import aboutUsStyle from '../assets/jss/material-kit-pro-react/views/aboutUsStyle';
-import styles from '../assets/jss/material-kit-pro-react/views/componentsSections/preFooter.js';
 
 import classNames from 'classnames';
-import { GatsbyLink } from 'gatsby-theme-material-ui';
-import Button from '../components/CustomButtons/Button';
+
+import PreFooterContact from '../components/PreFooterContact/PreFooterContact';
 
 const useStyles = makeStyles(aboutUsStyle);
-const useStyles2 = makeStyles(styles);
 
 const Societe = () => {
     const data = useStaticQuery(graphql`
@@ -64,7 +62,6 @@ const Societe = () => {
     `);
 
     const classes = useStyles();
-    const classesPrefooter = useStyles2();
 
     return (
         <Layout>
@@ -119,47 +116,10 @@ const Societe = () => {
                         </GridItem>
                     </GridContainer>
                 </div>
-                <div
-                    className={classNames(
-                        classesPrefooter.subscribeLine,
-                        classesPrefooter.subscribeLineImage
-                    )}
-                    style={{
-                        backgroundImage: `url(${data.file.childImageSharp.fluid.src})`,
-                    }}
-                >
-                    <div className={`prefooter ${classesPrefooter.container}`}>
-                        <GridContainer>
-                            <GridItem
-                                xs={12}
-                                sm={6}
-                                md={6}
-                                className={classNames(
-                                    classesPrefooter.mlAuto,
-                                    classesPrefooter.mrAuto
-                                )}
-                            >
-                                <div className={classes.textCenter}>
-                                    <h2 className={classesPrefooter.title}>
-                                        Contact
-                                    </h2>
-                                    <p>
-                                        Besoin d'un produit ? D'une formation ?
-                                        D'un plan ? Ou simplement une question ?
-                                        Nous serons ravis de vous aider.
-                                    </p>
-                                </div>
-                                <div className="contact-pre-footer">
-                                    <GatsbyLink to="/contact">
-                                        <Button color="danger">
-                                            Contactez-nous
-                                        </Button>
-                                    </GatsbyLink>
-                                </div>
-                            </GridItem>
-                        </GridContainer>
-                    </div>
-                </div>
+                <PreFooterContact
+                    url={data.file.childImageSharp.fluid.src}
+                    classes={classes}
+                />
             </div>
         </Layout>
     );
