@@ -13,7 +13,7 @@ import Parallax from '../components/Parallax/Parallax';
 import GridContainer from '../components/Grid/GridContainer';
 import GridItem from '../components/Grid/GridItem';
 import NavPills from '../components/NavPills/NavPills';
-import formatInArrayOfObjects from '../utils/formatInArrayOfObject';
+import formatInArrayOfObjects from '../utils/getAnArrayOfObject';
 /*
 Style
  */

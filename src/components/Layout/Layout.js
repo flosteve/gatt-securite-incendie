@@ -13,7 +13,13 @@ import Header from '../Header/Header';
 import '../../assets/scss/main.scss';
 import './layout.css';
 import HeaderLinks from '../Header/HeaderLinks';
-import { Box, makeStyles, List, ListItem } from '@material-ui/core';
+import {
+    Box,
+    makeStyles,
+    List,
+    ListItem,
+    useMediaQuery,
+} from '@material-ui/core';
 import Footer from '../Footer/Footer';
 import Button from '../CustomButtons/Button';
 import styles from '../../assets/jss/material-kit-pro-react/views/componentsSections/footerStyle';
@@ -34,6 +40,7 @@ const Layout = ({ children }) => {
         }
     `);
     const classes = useStyles();
+    const matches = useMediaQuery('(min-width:600px)');
 
     return (
         <>
@@ -43,7 +50,7 @@ const Layout = ({ children }) => {
                 fixed
                 color="transparent"
                 changeColorOnScroll={{
-                    height: 400,
+                    height: matches ? 400 : 100,
                     color: 'danger',
                 }}
             />

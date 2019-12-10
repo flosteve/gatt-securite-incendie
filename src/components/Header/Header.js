@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'gatsby';
+import { Link, useStaticQuery, graphql } from 'gatsby';
 // nodejs library that concatenates classes
 import classNames from 'classnames';
 // nodejs library to set properties for components
@@ -15,7 +15,7 @@ import Drawer from '@material-ui/core/Drawer';
 // @material-ui/icons
 import Menu from '@material-ui/icons/Menu';
 import Close from '@material-ui/icons/Close';
-// import Img from "gatsby-image"
+import Img from 'gatsby-image';
 // core components
 import styles from '../../assets/jss/material-kit-pro-react/components/headerStyle.js';
 import { Typography } from '@material-ui/core';
@@ -23,17 +23,17 @@ import { Typography } from '@material-ui/core';
 const useStyles = makeStyles(styles);
 
 export default function Header(props) {
-    // const data = useStaticQuery(graphql`
-    //   query Logo {
-    //     file(relativePath: { eq: "logo_gsi.png" }) {
-    //       childImageSharp {
-    //         fixed {
-    //           ...GatsbyImageSharpFixed_withWebp_tracedSVG
-    //         }
-    //       }
-    //     }
-    //   }
-    // `)
+    const data = useStaticQuery(graphql`
+        query Logo {
+            file(relativePath: { eq: "logo_gsi.png" }) {
+                childImageSharp {
+                    fixed {
+                        ...GatsbyImageSharpFixed_withWebp_tracedSVG
+                    }
+                }
+            }
+        }
+    `);
 
     const [mobileOpen, setMobileOpen] = React.useState(false);
     const classes = useStyles();
@@ -61,6 +61,12 @@ export default function Header(props) {
             document.body
                 .getElementsByTagName('header')[0]
                 .classList.add(classes[changeColorOnScroll.color]);
+            document.body
+                .getElementsByClassName('logo-gsi')[0]
+                .classList.add('logo-white');
+            document.body
+                .getElementsByClassName('logo-gsi')[0]
+                .classList.remove('logo-transparent');
         } else {
             document.body
                 .getElementsByTagName('header')[0]
@@ -68,6 +74,13 @@ export default function Header(props) {
             document.body
                 .getElementsByTagName('header')[0]
                 .classList.remove(classes[changeColorOnScroll.color]);
+
+            document.body
+                .getElementsByClassName('logo-gsi')[0]
+                .classList.add('logo-transparent');
+            document.body
+                .getElementsByClassName('logo-gsi')[0]
+                .classList.remove('logo-white');
         }
     };
     const { color, links, brand, fixed, absolute } = props;
@@ -82,8 +95,11 @@ export default function Header(props) {
             <Toolbar className={classes.container}>
                 <Button className={classes.title}>
                     <Link to="/" className={classes.brand}>
-                        <Typography variant={'h6'}>{brand}</Typography>
-                        {/*<Img fixed={data.file.childImageSharp.fixed} />*/}
+                        {/*<Typography variant={'h6'}>{brand}</Typography>*/}
+                        <Img
+                            fixed={data.file.childImageSharp.fixed}
+                            className="logo-gsi"
+                        />
                     </Link>
                 </Button>
                 <Hidden smDown implementation="css" className={classes.hidden}>

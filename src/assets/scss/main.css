@@ -32,6 +32,14 @@
   color: #f44336;
 }
 
+.logo-gsi.logo-white {
+  background: white;
+  border-radius: 50%;
+}
+.logo-gsi.logo-tranparent {
+  background: transparent;
+}
+
 .parallax {
   height: 90vh;
   overflow: hidden;

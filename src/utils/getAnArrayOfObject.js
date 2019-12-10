@@ -1,6 +1,6 @@
 import React from 'react';
 
-class FormatInArrayOfObject {
+class GetAnArrayOfObject {
     static formatTabs = tabsTypeEquipements => {
         const arrayTabs = [];
 
@@ -34,4 +34,4 @@ class FormatInArrayOfObject {
     };
 }
 
-export default FormatInArrayOfObject;
+export default GetAnArrayOfObject;

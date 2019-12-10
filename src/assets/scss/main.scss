@@ -6,7 +6,15 @@
 @import "pages/singleFormation";
 @import "pages/contact";
 
-
+.logo-gsi {
+  &.logo-white {
+    background: white;
+    border-radius: 50%;
+  }
+   &.logo-tranparent {
+     background: transparent;
+   }
+}
 .parallax {
   height: 90vh;
   overflow: hidden;
