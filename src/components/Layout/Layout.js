@@ -5,14 +5,12 @@
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
+/*
+ Core
+ */
 import React from 'react';
 import PropTypes from 'prop-types';
 import { useStaticQuery, graphql, Link } from 'gatsby';
-
-import Header from '../Header/Header';
-import '../../assets/scss/main.scss';
-import './layout.css';
-import HeaderLinks from '../Header/HeaderLinks';
 import {
     Box,
     makeStyles,
@@ -20,10 +18,22 @@ import {
     ListItem,
     useMediaQuery,
 } from '@material-ui/core';
+/*
+ Components & Templates
+ */
+import Header from '../Header/Header';
+import HeaderLinks from '../Header/HeaderLinks';
 import Footer from '../Footer/Footer';
 import Button from '../CustomButtons/Button';
+/*
+Style
+ */
+import '../../assets/scss/main.scss';
+import './layout.css';
 import styles from '../../assets/jss/material-kit-pro-react/views/componentsSections/footerStyle';
-
+/*
+Assets
+ */
 import TwitterIcon from '@material-ui/icons/Twitter';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
 
@@ -61,7 +71,7 @@ const Layout = ({ children }) => {
                     <div>
                         <div className={classes.left}>
                             <Link to="/" className={classes.footerBrand}>
-                                Gatt Sécurité Incendie
+                                {data.site.siteMetadata.title}
                             </Link>
                         </div>
                         <div className={`footer-menu ${classes.pullCenter}`}>
@@ -93,7 +103,7 @@ const Layout = ({ children }) => {
                             <ul>
                                 <li>
                                     <Button
-                                        href="https://twitter.com/CreativeTim?ref=creativetim"
+                                        href="https://twitter.com/flostevebron91"
                                         target="_blank"
                                         color="twitter"
                                         justIcon

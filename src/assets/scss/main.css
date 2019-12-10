@@ -39,6 +39,12 @@
 .logo-gsi.logo-tranparent {
   background: transparent;
 }
+@media (max-width: 600px) {
+  .logo-gsi {
+    width: 50px !important;
+    height: 50px !important;
+  }
+}
 
 .parallax {
   height: 90vh;
@@ -82,6 +88,11 @@ h1 {
   display: flex;
   justify-content: center;
   margin: 1rem auto;
+}
+@media (max-width: 600px) {
+  .page-gsi .page-modal-reglementation {
+    margin: 1rem auto 2rem;
+  }
 }
 @media (max-width: 600px) {
   .page-gsi {
