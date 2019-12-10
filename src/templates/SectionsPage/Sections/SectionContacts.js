@@ -243,7 +243,11 @@ export default function SectionContacts({ ...rest }) {
                                             classes.justifyContentBetween
                                         }
                                     >
-                                        <Button color="danger" fullWidth>
+                                        <Button
+                                            color="danger"
+                                            fullWidth
+                                            type="submit"
+                                        >
                                             Envoyer
                                         </Button>
                                     </CardFooter>
