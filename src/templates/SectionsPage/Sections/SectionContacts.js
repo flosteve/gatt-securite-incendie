@@ -204,31 +204,38 @@ export default function SectionContacts({ ...rest }) {
                                                 <CustomInput
                                                     labelText="Votre Prénom"
                                                     id="firstName"
+                                                    name="firstName"
                                                     formControlProps={{
                                                         fullWidth: true,
                                                     }}
+                                                    required
                                                 />
                                             </GridItem>
                                             <GridItem xs={12} sm={6} md={6}>
                                                 <CustomInput
                                                     labelText="Votre Nom"
                                                     id="lastName"
+                                                    name="lastName"
                                                     formControlProps={{
                                                         fullWidth: true,
                                                     }}
+                                                    required
                                                 />
                                             </GridItem>
                                         </GridContainer>
                                         <CustomInput
                                             labelText="Votre Email"
                                             id="email-address"
+                                            name="email-address"
                                             formControlProps={{
                                                 fullWidth: true,
                                             }}
+                                            required
                                         />
                                         <CustomInput
                                             labelText="Votre Message"
                                             id="message"
+                                            name="message"
                                             formControlProps={{
                                                 fullWidth: true,
                                             }}
@@ -236,6 +243,7 @@ export default function SectionContacts({ ...rest }) {
                                                 multiline: true,
                                                 rows: 5,
                                             }}
+                                            required
                                         />
                                     </CardBody>
                                     <CardFooter
