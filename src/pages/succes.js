@@ -17,6 +17,9 @@ Style
  */
 import aboutUsStyle from '../assets/jss/material-kit-pro-react/views/aboutUsStyle';
 import classNames from 'classnames';
+import ArrowBackIcon from '@material-ui/icons/ArrowBack';
+import Button from '../components/CustomButtons/Button';
+import { GatsbyLink } from 'gatsby-theme-material-ui';
 
 const useStyles = makeStyles(aboutUsStyle);
 
@@ -24,7 +27,7 @@ const MentionsLegales = () => {
     const data = useStaticQuery(graphql`
         query Succes {
             wpgraphql {
-                pageBy(pageId: 312) {
+                pageBy(pageId: 45913) {
                     banniere {
                         titreDeLaPage
                         imageDeBanniere {
@@ -76,8 +79,7 @@ const MentionsLegales = () => {
                             )}
                         >
                             <h1 className={classes.title}>
-                                Succes
-                                {/*{data.wpgraphql.pageBy.banniere.titreDeLaPage}*/}
+                                {data.wpgraphql.pageBy.banniere.titreDeLaPage}
                             </h1>
                         </GridItem>
                     </GridContainer>
@@ -85,11 +87,17 @@ const MentionsLegales = () => {
             </Parallax>
             <div className={classNames(classes.main, classes.mainRaised)}>
                 <div className={classes.container}>
-                    <GridContainer className="page-gsi">
+                    <GridContainer className="page-gsi succes">
                         <GridItem
                             xs={12}
                             className={classes.mlAuto + ' ' + classes.mrAuto}
                         >
+                            <h2>
+                                {
+                                    data.wpgraphql.pageBy.contenu_page
+                                        .titreDuParagraphe
+                                }
+                            </h2>
                             <div
                                 dangerouslySetInnerHTML={{
                                     __html:
@@ -97,6 +105,14 @@ const MentionsLegales = () => {
                                             .contenuDuParagraphe,
                                 }}
                             />
+                            <GatsbyLink to="/" className="retour-succes">
+                                <Button
+                                    color="danger"
+                                    startIcon={<ArrowBackIcon />}
+                                >
+                                    Retour Accueil
+                                </Button>
+                            </GatsbyLink>
                         </GridItem>
                     </GridContainer>
                 </div>

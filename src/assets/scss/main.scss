@@ -67,6 +67,9 @@ h1 {
   }
   @include sm {
     padding: 2rem 0;
+    &.succes {
+      padding: 5rem 0;
+    }
   }
 }
 /*
@@ -117,6 +120,16 @@ Pre Footer
     }
   }
 }
+
+/*
+Page Succes
+ */
+.page-gsi.succes {
+  a.retour-succes {
+    text-decoration: none;
+  }
+}
+
 
 
 @media (max-width: 812px) and (orientation: landscape) {

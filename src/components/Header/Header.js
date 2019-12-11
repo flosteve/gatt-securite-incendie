@@ -18,7 +18,6 @@ import Close from '@material-ui/icons/Close';
 import Img from 'gatsby-image';
 // core components
 import styles from '../../assets/jss/material-kit-pro-react/components/headerStyle.js';
-import { Typography } from '@material-ui/core';
 
 const useStyles = makeStyles(styles);
 
@@ -27,7 +26,7 @@ export default function Header(props) {
         query Logo {
             file(relativePath: { eq: "logo_gsi.png" }) {
                 childImageSharp {
-                    fixed {
+                    fixed(width: 67, height: 67, quality: 100) {
                         ...GatsbyImageSharpFixed_withWebp_tracedSVG
                     }
                 }
@@ -83,7 +82,7 @@ export default function Header(props) {
                 .classList.remove('logo-white');
         }
     };
-    const { color, links, brand, fixed, absolute } = props;
+    const { color, links, fixed, absolute } = props;
     const appBarClasses = classNames({
         [classes.appBar]: true,
         [classes[color]]: color,
@@ -95,7 +94,6 @@ export default function Header(props) {
             <Toolbar className={classes.container}>
                 <Button className={classes.title}>
                     <Link to="/" className={classes.brand}>
-                        {/*<Typography variant={'h6'}>{brand}</Typography>*/}
                         <Img
                             fixed={data.file.childImageSharp.fixed}
                             className="logo-gsi"

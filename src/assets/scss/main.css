@@ -98,6 +98,9 @@ h1 {
   .page-gsi {
     padding: 2rem 0;
   }
+  .page-gsi.succes {
+    padding: 5rem 0;
+  }
 }
 
 /*
@@ -146,6 +149,13 @@ Pre Footer
   justify-content: center;
 }
 .prefooter .contact-pre-footer a {
+  text-decoration: none;
+}
+
+/*
+Page Succes
+ */
+.page-gsi.succes a.retour-succes {
   text-decoration: none;
 }
 
