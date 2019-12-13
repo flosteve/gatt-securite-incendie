@@ -9,7 +9,7 @@ module.exports = {
         description: `Vente, formation et conception de plan sécurité`,
         keywords: `sécurité, incendie, formation, plan`,
         author: `flostevebron91`,
-        siteUrl: `https://dev.gattsecuriteincendie.com/`,
+        siteUrl: `https://www.gattsecuriteincendie.com/`,
     },
     plugins: [
         `gatsby-plugin-react-helmet`,
@@ -27,7 +27,7 @@ module.exports = {
             options: {
                 typeName: 'WPGraphQL',
                 fieldName: 'wpgraphql',
-                url: `https://dev.gattsecuriteincendie.com/graphql`,
+                url: `https://dev.eravilleconceptweb.com/graphql`,
             },
         },
         {
