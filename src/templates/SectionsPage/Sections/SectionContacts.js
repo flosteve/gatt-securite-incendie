@@ -241,6 +241,7 @@ export default function SectionContacts({ ...rest }) {
                                             inputProps={{
                                                 name: 'email-address',
                                                 required: true,
+                                                type: 'email'
                                             }}
                                         />
                                         <CustomInput
