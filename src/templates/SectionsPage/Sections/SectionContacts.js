@@ -3,7 +3,7 @@ Core
  */
 import React from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
-import { Input, Link, makeStyles } from '@material-ui/core';
+import { Input, Link, Hidden, makeStyles } from '@material-ui/core';
 
 /*
 Components & Templates
@@ -182,18 +182,20 @@ export default function SectionContacts({ ...rest }) {
                             <Card className={classes.card1}>
                                 <form
                                     method="POST"
-                                    data-netlify-honeypot="bot-field"
+                                    netlify-honeypot="bot-field"
                                     data-netlify="true"
                                     name="contact"
                                     action="/succes"
                                     // onSubmit={handleSubmit}
                                 >
-                                    <Input type="hidden" name="bot-field" />
-                                    <Input
-                                        type="hidden"
-                                        name="form-name"
-                                        value="contact"
-                                    />
+                                    <Hidden>
+                                        <Input type="hidden" name="bot-field" />
+                                        <Input
+                                            type="hidden"
+                                            name="form-name"
+                                            value="contact"
+                                        />
+                                    </Hidden>
                                     <CardHeader
                                         contact
                                         color="danger"
@@ -241,7 +243,7 @@ export default function SectionContacts({ ...rest }) {
                                             inputProps={{
                                                 name: 'email-address',
                                                 required: true,
-                                                type: 'email'
+                                                type: 'email',
                                             }}
                                         />
                                         <CustomInput
