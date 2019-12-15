@@ -44,12 +44,8 @@ const IndexPage = () => {
                         imageBanniere {
                             imageFile {
                                 childImageSharp {
-                                    fluid(
-                                        maxWidth: 1600
-                                        maxHeight: 1200
-                                        quality: 100
-                                    ) {
-                                        ...GatsbyImageSharpFluid_withWebp_tracedSVG
+                                    fluid(maxWidth: 1600, maxHeight: 900) {
+                                        ...GatsbyImageSharpFluid_withWebp
                                     }
                                 }
                             }
@@ -60,12 +56,8 @@ const IndexPage = () => {
                             image {
                                 imageFile {
                                     childImageSharp {
-                                        fluid(
-                                            maxWidth: 1600
-                                            maxHeight: 1200
-                                            quality: 100
-                                        ) {
-                                            ...GatsbyImageSharpFluid_withWebp_tracedSVG
+                                        fluid(maxWidth: 1600, maxHeight: 1200) {
+                                            ...GatsbyImageSharpFluid_withWebp
                                         }
                                     }
                                 }

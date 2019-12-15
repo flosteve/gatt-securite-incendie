@@ -52,8 +52,8 @@ export default function SectionContacts({ ...rest }) {
             }
             file(relativePath: { eq: "contact_gsi.jpg" }) {
                 childImageSharp {
-                    fluid(maxWidth: 1600, maxHeight: 1067, quality: 100) {
-                        ...GatsbyImageSharpFluid_withWebp_tracedSVG
+                    fluid(maxWidth: 1600, maxHeight: 1067) {
+                        ...GatsbyImageSharpFluid_withWebp
                     }
                 }
             }
