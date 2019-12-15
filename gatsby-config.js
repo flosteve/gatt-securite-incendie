@@ -28,7 +28,7 @@ module.exports = {
             options: {
                 typeName: 'WPGraphQL',
                 fieldName: 'wpgraphql',
-                url: `https://dev.eravilleconceptweb.com/graphql`,
+                url: `https://gsi.eravilleconceptweb.com/graphql`,
             },
         },
         {
