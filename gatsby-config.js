@@ -10,6 +10,7 @@ module.exports = {
         keywords: `sécurité, incendie, formation, plan`,
         author: `flostevebron91`,
         siteUrl: `https://www.gattsecuriteincendie.com/`,
+        twitterUsername: `flostevebron91`,
     },
     plugins: [
         `gatsby-plugin-react-helmet`,

@@ -5,84 +5,114 @@
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-import React from "react"
-import PropTypes from "prop-types"
-import Helmet from "react-helmet"
-import { useStaticQuery, graphql } from "gatsby"
+import React from 'react';
+import PropTypes from 'prop-types';
+import Helmet from 'react-helmet';
+import { useStaticQuery, graphql } from 'gatsby';
 
-function Seo({ description, lang, meta, title }) {
-  const { site } = useStaticQuery(
-    graphql`
-      query {
-        site {
-          siteMetadata {
-            title
-            description
-            author
-          }
-        }
-      }
-    `
-  )
+function Seo({ description, lang, meta, title, keywords, twitterUsername }) {
+    const { site } = useStaticQuery(
+        graphql`
+            query {
+                site {
+                    siteMetadata {
+                        title
+                        description
+                        author
+                        lang
+                        twitterUsername
+                    }
+                }
+            }
+        `
+    );
 
-  const metaDescription = description || site.siteMetadata.description
+    const metaDescription = description || site.siteMetadata.description;
+    const titlePage = title || site.siteMetadata.title;
+    const keyWordsArray = keywords || site.siteMetadata.keywords;
+    const twitterUser = twitterUsername || site.siteMetadata.twitterUsername;
+    const urlSite = `${site.siteMetadata.siteUrl}${'/'}`;
 
-  return (
-    <Helmet
-      htmlAttributes={{
-        lang,
-      }}
-      title={title}
-      titleTemplate={`%s | ${site.siteMetadata.title}`}
-      meta={[
-        {
-          name: `description`,
-          content: metaDescription,
-        },
-        {
-          property: `og:title`,
-          content: title,
-        },
-        {
-          property: `og:description`,
-          content: metaDescription,
-        },
-        {
-          property: `og:type`,
-          content: `website`,
-        },
-        {
-          name: `twitter:card`,
-          content: `summary`,
-        },
-        {
-          name: `twitter:creator`,
-          content: site.siteMetadata.author,
-        },
-        {
-          name: `twitter:title`,
-          content: title,
-        },
-        {
-          name: `twitter:description`,
-          content: metaDescription,
-        },
-      ].concat(meta)}
-    />
-  )
+    return (
+        <Helmet
+            htmlAttributes={{
+                lang,
+            }}
+            title={titlePage}
+            titleTemplate={`%s | ${site.siteMetadata.title}`}
+            meta={[
+                {
+                    name: `description`,
+                    content: metaDescription,
+                },
+                {
+                    name: `keywords`,
+                    content: keyWordsArray,
+                },
+                {
+                    property: `og:title`,
+                    content: titlePage,
+                },
+                {
+                    property: `og:description`,
+                    content: metaDescription,
+                },
+                {
+                    property: `og:type`,
+                    content: `website`,
+                },
+                {
+                    property: `og:locale`,
+                    content: `fr`,
+                },
+                {
+                    property: `og:url`,
+                    content: urlSite,
+                },
+                {
+                    name: `twitter:card`,
+                    content: `summary_large_image`,
+                },
+                {
+                    name: `twitter:creator`,
+                    content: twitterUser,
+                },
+                {
+                    name: `twitter:title`,
+                    content: titlePage,
+                },
+                {
+                    name: `twitter:description`,
+                    content: metaDescription,
+                },
+                {
+                    name: `docsearch:version`,
+                    content: `2.0`,
+                },
+                {
+                    name: `viewport`,
+                    content: `width=device-width,initial-scale=1,shrink-to-fit=no,viewport-fit=cover`,
+                },
+            ].concat(meta)}
+        />
+    );
 }
 
 Seo.defaultProps = {
-  lang: `en`,
-  meta: [],
-  description: ``,
-}
+    lang: `fr`,
+    meta: [],
+    keywords: '',
+    description: ``,
+};
 
 Seo.propTypes = {
-  description: PropTypes.string,
-  lang: PropTypes.string,
-  meta: PropTypes.arrayOf(PropTypes.object),
-  title: PropTypes.string.isRequired,
-}
+    description: PropTypes.string,
+    lang: PropTypes.string,
+    meta: PropTypes.arrayOf(PropTypes.object),
+    title: PropTypes.string.isRequired,
+    keywords: PropTypes.string,
+    image: PropTypes.string,
+    pathname: PropTypes.string,
+};
 
-export default Seo
+export default Seo;
