@@ -184,7 +184,7 @@ export default function SectionContacts({ ...rest }) {
                                             value="contact"
                                         />
                                         <Input
-                                            type="hidden"
+                                            type="text"
                                             name="subject"
                                             value="Soumission de formulaire de Gatt Sécurité Incendie"
                                         />

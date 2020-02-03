@@ -63,7 +63,7 @@ module.exports = {
                 icon: 'src/assets/img/logo_gsi.png', // This path is relative to the root of the site.
             },
         },
-        'gatsby-plugin-offline',
+        `gatsby-plugin-sitemap`,
         'gatsby-plugin-sass',
         {
             resolve: `gatsby-theme-material-ui`,
