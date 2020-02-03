@@ -38,38 +38,30 @@ const Installation = () => {
                     }
                 }
             }
-            wpgraphql {
-                pageBy(pageId: 299) {
-                    banniere {
-                        titreDeLaPage
-                        imageDeBanniere {
-                            sourceUrl
-                            imageFile {
-                                childImageSharp {
-                                    fluid(
-                                        maxWidth: 1280
-                                        maxHeight: 900
-                                        quality: 100
-                                    ) {
-                                        ...GatsbyImageSharpFluid_withWebp_tracedSVG
-                                    }
+            wordpressPage(wordpress_id: { eq: 299 }) {
+                acf {
+                    titre_de_la_page
+                    image_de_banniere {
+                        source_url
+                        localFile {
+                            childImageSharp {
+                                fluid(
+                                    maxWidth: 1600
+                                    maxHeight: 1067
+                                    quality: 100
+                                ) {
+                                    ...GatsbyImageSharpFluid_withWebp_tracedSVG
                                 }
                             }
                         }
                     }
-                    contenu_page_prestation {
-                        paragrapheDeReglementation
-                        texteDuLienReglementation
-                    }
-                    contenu_page {
-                        titreDuParagraphe
-                        contenuDuParagraphe
-                    }
-                    type_equipements {
-                        tabsTypeEquipements {
-                            tabContent
-                            tabButton
-                        }
+                    contenu_du_paragraphe
+                    titre_du_paragraphe
+                    texte_du_lien_reglementation
+                    paragraphe_de_reglementation
+                    tabs_type_equipements {
+                        tab_content
+                        tab_button
                     }
                 }
             }
@@ -80,10 +72,10 @@ const Installation = () => {
 
     return (
         <Layout>
-            <Seo title={data.wpgraphql.pageBy.banniere.titreDeLaPage} />
+            <Seo title={data.wordpressPage.acf.titre_de_la_page} />
             <Parallax
                 image={
-                    data.wpgraphql.pageBy.banniere.imageDeBanniere.imageFile
+                    data.wordpressPage.acf.image_de_banniere.localFile
                         .childImageSharp.fluid.src
                 }
                 className="parallax"
@@ -102,7 +94,7 @@ const Installation = () => {
                             )}
                         >
                             <h1 className={classes.title}>
-                                {data.wpgraphql.pageBy.banniere.titreDeLaPage}
+                                {data.wordpressPage.acf.titre_de_la_page}
                             </h1>
                         </GridItem>
                     </GridContainer>
@@ -124,8 +116,7 @@ const Installation = () => {
                                     contentGrid: { xs: 12, sm: 8, md: 7 },
                                 }}
                                 tabs={formatInArrayOfObjects.formatTabs(
-                                    data.wpgraphql.pageBy.type_equipements
-                                        .tabsTypeEquipements
+                                    data.wordpressPage.acf.tabs_type_equipements
                                 )}
                             />
                         </GridItem>

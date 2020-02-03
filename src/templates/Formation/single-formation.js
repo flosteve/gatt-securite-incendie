@@ -25,12 +25,12 @@ import Button from '../../components/CustomButtons/Button';
 const useStyles = makeStyles(aboutUsStyle);
 const useStyles2 = makeStyles(styles);
 
-const Audit = ({ data }) => {
+export default ({ data }) => {
     const classes = useStyles();
     const classesPrefooter = useStyles2();
     return (
         <Layout>
-            <Seo title={data.wpgraphql.formations.nodes[0].title} />
+            <Seo title={data.allWordpressWpFormation.nodes[0].title} />
             <Parallax
                 image={data.allFile.nodes[0].childImageSharp.fluid.src}
                 className="parallax"
@@ -64,9 +64,9 @@ const Audit = ({ data }) => {
                                     <Paper elevation={20}>
                                         <Img
                                             fluid={
-                                                data.wpgraphql.formations
-                                                    .nodes[0].formations
-                                                    .imageFormation.imageFile
+                                                data.allWordpressWpFormation
+                                                    .nodes[0].acf
+                                                    .image_formation.localFile
                                                     .childImageSharp.fluid
                                             }
                                         />
@@ -82,36 +82,36 @@ const Audit = ({ data }) => {
                                 >
                                     <h2>
                                         {
-                                            data.wpgraphql.formations.nodes[0]
-                                                .title
+                                            data.allWordpressWpFormation
+                                                .nodes[0].title
                                         }
                                     </h2>
-                                    {data.wpgraphql.formations.nodes[0]
-                                        .formations.programmeTheorique && (
+                                    {data.allWordpressWpFormation.nodes[0].acf
+                                        .programme_theorique && (
                                         <Box>
                                             <h3>Programme Théorique</h3>
                                             <p
                                                 dangerouslySetInnerHTML={{
                                                     __html:
-                                                        data.wpgraphql
-                                                            .formations.nodes[0]
-                                                            .formations
-                                                            .programmeTheorique,
+                                                        data
+                                                            .allWordpressWpFormation
+                                                            .nodes[0].acf
+                                                            .programme_theorique,
                                                 }}
                                             />
                                         </Box>
                                     )}
-                                    {data.wpgraphql.formations.nodes[0]
-                                        .formations.programmePratique && (
+                                    {data.allWordpressWpFormation.nodes[0].acf
+                                        .programme_pratique && (
                                         <Box>
                                             <h3>Programme Pratique</h3>
                                             <p
                                                 dangerouslySetInnerHTML={{
                                                     __html:
-                                                        data.wpgraphql
-                                                            .formations.nodes[0]
-                                                            .formations
-                                                            .programmePratique ||
+                                                        data
+                                                            .allWordpressWpFormation
+                                                            .nodes[0].acf
+                                                            .programme_pratique ||
                                                         '',
                                                 }}
                                             />
@@ -137,44 +137,40 @@ const Audit = ({ data }) => {
                                                 Caractéristiques
                                             </h3>
                                             <ul>
-                                                {data.wpgraphql.formations
-                                                    .nodes[0].formations
-                                                    .objectifs && (
+                                                {data.allWordpressWpFormation
+                                                    .nodes[0].acf.objectifs && (
                                                     <li>
                                                         <TrackChangesIcon />
                                                         <div
                                                             dangerouslySetInnerHTML={{
                                                                 __html:
                                                                     data
-                                                                        .wpgraphql
-                                                                        .formations
+                                                                        .allWordpressWpFormation
                                                                         .nodes[0]
-                                                                        .formations
+                                                                        .acf
                                                                         .objectifs,
                                                             }}
                                                         />
                                                     </li>
                                                 )}
-                                                {data.wpgraphql.formations
-                                                    .nodes[0].formations
-                                                    .pedagogie && (
+                                                {data.allWordpressWpFormation
+                                                    .nodes[0].acf.pedagogie && (
                                                     <li>
                                                         <SchoolIcon />
                                                         <div
                                                             dangerouslySetInnerHTML={{
                                                                 __html:
                                                                     data
-                                                                        .wpgraphql
-                                                                        .formations
+                                                                        .allWordpressWpFormation
                                                                         .nodes[0]
-                                                                        .formations
+                                                                        .acf
                                                                         .pedagogie,
                                                             }}
                                                         />
                                                     </li>
                                                 )}
-                                                {data.wpgraphql.formations
-                                                    .nodes[0].formations
+                                                {data.allWordpressWpFormation
+                                                    .nodes[0].acf
                                                     .validation && (
                                                     <li>
                                                         <CheckCircleIcon />
@@ -182,28 +178,25 @@ const Audit = ({ data }) => {
                                                             dangerouslySetInnerHTML={{
                                                                 __html:
                                                                     data
-                                                                        .wpgraphql
-                                                                        .formations
+                                                                        .allWordpressWpFormation
                                                                         .nodes[0]
-                                                                        .formations
+                                                                        .acf
                                                                         .validation,
                                                             }}
                                                         />
                                                     </li>
                                                 )}
-                                                {data.wpgraphql.formations
-                                                    .nodes[0].formations
-                                                    .duree && (
+                                                {data.allWordpressWpFormation
+                                                    .nodes[0].acf.duree && (
                                                     <li>
                                                         <AvTimerIcon />
                                                         <div
                                                             dangerouslySetInnerHTML={{
                                                                 __html:
                                                                     data
-                                                                        .wpgraphql
-                                                                        .formations
+                                                                        .allWordpressWpFormation
                                                                         .nodes[0]
-                                                                        .formations
+                                                                        .acf
                                                                         .duree ||
                                                                     '',
                                                             }}
@@ -264,8 +257,6 @@ const Audit = ({ data }) => {
     );
 };
 
-export default Audit;
-
 export const data = graphql`
     query SinglePostFormation($id: Int!) {
         allFile(
@@ -281,31 +272,27 @@ export const data = graphql`
                 }
             }
         }
-        wpgraphql {
-            formations(where: { id: $id }) {
-                nodes {
-                    title
-                    slug
-                    formationId
-                    formations {
-                        duree
-                        fieldGroupName
-                        objectifs
-                        pedagogie
-                        programmePratique
-                        programmeTheorique
-                        validation
-                        imageFormation {
-                            sourceUrl
-                            imageFile {
-                                childImageSharp {
-                                    fluid(
-                                        maxWidth: 1280
-                                        maxHeight: 900
-                                        quality: 100
-                                    ) {
-                                        ...GatsbyImageSharpFluid_withWebp_tracedSVG
-                                    }
+        allWordpressWpFormation(filter: { wordpress_id: { eq: $id } }) {
+            nodes {
+                title
+                slug
+                wordpress_id
+                acf {
+                    duree
+                    objectifs
+                    pedagogie
+                    programme_pratique
+                    programme_theorique
+                    validation
+                    image_formation {
+                        localFile {
+                            childImageSharp {
+                                fluid(
+                                    maxWidth: 1280
+                                    maxHeight: 900
+                                    quality: 100
+                                ) {
+                                    ...GatsbyImageSharpFluid_withWebp_tracedSVG
                                 }
                             }
                         }
@@ -313,5 +300,37 @@ export const data = graphql`
                 }
             }
         }
+        #        wpgraphql {
+        #            formations(where: { id: $id }) {
+        #                nodes {
+        #                    title
+        #                    slug
+        #                    formationId
+        #                    formations {
+        #                        duree
+        #                        fieldGroupName
+        #                        objectifs
+        #                        pedagogie
+        #                        programmePratique
+        #                        programmeTheorique
+        #                        validation
+        #                        imageFormation {
+        #                            sourceUrl
+        #                            imageFile {
+        #                                childImageSharp {
+        #                                    fluid(
+        #                                        maxWidth: 1280
+        #                                        maxHeight: 900
+        #                                        quality: 100
+        #                                    ) {
+        #                                        ...GatsbyImageSharpFluid_withWebp_tracedSVG
+        #                                    }
+        #                                }
+        #                            }
+        #                        }
+        #                    }
+        #                }
+        #            }
+        #        }
     }
 `;

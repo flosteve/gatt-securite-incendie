@@ -32,22 +32,20 @@ const useStyles = makeStyles(contactsStyle);
 export default function SectionContacts({ ...rest }) {
     const data = useStaticQuery(graphql`
         query ContactHomeSection {
-            wpgraphql {
-                pageBy(pageId: 115) {
-                    coordonnees_contact {
-                        titreDuFormulaire
-                        descriptionDuFormulaireDeContact
-                        addresseContact
-                        codePostalContact
-                        emailContact
-                        nomDeLaSociete
-                        nomDuGerant
-                        numeroDeFax
-                        numeroDeMobile
-                        paysContact
-                        titreSectionTelephone
-                        villeContact
-                    }
+            wordpressAcfPages(wordpress_id: { eq: 115 }) {
+                acf {
+                    titre_du_formulaire
+                    addresse_contact
+                    description_du_formulaire_de_contact
+                    code_postal_contact
+                    email_contact
+                    nom_de_la_societe
+                    nom_du_gerant
+                    numero_de_fax
+                    numero_de_mobile
+                    pays_contact
+                    titre_section_telephone
+                    ville_contact
                 }
             }
             file(relativePath: { eq: "contact_gsi.jpg" }) {
@@ -78,46 +76,39 @@ export default function SectionContacts({ ...rest }) {
                     <GridContainer>
                         <GridItem xs={12} sm={5} md={6}>
                             <h2 className={classes.title}>
-                                {
-                                    data.wpgraphql.pageBy.coordonnees_contact
-                                        .titreDuFormulaire
-                                }
+                                {data.wordpressAcfPages.acf.titre_du_formulaire}
                             </h2>
                             <h5 className={classes.description}>
                                 {
-                                    data.wpgraphql.pageBy.coordonnees_contact
-                                        .descriptionDuFormulaireDeContact
+                                    data.wordpressAcfPages.acf
+                                        .description_du_formulaire_de_contact
                                 }
                             </h5>
                             <InfoArea
                                 className={classes.infoArea}
                                 title={
-                                    data.wpgraphql.pageBy.coordonnees_contact
-                                        .nomDeLaSociete
+                                    data.wordpressAcfPages.acf.nom_de_la_societe
                                 }
                                 description={
                                     <span>
                                         {
-                                            data.wpgraphql.pageBy
-                                                .coordonnees_contact
-                                                .addresseContact
+                                            data.wordpressAcfPages.acf
+                                                .addresse_contact
                                         }
                                         <br />{' '}
                                         {
-                                            data.wpgraphql.pageBy
-                                                .coordonnees_contact
-                                                .codePostalContact
+                                            data.wordpressAcfPages.acf
+                                                .code_postal_contact
                                         }{' '}
                                         {
-                                            data.wpgraphql.pageBy
-                                                .coordonnees_contact
-                                                .villeContact
+                                            data.wordpressAcfPages.acf
+                                                .ville_contact
                                         }
                                         ,
                                         <br />{' '}
                                         {
-                                            data.wpgraphql.pageBy
-                                                .coordonnees_contact.paysContact
+                                            data.wordpressAcfPages.acf
+                                                .pays_contact
                                         }
                                     </span>
                                 }
@@ -126,46 +117,43 @@ export default function SectionContacts({ ...rest }) {
                             <InfoArea
                                 className={classes.infoArea}
                                 title={
-                                    data.wpgraphql.pageBy.coordonnees_contact
-                                        .titreSectionTelephone
+                                    data.wordpressAcfPages.acf
+                                        .titre_section_telephone
                                 }
                                 description={
                                     <span>
                                         {
-                                            data.wpgraphql.pageBy
-                                                .coordonnees_contact.nomDuGerant
+                                            data.wordpressAcfPages.acf
+                                                .nom_du_gerant
                                         }
                                         <br />
                                         <Link
-                                            href={`tel: ${data.wpgraphql.pageBy.coordonnees_contact.numeroDeMobile}`}
+                                            href={`tel: ${data.wordpressAcfPages.acf.numero_de_mobile}`}
                                             style={{ color: 'inherit' }}
                                         >
                                             {
-                                                data.wpgraphql.pageBy
-                                                    .coordonnees_contact
-                                                    .numeroDeMobile
+                                                data.wordpressAcfPages.acf
+                                                    .numero_de_mobile
                                             }
                                         </Link>
                                         <br />
                                         <Link
-                                            href={`tel: ${data.wpgraphql.pageBy.coordonnees_contact.numeroDeFax}`}
+                                            href={`tel: ${data.wordpressAcfPages.acf.numero_de_fax}`}
                                             style={{ color: 'inherit' }}
                                         >
                                             {
-                                                data.wpgraphql.pageBy
-                                                    .coordonnees_contact
-                                                    .numeroDeFax
+                                                data.wordpressAcfPages.acf
+                                                    .numero_de_fax
                                             }
                                         </Link>
                                         <br />
                                         <Link
-                                            href={`mailto: ${data.wpgraphql.pageBy.coordonnees_contact.emailContact}`}
+                                            href={`mailto: ${data.wordpressAcfPages.email_contact}`}
                                             style={{ color: 'inherit' }}
                                         >
                                             {
-                                                data.wpgraphql.pageBy
-                                                    .coordonnees_contact
-                                                    .emailContact
+                                                data.wordpressAcfPages.acf
+                                                    .email_contact
                                             }
                                         </Link>
                                     </span>

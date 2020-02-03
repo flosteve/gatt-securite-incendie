@@ -7,9 +7,11 @@ class GetAnArrayOfObject {
         tabsTypeEquipements.map(tab => {
             const currentTab = {
                 tabContent: (
-                    <div dangerouslySetInnerHTML={{ __html: tab.tabContent }} />
+                    <div
+                        dangerouslySetInnerHTML={{ __html: tab.tab_content }}
+                    />
                 ),
-                tabButton: tab.tabButton,
+                tabButton: tab.tab_button,
             };
             arrayTabs.push(currentTab);
             return '';
@@ -23,9 +25,9 @@ class GetAnArrayOfObject {
         tabsFaq.map(tab => {
             const currentTab = {
                 content: (
-                    <div dangerouslySetInnerHTML={{ __html: tab.faqAnswer }} />
+                    <div dangerouslySetInnerHTML={{ __html: tab.faq_answer }} />
                 ),
-                title: tab.faqQuestion,
+                title: tab.faq_question,
             };
             arrayTabs.push(currentTab);
             return '';

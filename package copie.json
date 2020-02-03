@@ -1,0 +1,94 @@
+{
+  "name": "GSI",
+  "version": "1.8.0",
+  "private": true,
+  "description": "A simple template for GSI",
+  "author": "Steve Eraville <steve@eravilleconceptweb.com>",
+  "dependencies": {
+    "@material-ui/core": "4.9.0",
+    "@material-ui/icons": "4.5.1",
+    "animate.css": "3.7.2",
+    "browser-sync": "^2.26.7",
+    "classnames": "2.2.6",
+    "core-js": "^3.6.4",
+    "dotenv": "^8.2.0",
+    "gatsby": "^2.19.5",
+    "gatsby-image": "^2.2.39",
+    "gatsby-plugin-manifest": "^2.2.38",
+    "gatsby-plugin-netlify": "^2.1.31",
+    "gatsby-plugin-offline": "^3.0.32",
+    "gatsby-plugin-performance-metrics": "^1.0.1",
+    "gatsby-plugin-react-helmet": "^3.1.21",
+    "gatsby-plugin-sass": "^2.1.27",
+    "gatsby-plugin-sharp": "^2.4.0",
+    "gatsby-plugin-smoothscroll": "^1.0.4",
+    "gatsby-source-filesystem": "^2.1.46",
+    "gatsby-source-graphql": "^2.1.32",
+    "gatsby-theme-material-ui": "^1.0.8",
+    "gatsby-transformer-sharp": "^2.3.13",
+    "gsap": "^3.1.1",
+    "history": "4.10.1",
+    "moment": "2.24.0",
+    "node-gyp": "^6.1.0",
+    "node-sass": "4.13.1",
+    "nouislider": "14.1.1",
+    "prop-types": "15.7.2",
+    "react": "16.12.0",
+    "react-dom": "16.12.0",
+    "react-google-maps": "9.4.5",
+    "react-helmet": "^5.2.1",
+    "react-router-dom": "5.1.2",
+    "react-swipeable-views": "0.13.6",
+    "scrollmagic": "^2.0.7",
+    "scrollmagic-plugin-gsap": "^1.0.4",
+    "smooth-scroll": "^16.1.2"
+  },
+  "scripts": {
+    "build": "gatsby build",
+    "develop": "gatsby develop",
+    "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
+    "start": "npm run develop",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean",
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
+    "eject": "react-scripts eject",
+    "lint:check": "eslint . --ext=js,jsx;  exit 0",
+    "lint:fix": "eslint . --ext=js,jsx --fix;  exit 0",
+    "install:clean": "rm -rf node_modules/ && rm -rf package-lock.json && npm install && npm start",
+    "compile-sass": "node-sass src/assets/scss/material-kit-pro-react.scss src/assets/css/material-kit-pro-react.css",
+    "minify-sass": "node-sass src/assets/scss/material-kit-pro-react.scss src/assets/css/material-kit-pro-react.min.css --output-style compressed",
+    "map-sass": "node-sass src/assets/scss/material-kit-pro-react.scss src/assets/css/material-kit-pro-react.css --source-map true"
+  },
+  "devDependencies": {
+    "gulp": "4.0.2",
+    "gulp-append-prepend": "1.0.8",
+    "prettier": "^1.19.1"
+  },
+  "keywords": [
+    "gatsby"
+  ],
+  "license": "MIT",
+  "optionalDependencies": {
+    "@types/googlemaps": "3.39.2",
+    "@types/markerclustererplus": "2.1.33",
+    "eslint-config-prettier": "6.9.0",
+    "eslint-plugin-prettier": "3.1.2",
+    "eslint-plugin-react": "7.18.0",
+    "typescript": "3.7.5"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": []
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/flosteve/gatt-securite-incendie"
+  },
+  "bugs": {
+    "url": "https://github.com/flosteve/gatt-securite-incendie"
+  }
+}

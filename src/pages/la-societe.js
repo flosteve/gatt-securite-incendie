@@ -33,31 +33,53 @@ const Societe = () => {
                     }
                 }
             }
-            wpgraphql {
-                pageBy(pageId: 117) {
-                    banniere {
-                        titreDeLaPage
-                        imageDeBanniere {
-                            sourceUrl
-                            imageFile {
-                                childImageSharp {
-                                    fluid(
-                                        maxWidth: 1600
-                                        maxHeight: 1200
-                                        quality: 100
-                                    ) {
-                                        ...GatsbyImageSharpFluid_withWebp_tracedSVG
-                                    }
+            wordpressPage(wordpress_id: { eq: 117 }) {
+                acf {
+                    titre_de_la_page
+                    image_de_banniere {
+                        source_url
+                        localFile {
+                            childImageSharp {
+                                fluid(
+                                    maxWidth: 1600
+                                    maxHeight: 1067
+                                    quality: 100
+                                ) {
+                                    ...GatsbyImageSharpFluid_withWebp_tracedSVG
                                 }
                             }
                         }
                     }
-                    contenu_page {
-                        titreDuParagraphe
-                        contenuDuParagraphe
-                    }
+                    contenu_du_paragraphe
+                    titre_du_paragraphe
                 }
             }
+
+            #            wpgraphql {
+            #                pageBy(pageId: 117) {
+            #                    banniere {
+            #                        titreDeLaPage
+            #                        imageDeBanniere {
+            #                            sourceUrl
+            #                            imageFile {
+            #                                childImageSharp {
+            #                                    fluid(
+            #                                        maxWidth: 1600
+            #                                        maxHeight: 1200
+            #                                        quality: 100
+            #                                    ) {
+            #                                        ...GatsbyImageSharpFluid_withWebp_tracedSVG
+            #                                    }
+            #                                }
+            #                            }
+            #                        }
+            #                    }
+            #                    contenu_page {
+            #                        titreDuParagraphe
+            #                        contenuDuParagraphe
+            #                    }
+            #                }
+            #            }
         }
     `);
 
@@ -65,10 +87,10 @@ const Societe = () => {
 
     return (
         <Layout>
-            <Seo title={data.wpgraphql.pageBy.banniere.titreDeLaPage} />
+            <Seo title={data.wordpressPage.acf.titre_de_la_page} />
             <Parallax
                 image={
-                    data.wpgraphql.pageBy.banniere.imageDeBanniere.imageFile
+                    data.wordpressPage.acf.image_de_banniere.localFile
                         .childImageSharp.fluid.src
                 }
                 className="parallax"
@@ -87,7 +109,7 @@ const Societe = () => {
                             )}
                         >
                             <h1 className={classes.title}>
-                                {data.wpgraphql.pageBy.banniere.titreDeLaPage}
+                                {data.wordpressPage.acf.titre_de_la_page}
                             </h1>
                         </GridItem>
                     </GridContainer>
@@ -101,16 +123,13 @@ const Societe = () => {
                             className={classes.mlAuto + ' ' + classes.mrAuto}
                         >
                             <h2>
-                                {
-                                    data.wpgraphql.pageBy.contenu_page
-                                        .titreDuParagraphe
-                                }
+                                {data.wordpressPage.acf.titre_du_paragraphe}
                             </h2>
                             <div
                                 dangerouslySetInnerHTML={{
                                     __html:
-                                        data.wpgraphql.pageBy.contenu_page
-                                            .contenuDuParagraphe,
+                                        data.wordpressPage.acf
+                                            .contenu_du_paragraphe,
                                 }}
                             />
                         </GridItem>

@@ -39,19 +39,17 @@ const PageContent = ({ data, classes }) => {
 
     return (
         <GridItem xs={12} className={classes.mlAuto + ' ' + classes.mrAuto}>
-            <h2>{data.wpgraphql.pageBy.contenu_page.titreDuParagraphe}</h2>
+            <h2>{data.wordpressPage.acf.titre_du_paragraphe}</h2>
             <div
                 dangerouslySetInnerHTML={{
-                    __html:
-                        data.wpgraphql.pageBy.contenu_page.contenuDuParagraphe,
+                    __html: data.wordpressPage.acf.contenu_du_paragraphe,
                 }}
             />
             <Box className="page-modal-reglementation">
                 <Button
                     color="danger"
                     children={
-                        data.wpgraphql.pageBy.contenu_page_prestation
-                            .texteDuLienReglementation
+                        data.wordpressPage.acf.texte_du_lien_reglementation
                     }
                     startIcon={<GavelIcon />}
                     onClick={handleClickOpen}
@@ -71,12 +69,11 @@ const PageContent = ({ data, classes }) => {
                 </DialogTitle>
                 <DialogContent>
                     <DialogContentText id="alert-dialog-slide-description">
-                        <div
+                        <span
                             dangerouslySetInnerHTML={{
                                 __html:
-                                    data.wpgraphql.pageBy
-                                        .contenu_page_prestation
-                                        .paragrapheDeReglementation,
+                                    data.wordpressPage.acf
+                                        .paragraphe_de_reglementation,
                             }}
                         />
                     </DialogContentText>

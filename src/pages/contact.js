@@ -24,41 +24,65 @@ const useStyles = makeStyles(aboutUsStyle);
 const Contact = () => {
     const data = useStaticQuery(graphql`
         query Contact {
-            wpgraphql {
-                pageBy(pageId: 115) {
-                    banniere {
-                        titreDeLaPage
-                        imageDeBanniere {
-                            sourceUrl
-                            imageFile {
-                                childImageSharp {
-                                    fluid(
-                                        maxWidth: 1600
-                                        maxHeight: 900
-                                        quality: 100
-                                    ) {
-                                        ...GatsbyImageSharpFluid_withWebp_tracedSVG
-                                    }
+            wordpressPage(wordpress_id: { eq: 115 }) {
+                acf {
+                    titre_de_la_page
+                    image_de_banniere {
+                        source_url
+                        localFile {
+                            childImageSharp {
+                                fluid(
+                                    maxWidth: 1600
+                                    maxHeight: 1067
+                                    quality: 100
+                                ) {
+                                    ...GatsbyImageSharpFluid_withWebp_tracedSVG
                                 }
                             }
                         }
                     }
-                    contenu_page {
-                        titreDuParagraphe
-                        contenuDuParagraphe
-                    }
+                    contenu_du_paragraphe
+                    titre_du_paragraphe
+                    texte_du_lien_reglementation
+                    paragraphe_de_reglementation
                 }
             }
+
+            #            wpgraphql {
+            #                pageBy(pageId: 115) {
+            #                    banniere {
+            #                        titreDeLaPage
+            #                        imageDeBanniere {
+            #                            sourceUrl
+            #                            imageFile {
+            #                                childImageSharp {
+            #                                    fluid(
+            #                                        maxWidth: 1600
+            #                                        maxHeight: 900
+            #                                        quality: 100
+            #                                    ) {
+            #                                        ...GatsbyImageSharpFluid_withWebp_tracedSVG
+            #                                    }
+            #                                }
+            #                            }
+            #                        }
+            #                    }
+            #                    contenu_page {
+            #                        titreDuParagraphe
+            #                        contenuDuParagraphe
+            #                    }
+            #                }
+            #            }
         }
     `);
 
     const classes = useStyles();
     return (
         <Layout>
-            <Seo title={data.wpgraphql.pageBy.banniere.titreDeLaPage} />
+            <Seo title={data.wordpressPage.acf.titre_de_la_page} />
             <Parallax
                 image={
-                    data.wpgraphql.pageBy.banniere.imageDeBanniere.imageFile
+                    data.wordpressPage.acf.image_de_banniere.localFile
                         .childImageSharp.fluid.src
                 }
                 className="parallax"

@@ -27,47 +27,79 @@ const useStyles = makeStyles(aboutUsStyle);
 const Faq = () => {
     const data = useStaticQuery(graphql`
         query Faq {
-            wpgraphql {
-                pageBy(pageId: 309) {
-                    tabsFaq {
-                        faqContent {
-                            faqAnswer
-                            faqQuestion
-                        }
-                    }
-                    banniere {
-                        titreDeLaPage
-                        imageDeBanniere {
-                            sourceUrl
-                            imageFile {
-                                childImageSharp {
-                                    fluid(
-                                        maxWidth: 1280
-                                        maxHeight: 900
-                                        quality: 100
-                                    ) {
-                                        ...GatsbyImageSharpFluid_withWebp_tracedSVG
-                                    }
+            wordpressPage(wordpress_id: { eq: 309 }) {
+                acf {
+                    titre_de_la_page
+                    image_de_banniere {
+                        source_url
+                        localFile {
+                            childImageSharp {
+                                fluid(
+                                    maxWidth: 1600
+                                    maxHeight: 1067
+                                    quality: 100
+                                ) {
+                                    ...GatsbyImageSharpFluid_withWebp_tracedSVG
                                 }
                             }
                         }
                     }
-                    contenu_page_prestation {
-                        paragrapheDeReglementation
-                        texteDuLienReglementation
+                    contenu_du_paragraphe
+                    titre_du_paragraphe
+                    texte_du_lien_reglementation
+                    paragraphe_de_reglementation
+                    faq_content {
+                        faq_answer
+                        faq_question
                     }
-                    contenu_page {
-                        titreDuParagraphe
-                        contenuDuParagraphe
-                    }
-                    type_equipements {
-                        tabsTypeEquipements {
-                            tabContent
-                            tabButton
-                        }
+                    tabs_type_equipements {
+                        tab_button
+                        tab_content
                     }
                 }
             }
+
+            #            wpgraphql {
+            #                pageBy(pageId: 309) {
+            #                    tabsFaq {
+            #                        faqContent {
+            #                            faqAnswer
+            #                            faqQuestion
+            #                        }
+            #                    }
+            #                    banniere {
+            #                        titreDeLaPage
+            #                        imageDeBanniere {
+            #                            sourceUrl
+            #                            imageFile {
+            #                                childImageSharp {
+            #                                    fluid(
+            #                                        maxWidth: 1280
+            #                                        maxHeight: 900
+            #                                        quality: 100
+            #                                    ) {
+            #                                        ...GatsbyImageSharpFluid_withWebp_tracedSVG
+            #                                    }
+            #                                }
+            #                            }
+            #                        }
+            #                    }
+            #                    contenu_page_prestation {
+            #                        paragrapheDeReglementation
+            #                        texteDuLienReglementation
+            #                    }
+            #                    contenu_page {
+            #                        titreDuParagraphe
+            #                        contenuDuParagraphe
+            #                    }
+            #                    type_equipements {
+            #                        tabsTypeEquipements {
+            #                            tabContent
+            #                            tabButton
+            #                        }
+            #                    }
+            #                }
+            #            }
             file(relativePath: { eq: "contact_gsi.jpg" }) {
                 childImageSharp {
                     fluid(maxWidth: 1600, maxHeight: 1067, quality: 100) {
@@ -82,10 +114,10 @@ const Faq = () => {
 
     return (
         <Layout>
-            <Seo title={data.wpgraphql.pageBy.banniere.titreDeLaPage} />
+            <Seo title={data.wordpressPage.acf.titre_de_la_page} />
             <Parallax
                 image={
-                    data.wpgraphql.pageBy.banniere.imageDeBanniere.imageFile
+                    data.wordpressPage.acf.image_de_banniere.localFile
                         .childImageSharp.fluid.src
                 }
                 className="parallax"
@@ -104,7 +136,7 @@ const Faq = () => {
                             )}
                         >
                             <h1 className={classes.title}>
-                                {data.wpgraphql.pageBy.banniere.titreDeLaPage}
+                                {data.wordpressPage.acf.titre_de_la_page}
                             </h1>
                         </GridItem>
                     </GridContainer>
@@ -120,16 +152,13 @@ const Faq = () => {
                             className={classes.mlAuto + ' ' + classes.mrAuto}
                         >
                             <h2>
-                                {
-                                    data.wpgraphql.pageBy.contenu_page
-                                        .titreDuParagraphe
-                                }
+                                {data.wordpressPage.acf.titre_du_paragraphe}
                             </h2>
                             <Accordion
                                 active={0}
                                 activeColor="danger"
                                 collapses={formatInArrayOfObjects.formatAccordion(
-                                    data.wpgraphql.pageBy.tabsFaq.faqContent
+                                    data.wordpressPage.acf.faq_content
                                 )}
                             />
                         </GridItem>

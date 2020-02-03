@@ -35,38 +35,35 @@ const useStyles = makeStyles(presentationStyle);
 const IndexPage = () => {
     const data = useStaticQuery(graphql`
         query HomeBanner {
-            wpgraphql {
-                pageBy(pageId: 65) {
-                    bannerHomePage {
-                        titrePrincipal
-                        boutonDemandeDevis
-                        slogan
-                        imageBanniere {
-                            imageFile {
+            wordpressAcfPages(wordpress_id: { eq: 65 }) {
+                acf {
+                    titre_principal
+                    bouton_demande_devis
+                    slogan
+                    image_banniere {
+                        localFile {
+                            childImageSharp {
+                                fluid(maxWidth: 1600, maxHeight: 900) {
+                                    ...GatsbyImageSharpFluid_withWebp
+                                }
+                            }
+                        }
+                        source_url
+                    }
+                    section_nos_offres {
+                        titre
+                        image {
+                            localFile {
                                 childImageSharp {
-                                    fluid(maxWidth: 1600, maxHeight: 900) {
+                                    fluid(maxWidth: 1600, maxHeight: 1200) {
                                         ...GatsbyImageSharpFluid_withWebp
                                     }
                                 }
                             }
-                            sourceUrl
                         }
-                        sectionNosOffres {
+                        les_offres {
+                            descriptif
                             titre
-                            image {
-                                imageFile {
-                                    childImageSharp {
-                                        fluid(maxWidth: 1600, maxHeight: 1200) {
-                                            ...GatsbyImageSharpFluid_withWebp
-                                        }
-                                    }
-                                }
-                                sourceUrl
-                            }
-                            lesOffres {
-                                descriptif
-                                titre
-                            }
                         }
                     }
                 }
@@ -118,36 +115,32 @@ const IndexPage = () => {
     return (
         <Layout>
             <Seo title="Accueil" />
-            {data.wpgraphql.pageBy.bannerHomePage.imageBanniere.imageFile
+            {data.wordpressAcfPages.acf.image_banniere.localFile
                 .childImageSharp && (
                 <Parallax
                     image={
-                        data.wpgraphql.pageBy.bannerHomePage.imageBanniere
-                            .imageFile.childImageSharp.fluid.src
+                        data.wordpressAcfPages.acf.image_banniere.localFile
+                            .childImageSharp.fluid.src
                     }
                     className="parallax home"
                     filter="dark"
                 >
                     <div className={classes.container}>
                         <GridContainer>
-                            {data.wpgraphql.pageBy.bannerHomePage && (
+                            {data.wordpressAcfPages.acf && (
                                 <GridItem>
                                     <div className={classes.brand}>
                                         <h1 ref={el => (title = el)}>
                                             {
-                                                data.wpgraphql.pageBy
-                                                    .bannerHomePage
-                                                    .titrePrincipal
+                                                data.wordpressAcfPages.acf
+                                                    .titre_principal
                                             }
                                         </h1>
                                         <h3
                                             className={classes.title}
                                             ref={el => (slogan = el)}
                                         >
-                                            {
-                                                data.wpgraphql.pageBy
-                                                    .bannerHomePage.slogan
-                                            }
+                                            {data.wordpressAcfPages.acf.slogan}
                                         </h3>
                                         <Button
                                             size="lg"
@@ -159,9 +152,9 @@ const IndexPage = () => {
                                                 <span>
                                                     {' '}
                                                     {
-                                                        data.wpgraphql.pageBy
-                                                            .bannerHomePage
-                                                            .boutonDemandeDevis
+                                                        data.wordpressAcfPages
+                                                            .acf
+                                                            .bouton_demande_devis
                                                     }
                                                 </span>
                                             }
@@ -187,32 +180,32 @@ const IndexPage = () => {
                             >
                                 <Img
                                     fluid={
-                                        data.wpgraphql.pageBy.bannerHomePage
-                                            .sectionNosOffres.image.imageFile
+                                        data.wordpressAcfPages.acf
+                                            .section_nos_offres.image.localFile
                                             .childImageSharp.fluid
                                     }
                                 />
                             </div>
                         </GridItem>
-                        {data.wpgraphql.pageBy.bannerHomePage
-                            .sectionNosOffres && (
+                        {data.wordpressAcfPages.acf.section_nos_offres && (
                             <GridItem xs={12} sm={12} md={6}>
                                 <h2>
                                     {
-                                        data.wpgraphql.pageBy.bannerHomePage
-                                            .sectionNosOffres.titre
+                                        data.wordpressAcfPages.acf
+                                            .section_nos_offres.titre
                                     }
                                 </h2>
                                 <InfoArea
                                     className={classes.infoArea}
                                     icon={BuildIcon}
                                     title={
-                                        data.wpgraphql.pageBy.bannerHomePage
-                                            .sectionNosOffres.lesOffres[0].titre
+                                        data.wordpressAcfPages.acf
+                                            .section_nos_offres.les_offres[0]
+                                            .titre
                                     }
                                     description={
-                                        data.wpgraphql.pageBy.bannerHomePage
-                                            .sectionNosOffres.lesOffres[0]
+                                        data.wordpressAcfPages.acf
+                                            .section_nos_offres.les_offres[0]
                                             .descriptif
                                     }
                                     iconColor="danger"
@@ -221,12 +214,13 @@ const IndexPage = () => {
                                     className={classes.infoArea}
                                     icon={CreateIcon}
                                     title={
-                                        data.wpgraphql.pageBy.bannerHomePage
-                                            .sectionNosOffres.lesOffres[1].titre
+                                        data.wordpressAcfPages.acf
+                                            .section_nos_offres.les_offres[1]
+                                            .titre
                                     }
                                     description={
-                                        data.wpgraphql.pageBy.bannerHomePage
-                                            .sectionNosOffres.lesOffres[1]
+                                        data.wordpressAcfPages.acf
+                                            .section_nos_offres.les_offres[1]
                                             .descriptif
                                     }
                                     iconColor="danger"
@@ -235,12 +229,13 @@ const IndexPage = () => {
                                     className={classes.infoArea}
                                     icon={MapIcon}
                                     title={
-                                        data.wpgraphql.pageBy.bannerHomePage
-                                            .sectionNosOffres.lesOffres[2].titre
+                                        data.wordpressAcfPages.acf
+                                            .section_nos_offres.les_offres[2]
+                                            .titre
                                     }
                                     description={
-                                        data.wpgraphql.pageBy.bannerHomePage
-                                            .sectionNosOffres.lesOffres[2]
+                                        data.wordpressAcfPages.acf
+                                            .section_nos_offres.les_offres[2]
                                             .descriptif
                                     }
                                     iconColor="danger"
@@ -249,12 +244,13 @@ const IndexPage = () => {
                                     className={classes.infoArea}
                                     icon={VerifiedUserIcon}
                                     title={
-                                        data.wpgraphql.pageBy.bannerHomePage
-                                            .sectionNosOffres.lesOffres[3].titre
+                                        data.wordpressAcfPages.acf
+                                            .section_nos_offres.les_offres[3]
+                                            .titre
                                     }
                                     description={
-                                        data.wpgraphql.pageBy.bannerHomePage
-                                            .sectionNosOffres.lesOffres[3]
+                                        data.wordpressAcfPages.acf
+                                            .section_nos_offres.les_offres[3]
                                             .descriptif
                                     }
                                     iconColor="danger"

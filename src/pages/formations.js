@@ -39,64 +39,108 @@ const Formations = () => {
                     }
                 }
             }
-            wpgraphql {
-                pageBy(pageId: 27062) {
-                    banniere {
-                        titreDeLaPage
-                        imageDeBanniere {
-                            sourceUrl
-                            imageFile {
-                                childImageSharp {
-                                    fluid(
-                                        maxWidth: 1280
-                                        maxHeight: 900
-                                        quality: 100
-                                    ) {
-                                        ...GatsbyImageSharpFluid_withWebp_tracedSVG
-                                    }
+            wordpressPage(wordpress_id: { eq: 27062 }) {
+                acf {
+                    titre_de_la_page
+                    image_de_banniere {
+                        source_url
+                        localFile {
+                            childImageSharp {
+                                fluid(
+                                    maxWidth: 1600
+                                    maxHeight: 1067
+                                    quality: 100
+                                ) {
+                                    ...GatsbyImageSharpFluid_withWebp_tracedSVG
                                 }
                             }
                         }
                     }
-                    contenu_page {
-                        titreDuParagraphe
-                    }
+                    contenu_du_paragraphe
+                    titre_du_paragraphe
+                    texte_du_lien_reglementation
+                    paragraphe_de_reglementation
                 }
-                formations {
-                    nodes {
-                        title
-                        uri
-                        formations {
-                            tagFormation
-                            imageFormation {
-                                imageFile {
-                                    childImageSharp {
-                                        fluid(
-                                            maxWidth: 1600
-                                            maxHeight: 900
-                                            quality: 100
-                                        ) {
-                                            ...GatsbyImageSharpFluid_withWebp_tracedSVG
-                                        }
+            }
+            allWordpressWpFormation(sort: { fields: title, order: ASC }) {
+                nodes {
+                    link
+                    title
+                    path
+                    acf {
+                        tag_formation
+                        image_formation {
+                            localFile {
+                                childImageSharp {
+                                    fluid {
+                                        src
                                     }
                                 }
-                                sourceUrl
                             }
+                            source_url
                         }
                     }
                 }
             }
         }
+
+        #            wpgraphql {
+        #                pageBy(pageId: 27062) {
+        #                    banniere {
+        #                        titreDeLaPage
+        #                        imageDeBanniere {
+        #                            sourceUrl
+        #                            imageFile {
+        #                                childImageSharp {
+        #                                    fluid(
+        #                                        maxWidth: 1280
+        #                                        maxHeight: 900
+        #                                        quality: 100
+        #                                    ) {
+        #                                        ...GatsbyImageSharpFluid_withWebp_tracedSVG
+        #                                    }
+        #                                }
+        #                            }
+        #                        }
+        #                    }
+        #                    contenu_page {
+        #                        titreDuParagraphe
+        #                    }
+        #                }
+        #                formations {
+        #                    nodes {
+        #                        title
+        #                        uri
+        #                        formations {
+        #                            tagFormation
+        #                            imageFormation {
+        #                                imageFile {
+        #                                    childImageSharp {
+        #                                        fluid(
+        #                                            maxWidth: 1600
+        #                                            maxHeight: 900
+        #                                            quality: 100
+        #                                        ) {
+        #                                            ...GatsbyImageSharpFluid_withWebp_tracedSVG
+        #                                        }
+        #                                    }
+        #                                }
+        #                                sourceUrl
+        #                            }
+        #                        }
+        #                    }
+        #                }
+        #            }
     `);
 
     const classes = useStyles();
 
     return (
         <Layout>
-            <Seo title={data.wpgraphql.pageBy.banniere.titreDeLaPage} />
+            <Seo title={data.wordpressPage.acf.titre_de_la_page} />
             <Parallax
                 image={
-                    data.wpgraphql.pageBy.banniere.imageDeBanniere.imageFile
+                    data.wordpressPage.acf.image_de_banniere.localFile
                         .childImageSharp.fluid.src
                 }
                 className="parallax"
@@ -115,7 +159,7 @@ const Formations = () => {
                             )}
                         >
                             <h1 className={classes.title}>
-                                {data.wpgraphql.pageBy.banniere.titreDeLaPage}
+                                {data.wordpressPage.acf.titre_de_la_page}
                             </h1>
                         </GridItem>
                     </GridContainer>
@@ -132,53 +176,53 @@ const Formations = () => {
                             className={classes.mlAuto + ' ' + classes.mrAuto}
                         >
                             <h2>
-                                {
-                                    data.wpgraphql.pageBy.contenu_page
-                                        .titreDuParagraphe
-                                }
+                                {data.wordpressPage.acf.titre_du_paragraphe}
                             </h2>
                         </GridItem>
 
-                        {data.wpgraphql.formations &&
-                            data.wpgraphql.formations.nodes.map(formation => (
-                                <GridItem xs={12} sm={6} md={6}>
-                                    <Card
-                                        raised
-                                        background
-                                        style={{
-                                            backgroundImage: `url("${formation.formations.imageFormation.imageFile.childImageSharp.fluid.src}")`,
-                                        }}
-                                    >
-                                        <CardBody background>
-                                            <h6 className={classes.category}>
-                                                {
-                                                    formation.formations
-                                                        .tagFormation
-                                                }
-                                            </h6>
-                                            <Link
-                                                to={`/formations/${formation.uri}`}
-                                            >
-                                                <h3
-                                                    className={
-                                                        classes.cardTitle
-                                                    }
+                        {data.allWordpressWpFormation.nodes &&
+                            data.allWordpressWpFormation.nodes.map(
+                                formation => (
+                                    <GridItem xs={12} sm={6} md={6}>
+                                        <Card
+                                            raised
+                                            background
+                                            style={{
+                                                backgroundImage: `url("${formation.acf.image_formation.localFile.childImageSharp.fluid.src}")`,
+                                            }}
+                                        >
+                                            <CardBody background>
+                                                <h6
+                                                    className={classes.category}
                                                 >
-                                                    {formation.title}
-                                                </h3>
-                                            </Link>
-                                            <Link
-                                                to={`/formations/${formation.uri}`}
-                                            >
-                                                <Button round color="danger">
-                                                    <LibraryBooksIcon /> Voir le
-                                                    détail
-                                                </Button>
-                                            </Link>
-                                        </CardBody>
-                                    </Card>
-                                </GridItem>
-                            ))}
+                                                    {
+                                                        formation.acf
+                                                            .tag_formation
+                                                    }
+                                                </h6>
+                                                <Link to={formation.path}>
+                                                    <h3
+                                                        className={
+                                                            classes.cardTitle
+                                                        }
+                                                    >
+                                                        {formation.title}
+                                                    </h3>
+                                                </Link>
+                                                <Link to={formation.path}>
+                                                    <Button
+                                                        round
+                                                        color="danger"
+                                                    >
+                                                        <LibraryBooksIcon />{' '}
+                                                        Voir le détail
+                                                    </Button>
+                                                </Link>
+                                            </CardBody>
+                                        </Card>
+                                    </GridItem>
+                                )
+                            )}
                     </GridContainer>
                 </div>
                 <PreFooterContact
