@@ -47,32 +47,6 @@ const Contact = () => {
                     paragraphe_de_reglementation
                 }
             }
-
-            #            wpgraphql {
-            #                pageBy(pageId: 115) {
-            #                    banniere {
-            #                        titreDeLaPage
-            #                        imageDeBanniere {
-            #                            sourceUrl
-            #                            imageFile {
-            #                                childImageSharp {
-            #                                    fluid(
-            #                                        maxWidth: 1600
-            #                                        maxHeight: 900
-            #                                        quality: 100
-            #                                    ) {
-            #                                        ...GatsbyImageSharpFluid_withWebp_tracedSVG
-            #                                    }
-            #                                }
-            #                            }
-            #                        }
-            #                    }
-            #                    contenu_page {
-            #                        titreDuParagraphe
-            #                        contenuDuParagraphe
-            #                    }
-            #                }
-            #            }
         }
     `);
 

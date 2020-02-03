@@ -61,36 +61,6 @@ const Signaletique = () => {
                     paragraphe_de_reglementation
                 }
             }
-
-            #            wpgraphql {
-            #                pageBy(pageId: 345) {
-            #                    banniere {
-            #                        titreDeLaPage
-            #                        imageDeBanniere {
-            #                            sourceUrl
-            #                            imageFile {
-            #                                childImageSharp {
-            #                                    fluid(
-            #                                        maxWidth: 1024
-            #                                        maxHeight: 900
-            #                                        quality: 100
-            #                                    ) {
-            #                                        ...GatsbyImageSharpFluid_withWebp_tracedSVG
-            #                                    }
-            #                                }
-            #                            }
-            #                        }
-            #                    }
-            #                    contenu_page_prestation {
-            #                        paragrapheDeReglementation
-            #                        texteDuLienReglementation
-            #                    }
-            #                    contenu_page {
-            #                        titreDuParagraphe
-            #                        contenuDuParagraphe
-            #                    }
-            #                }
-            #            }
         }
     `);
 

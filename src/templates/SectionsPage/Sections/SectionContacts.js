@@ -183,6 +183,11 @@ export default function SectionContacts({ ...rest }) {
                                             name="form-name"
                                             value="contact"
                                         />
+                                        <Input
+                                            type="hidden"
+                                            name="subject"
+                                            value="Soumission de formulaire de Gatt Sécurité Incendie"
+                                        />
                                     </Hidden>
                                     <CardHeader
                                         contact

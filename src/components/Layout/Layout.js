@@ -34,7 +34,6 @@ import styles from '../../assets/jss/material-kit-pro-react/views/componentsSect
 /*
 Assets
  */
-import TwitterIcon from '@material-ui/icons/Twitter';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
 
 const useStyles = makeStyles(styles);
@@ -101,17 +100,6 @@ const Layout = ({ children }) => {
                         </div>
                         <div className={classes.rightLinks}>
                             <ul>
-                                <li>
-                                    <Button
-                                        href="https://twitter.com/flostevebron91"
-                                        target="_blank"
-                                        color="twitter"
-                                        justIcon
-                                        simple
-                                    >
-                                        <TwitterIcon />
-                                    </Button>
-                                </li>
                                 <li>
                                     <Button
                                         href="https://fr.linkedin.com/in/pierre-gatt-0172aa11a"

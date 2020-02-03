@@ -83,54 +83,6 @@ const Formations = () => {
                 }
             }
         }
-
-        #            wpgraphql {
-        #                pageBy(pageId: 27062) {
-        #                    banniere {
-        #                        titreDeLaPage
-        #                        imageDeBanniere {
-        #                            sourceUrl
-        #                            imageFile {
-        #                                childImageSharp {
-        #                                    fluid(
-        #                                        maxWidth: 1280
-        #                                        maxHeight: 900
-        #                                        quality: 100
-        #                                    ) {
-        #                                        ...GatsbyImageSharpFluid_withWebp_tracedSVG
-        #                                    }
-        #                                }
-        #                            }
-        #                        }
-        #                    }
-        #                    contenu_page {
-        #                        titreDuParagraphe
-        #                    }
-        #                }
-        #                formations {
-        #                    nodes {
-        #                        title
-        #                        uri
-        #                        formations {
-        #                            tagFormation
-        #                            imageFormation {
-        #                                imageFile {
-        #                                    childImageSharp {
-        #                                        fluid(
-        #                                            maxWidth: 1600
-        #                                            maxHeight: 900
-        #                                            quality: 100
-        #                                        ) {
-        #                                            ...GatsbyImageSharpFluid_withWebp_tracedSVG
-        #                                        }
-        #                                    }
-        #                                }
-        #                                sourceUrl
-        #                            }
-        #                        }
-        #                    }
-        #                }
-        #            }
     `);
 
     const classes = useStyles();

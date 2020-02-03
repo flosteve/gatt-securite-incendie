@@ -47,32 +47,6 @@ const MentionsLegales = () => {
                     titre_du_paragraphe
                 }
             }
-
-            #            wpgraphql {
-            #                pageBy(pageId: 45913) {
-            #                    banniere {
-            #                        titreDeLaPage
-            #                        imageDeBanniere {
-            #                            sourceUrl
-            #                            imageFile {
-            #                                childImageSharp {
-            #                                    fluid(
-            #                                        maxWidth: 1600
-            #                                        maxHeight: 1200
-            #                                        quality: 100
-            #                                    ) {
-            #                                        ...GatsbyImageSharpFluid_withWebp_tracedSVG
-            #                                    }
-            #                                }
-            #                            }
-            #                        }
-            #                    }
-            #                    contenu_page {
-            #                        titreDuParagraphe
-            #                        contenuDuParagraphe
-            #                    }
-            #                }
-            #            }
         }
     `);
 

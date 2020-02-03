@@ -300,37 +300,5 @@ export const data = graphql`
                 }
             }
         }
-        #        wpgraphql {
-        #            formations(where: { id: $id }) {
-        #                nodes {
-        #                    title
-        #                    slug
-        #                    formationId
-        #                    formations {
-        #                        duree
-        #                        fieldGroupName
-        #                        objectifs
-        #                        pedagogie
-        #                        programmePratique
-        #                        programmeTheorique
-        #                        validation
-        #                        imageFormation {
-        #                            sourceUrl
-        #                            imageFile {
-        #                                childImageSharp {
-        #                                    fluid(
-        #                                        maxWidth: 1280
-        #                                        maxHeight: 900
-        #                                        quality: 100
-        #                                    ) {
-        #                                        ...GatsbyImageSharpFluid_withWebp_tracedSVG
-        #                                    }
-        #                                }
-        #                            }
-        #                        }
-        #                    }
-        #                }
-        #            }
-        #        }
     }
 `;

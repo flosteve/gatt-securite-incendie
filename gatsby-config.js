@@ -23,14 +23,6 @@ module.exports = {
         },
         `gatsby-transformer-sharp`,
         `gatsby-plugin-sharp`,
-        // {
-        //     resolve: 'gatsby-source-graphql',
-        //     options: {
-        //         typeName: 'WPGraphQL',
-        //         fieldName: 'wpgraphql',
-        //         url: `https://gsi.eravilleconceptweb.com/graphql`,
-        //     },
-        // },
         {
             resolve: `gatsby-source-wordpress`,
             options: {

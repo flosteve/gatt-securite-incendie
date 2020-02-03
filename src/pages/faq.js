@@ -59,47 +59,6 @@ const Faq = () => {
                 }
             }
 
-            #            wpgraphql {
-            #                pageBy(pageId: 309) {
-            #                    tabsFaq {
-            #                        faqContent {
-            #                            faqAnswer
-            #                            faqQuestion
-            #                        }
-            #                    }
-            #                    banniere {
-            #                        titreDeLaPage
-            #                        imageDeBanniere {
-            #                            sourceUrl
-            #                            imageFile {
-            #                                childImageSharp {
-            #                                    fluid(
-            #                                        maxWidth: 1280
-            #                                        maxHeight: 900
-            #                                        quality: 100
-            #                                    ) {
-            #                                        ...GatsbyImageSharpFluid_withWebp_tracedSVG
-            #                                    }
-            #                                }
-            #                            }
-            #                        }
-            #                    }
-            #                    contenu_page_prestation {
-            #                        paragrapheDeReglementation
-            #                        texteDuLienReglementation
-            #                    }
-            #                    contenu_page {
-            #                        titreDuParagraphe
-            #                        contenuDuParagraphe
-            #                    }
-            #                    type_equipements {
-            #                        tabsTypeEquipements {
-            #                            tabContent
-            #                            tabButton
-            #                        }
-            #                    }
-            #                }
-            #            }
             file(relativePath: { eq: "contact_gsi.jpg" }) {
                 childImageSharp {
                     fluid(maxWidth: 1600, maxHeight: 1067, quality: 100) {

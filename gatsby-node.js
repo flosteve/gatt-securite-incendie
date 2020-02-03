@@ -68,16 +68,11 @@ exports.createPages = async ({ graphql, actions }) => {
     const posts = result.data.allWordpressWpFormation.edges;
 
     posts.forEach((post, index) => {
-        // const previous = index === posts.length - 1 ? null : posts[index + 1].node
-        // const next = index === 0 ? null : posts[index - 1].node
-
         createPage({
             path: `/formation/` + post.node.slug,
             component: formationPost,
             context: {
                 id: post.node.wordpress_id,
-                // previous,
-                // next,
             },
         });
     });
