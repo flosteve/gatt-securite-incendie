@@ -2,15 +2,8 @@
 Core
  */
 import React from 'react';
-import {
-    Box,
-    Dialog,
-    DialogActions,
-    DialogContent,
-    DialogContentText,
-    DialogTitle,
-    Slide,
-} from '@material-ui/core';
+import { makeStyles } from '@material-ui/core/styles';
+import { Box } from '@material-ui/core';
 /*
 Component
  */
@@ -21,21 +14,14 @@ Assets
  */
 import Button from '../CustomButtons/Button';
 import GavelIcon from '@material-ui/icons/Gavel';
+import popoverStyles from '../../assets/jss/material-kit-pro-react/popoverStyles';
+import Popover from '@material-ui/core/Popover';
+
+const useStyles = makeStyles(popoverStyles);
 
 const PageContent = ({ data, classes }) => {
-    const Transition = React.forwardRef(function Transition(props, ref) {
-        return <Slide direction="up" ref={ref} {...props} timeout={1000} />;
-    });
-
-    const [open, setOpen] = React.useState(false);
-
-    const handleClickOpen = () => {
-        setOpen(true);
-    };
-
-    const handleClose = () => {
-        setOpen(false);
-    };
+    const classes2 = useStyles();
+    const [anchorElTop, setAnchorElTop] = React.useState(null);
 
     return (
         <GridItem xs={12} className={classes.mlAuto + ' ' + classes.mrAuto}>
@@ -52,38 +38,36 @@ const PageContent = ({ data, classes }) => {
                         data.wordpressPage.acf.texte_du_lien_reglementation
                     }
                     startIcon={<GavelIcon />}
-                    onClick={handleClickOpen}
+                    onClick={event => setAnchorElTop(event.currentTarget)}
                 />
             </Box>
-            <Dialog
-                open={open}
-                TransitionComponent={Transition}
-                keepMounted
-                onClose={handleClose}
-                aria-labelledby="alert-dialog-reglementation-titre"
-                aria-describedby="alert-dialog-reglementation-description"
-                className="alert-dialog-reglementation"
+            <Popover
+                classes={{
+                    paper: classes2.popover,
+                }}
+                open={Boolean(anchorElTop)}
+                anchorEl={anchorElTop}
+                onClose={() => setAnchorElTop(null)}
+                anchorOrigin={{
+                    vertical: 'top',
+                    horizontal: 'center',
+                }}
+                transformOrigin={{
+                    vertical: 'bottom',
+                    horizontal: 'center',
+                }}
             >
-                <DialogTitle id="alert-dialog-slide-title">
-                    Réglementation
-                </DialogTitle>
-                <DialogContent>
-                    <DialogContentText id="alert-dialog-slide-description">
-                        <span
-                            dangerouslySetInnerHTML={{
-                                __html:
-                                    data.wordpressPage.acf
-                                        .paragraphe_de_reglementation,
-                            }}
-                        />
-                    </DialogContentText>
-                </DialogContent>
-                <DialogActions className="alert-dialog-button-container">
-                    <Button onClick={handleClose} color="danger">
-                        Ok
-                    </Button>
-                </DialogActions>
-            </Dialog>
+                <h3 className={classes2.popoverHeader}>Réglementation</h3>
+                <div className={classes2.popoverBody}>
+                    <span
+                        dangerouslySetInnerHTML={{
+                            __html:
+                                data.wordpressPage.acf
+                                    .paragraphe_de_reglementation,
+                        }}
+                    />{' '}
+                </div>
+            </Popover>
         </GridItem>
     );
 };

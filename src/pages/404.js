@@ -21,7 +21,7 @@ const NotFoundPage = () => {
             wordpressPage(wordpress_id: { eq: 45932 }) {
                 acf {
                     titre_de_la_page
-                    image_banniere {
+                    image_de_banniere {
                         source_url
                         localFile {
                             childImageSharp {
@@ -48,7 +48,7 @@ const NotFoundPage = () => {
             <Seo title="404: Page non trouvée" />
             <Parallax
                 image={
-                    data.wordpressPage.acf.image_banniere.localFile
+                    data.wordpressPage.acf.image_de_banniere.localFile
                         .childImageSharp.fluid.src
                 }
                 className="parallax"
