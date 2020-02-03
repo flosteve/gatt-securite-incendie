@@ -49,6 +49,14 @@ module.exports = {
                 // If useACF is true, then the source plugin will try to import the WordPress ACF Plugin contents.
                 // This feature is untested for sites hosted on WordPress.com
                 useACF: true,
+                verboseOutput: false,
+                excludedRoutes: [
+                    '/wp/v2/users/me',
+                    '/acf/v2/options',
+                    '/wp/v2/settings',
+                    '/wp/v2/themes',
+                    '/acf/v3/comments',
+                ],
             },
         },
         {
